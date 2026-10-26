@@ -9,7 +9,7 @@
       --amber:#B96A00;--amber-soft:#FBF0DF;--line:#E3E0D8;--muted:#6B7680;}
 *{margin:0;padding:0;box-sizing:border-box;}
 html{font-size:17px;}
-body{font-family:'Apple SD Gothic Neo','Noto Sans KR',sans-serif;
+body{font-family:'Apple SD Gothic Neo','Noto Sans KR','Noto Sans SC','Noto Sans Thai',sans-serif;
      background:var(--paper);color:var(--ink);line-height:1.65;}
 a{color:inherit;}
 /* ── 사이트 상단 바: 로고 + 메뉴 ── */
@@ -38,7 +38,7 @@ h1{font-size:1.6rem;line-height:1.3;font-weight:800;}
       color:var(--ink);cursor:pointer;}
 .viewtab button.on{background:var(--green);border-color:var(--green);color:#fff;}
 /* ── 언어 탭 (글 화면 안) ── */
-.langtab{display:flex;gap:8px;margin-top:20px;}
+.langtab{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px;}
 .langtab button{padding:8px 16px;border-radius:999px;font-size:.9rem;
       font-weight:600;border:1.5px solid var(--line);background:#fff;cursor:pointer;}
 .langtab button.on{background:var(--ink);border-color:var(--ink);color:#fff;}
@@ -100,7 +100,7 @@ footer.site{max-width:720px;margin:40px auto 0;padding:20px 20px 40px;
 <div class="wrap">
 <a class="back" href="index.html">&larr; 약 목록으로</a>
 <h1 style="margin-top:12px" id="drug-name">알마겔현탁액(알마게이트)</h1>
-<p class="sub"></p>
+<p class="sub" id="drug-sub"></p>
 <div class="viewtab">
   <button id="btn-video" onclick="setView('video')">수어·음성 영상</button>
   <button id="btn-text"  onclick="setView('text')">글로 보기</button>
@@ -117,6 +117,9 @@ footer.site{max-width:720px;margin:40px auto 0;padding:20px 20px 40px;
   <div class="langtab">
     <button id="lang-ko" class="on" onclick="setLang('ko')">한국어</button>
     <button id="lang-en" onclick="setLang('en')">English</button>
+    <button id="lang-zh" onclick="setLang('zh')">中文</button>
+    <button id="lang-vi" onclick="setLang('vi')">Tiếng Việt</button>
+    <button id="lang-th" onclick="setLang('th')">ไทย</button>
   </div>
 
   <div id="blk-dose">
@@ -143,8 +146,11 @@ footer.site{max-width:720px;margin:40px auto 0;padding:20px 20px 40px;
 안내이며, 정확한 복용은 제품 첨부문서와 의사·약사의 지시를 따르세요.</footer>
 <script>
 const TEXT = {
-  ko: {name:"알마겔현탁액(알마게이트)", dose:["성인·만 12세 이상: 1회 1~1.5g, 1일 3회, 식후 30분~1시간에 복용.","필요하면 취침 전에 1회 더 복용."], ban:["이 약이나 구성성분에 알레르기(과민반응)가 있는 경우","알츠하이머병","치질","체액 저류(부기)","임신 중독증","설사","진단되지 않은 소화기 출혈"], consult:[], stop:[], caution:["테트라사이클린계 항생제와 함께 복용 금지 (흡수가 억제됨)"]},
-  en: {name:"Almagel Suspension (Almagate)", dose:["Adults and age 12 and over: 1–1.5 g at a time, 3 times a day, 30 minutes to 1 hour after meals.","If needed, take one more dose at bedtime."], ban:["You are allergic (hypersensitive) to this medicine or its ingredients","Alzheimer's disease","Hemorrhoids","Fluid retention (swelling)","Toxemia of pregnancy (preeclampsia)","Diarrhea","Undiagnosed bleeding in the digestive tract"], consult:[], stop:[], caution:["Do not take it together with tetracycline antibiotics (they reduce absorption)"]}
+  ko: {name:"알마겔현탁액(알마게이트)", ing:"", dose:["성인·만 12세 이상: 1회 1~1.5g, 1일 3회, 식후 30분~1시간에 복용.","필요하면 취침 전에 1회 더 복용."], ban:["이 약이나 구성성분에 알레르기(과민반응)가 있는 경우","알츠하이머병","치질","체액 저류(부기)","임신 중독증","설사","진단되지 않은 소화기 출혈"], consult:[], stop:[], caution:["테트라사이클린계 항생제와 함께 복용 금지 (흡수가 억제됨)"]},
+  en: {name:"Almagel Suspension (Almagate)", ing:"", dose:["Adults and age 12 and over: 1–1.5 g at a time, 3 times a day, 30 minutes to 1 hour after meals.","If needed, take one more dose at bedtime."], ban:["You are allergic (hypersensitive) to this medicine or its ingredients","Alzheimer's disease","Hemorrhoids","Fluid retention (swelling)","Toxemia of pregnancy (preeclampsia)","Diarrhea","Undiagnosed bleeding in the digestive tract"], consult:[], stop:[], caution:["Do not take it together with tetracycline antibiotics (they reduce absorption)"]},
+  zh: {name:"Almagel Suspension (Almagate)", ing:"", dose:["成人及12岁以上：每次1～1.5g，每日3次，饭后30分钟至1小时服用。","必要时睡前可再服1次。"], ban:["对本药或其成分过敏(过敏反应)","阿尔茨海默病","痔疮","体液潴留(水肿)","妊娠中毒症(子痫前期)","腹泻","原因不明的消化道出血"], consult:[], stop:[], caution:["不要与四环素类抗生素同时服用(会减少吸收)"]},
+  vi: {name:"Almagel Suspension (Almagate)", ing:"", dose:["Người lớn và từ 12 tuổi trở lên: mỗi lần 1–1,5 g, 3 lần mỗi ngày, sau bữa ăn 30 phút đến 1 giờ.","Nếu cần, uống thêm 1 lần trước khi ngủ."], ban:["Bạn dị ứng (quá mẫn) với thuốc này hoặc các thành phần của thuốc","Bệnh Alzheimer","Bệnh trĩ","Ứ dịch (phù)","Nhiễm độc thai nghén (tiền sản giật)","Tiêu chảy","Chảy máu đường tiêu hóa chưa được chẩn đoán"], consult:[], stop:[], caution:["Không dùng cùng kháng sinh nhóm tetracyclin (làm giảm hấp thu)"]},
+  th: {name:"Almagel Suspension (Almagate)", ing:"", dose:["ผู้ใหญ่และอายุ 12 ปีขึ้นไป: ครั้งละ 1–1.5 กรัม วันละ 3 ครั้ง หลังอาหาร 30 นาทีถึง 1 ชั่วโมง","หากจำเป็น กินเพิ่มอีก 1 ครั้งก่อนนอน"], ban:["แพ้ยานี้หรือส่วนประกอบของยา (ภาวะภูมิไวเกิน)","โรคอัลไซเมอร์","ริดสีดวงทวาร","ภาวะคั่งของเหลว (บวม)","ภาวะพิษแห่งครรภ์ (ครรภ์เป็นพิษ)","ท้องเสีย","เลือดออกในทางเดินอาหารที่ยังไม่ได้รับการวินิจฉัย"], consult:[], stop:[], caution:["ห้ามใช้ร่วมกับยาปฏิชีวนะกลุ่มเตตราไซคลิน (ทำให้การดูดซึมลดลง)"]}
 };
 const LABEL = {
   ko: {dose:'1. 복용법 (용법·용량)', ban:'2. 복용 금지 대상',
@@ -156,7 +162,22 @@ const LABEL = {
        ban1:'(1) Do NOT take this medicine if you are in any of these groups',
        consult:'(2) Talk to a doctor or pharmacist BEFORE taking if',
        stop:'(3) STOP taking it right away and talk to a doctor or pharmacist if',
-       caution:'3. Precautions'}
+       caution:'3. Precautions'},
+  zh: {dose:'1. 用法用量', ban:'2. 禁止服用的人群',
+       ban1:'(1) 属于以下情况的人，请勿服用本药',
+       consult:'(2) 服药前需先咨询医生或药师的人群',
+       stop:'(3) 出现以下情况，请立即停药并咨询医生或药师',
+       caution:'3. 注意事项'},
+  vi: {dose:'1. Cách dùng (liều lượng)', ban:'2. Đối tượng không được dùng',
+       ban1:'(1) KHÔNG dùng thuốc này nếu bạn thuộc các trường hợp sau',
+       consult:'(2) Hỏi bác sĩ hoặc dược sĩ TRƯỚC khi dùng nếu',
+       stop:'(3) NGỪNG dùng thuốc ngay và hỏi bác sĩ hoặc dược sĩ nếu',
+       caution:'3. Lưu ý'},
+  th: {dose:'1. วิธีใช้ (ขนาดยา)', ban:'2. ผู้ที่ไม่ควรใช้ยา',
+       ban1:'(1) ห้ามใช้ยานี้หากอยู่ในกลุ่มต่อไปนี้',
+       consult:'(2) ปรึกษาแพทย์หรือเภสัชกรก่อนใช้ยา หาก',
+       stop:'(3) หยุดใช้ยาทันทีและปรึกษาแพทย์หรือเภสัชกร หาก',
+       caution:'3. ข้อควรระวัง'}
 };
 function fill(id, items){
   const ul = document.getElementById('l-' + id);
@@ -174,6 +195,7 @@ function setLang(l){
   const t = TEXT[l], lab = LABEL[l];
   document.documentElement.lang = l;
   document.getElementById('drug-name').textContent = t.name;
+  document.getElementById('drug-sub').textContent = t.ing;
   ['dose','ban','caution'].forEach(k => document.getElementById('h-' + k).textContent = lab[k]);
   ['ban1','consult','stop'].forEach(k => document.getElementById('h-' + k).textContent = lab[k]);
   fill('dose', t.dose); fill('ban', t.ban); fill('consult', t.consult);
@@ -184,8 +206,7 @@ function setLang(l){
   show('blk-stop', t.stop.length > 0);
   show('blk-ban', t.ban.length + t.consult.length + t.stop.length > 0);
   show('blk-caution', t.caution.length > 0);
-  document.getElementById('lang-ko').classList.toggle('on', l==='ko');
-  document.getElementById('lang-en').classList.toggle('on', l==='en');
+  ['ko','en','zh','vi','th'].forEach(x => document.getElementById('lang-' + x).classList.toggle('on', x===l));
 }
 const first = new URLSearchParams(location.search).get('view') || 'video';
 setView(first === 'text' ? 'text' : 'video');

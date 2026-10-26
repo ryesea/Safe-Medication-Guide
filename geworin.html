@@ -9,7 +9,7 @@
       --amber:#B96A00;--amber-soft:#FBF0DF;--line:#E3E0D8;--muted:#6B7680;}
 *{margin:0;padding:0;box-sizing:border-box;}
 html{font-size:17px;}
-body{font-family:'Apple SD Gothic Neo','Noto Sans KR',sans-serif;
+body{font-family:'Apple SD Gothic Neo','Noto Sans KR','Noto Sans SC','Noto Sans Thai',sans-serif;
      background:var(--paper);color:var(--ink);line-height:1.65;}
 a{color:inherit;}
 /* ── 사이트 상단 바: 로고 + 메뉴 ── */
@@ -38,7 +38,7 @@ h1{font-size:1.6rem;line-height:1.3;font-weight:800;}
       color:var(--ink);cursor:pointer;}
 .viewtab button.on{background:var(--green);border-color:var(--green);color:#fff;}
 /* ── 언어 탭 (글 화면 안) ── */
-.langtab{display:flex;gap:8px;margin-top:20px;}
+.langtab{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px;}
 .langtab button{padding:8px 16px;border-radius:999px;font-size:.9rem;
       font-weight:600;border:1.5px solid var(--line);background:#fff;cursor:pointer;}
 .langtab button.on{background:var(--ink);border-color:var(--ink);color:#fff;}
@@ -100,7 +100,7 @@ footer.site{max-width:720px;margin:40px auto 0;padding:20px 20px 40px;
 <div class="wrap">
 <a class="back" href="index.html">&larr; 약 목록으로</a>
 <h1 style="margin-top:12px" id="drug-name">게보린정</h1>
-<p class="sub">주성분: 아세트아미노펜 300mg, 카페인무수물 50mg, 이소프로필안티피린 150mg</p>
+<p class="sub" id="drug-sub">주성분: 아세트아미노펜 300mg, 카페인무수물 50mg, 이소프로필안티피린 150mg</p>
 <div class="viewtab">
   <button id="btn-video" onclick="setView('video')">수어·음성 영상</button>
   <button id="btn-text"  onclick="setView('text')">글로 보기</button>
@@ -117,6 +117,9 @@ footer.site{max-width:720px;margin:40px auto 0;padding:20px 20px 40px;
   <div class="langtab">
     <button id="lang-ko" class="on" onclick="setLang('ko')">한국어</button>
     <button id="lang-en" onclick="setLang('en')">English</button>
+    <button id="lang-zh" onclick="setLang('zh')">中文</button>
+    <button id="lang-vi" onclick="setLang('vi')">Tiếng Việt</button>
+    <button id="lang-th" onclick="setLang('th')">ไทย</button>
   </div>
 
   <div id="blk-dose">
@@ -143,8 +146,11 @@ footer.site{max-width:720px;margin:40px auto 0;padding:20px 20px 40px;
 안내이며, 정확한 복용은 제품 첨부문서와 의사·약사의 지시를 따르세요.</footer>
 <script>
 const TEXT = {
-  ko: {name:"게보린정", dose:["만 15세 이상 성인: 1회 1정, 1일 3회까지 (4시간 이상 간격). 공복을 피하고, 단기간만 복용."], ban:["만 15세 미만 소아","이 약이나 다른 해열진통제로 천식 발작이 있었던 경우","술을 마신 직후","심한 간·신장·심장 질환이 있는 경우","출혈이 잘 안 멎는 체질이거나 위·장 궤양, 심한 혈액 이상이 있는 경우","G6PD(포도당-6-인산 탈수소효소) 결핍증, 급성 간헐성 포르피린증, 과립백혈구감소증이 있는 경우","바르비탈계 약물이나 삼환계 항우울제를 복용한 경우"], consult:["알레르기 체질이거나 약으로 알레르기가 있었던 경우","임신·수유 중, 고령","간·신장·심장 질환, 위궤양, 혈액 이상 병력","갑상선 질환, 당뇨병, 고혈압이 있거나 몸이 약한 경우","와파린 같은 항응고제, 스테로이드제, 리튬, 이뇨제 등 다른 약 복용 중","수두·독감이 의심되는 청소년","술을 정기적으로(매일 3잔 이상) 마시는 경우"], stop:["5~6회 복용해도 증상이 좋아지지 않는 경우","숨쉬기 힘들거나 얼굴이 붓는 등 쇼크·아나필락시스 증상","심한 피부 반응(발진, 피부 벗겨짐 등)","위장 출혈이나 통증"], caution:["다른 소염(항염) 진통제, 아세트아미노펜이 든 다른 약과 함께 복용하는 것은 피한다.","충분한 물과 함께 복용 (위장장애가 나타날 수 있음)"]},
-  en: {name:"Geworin Tablet", dose:["Adults 15 years and over: 1 tablet at a time, up to 3 times a day (at least 4 hours apart). Avoid taking it on an empty stomach, and take it for a short time only."], ban:["Children under 15","You have had an asthma attack from this medicine or another fever/pain reliever","You have just been drinking alcohol","You have severe liver, kidney or heart disease","You bleed easily or bleeding is hard to stop, or you have a stomach/intestinal ulcer or a serious blood disorder","G6PD (glucose-6-phosphate dehydrogenase) deficiency, acute intermittent porphyria, or granulocytopenia","You have taken a barbiturate or a tricyclic antidepressant"], consult:["You are allergic by nature, or have had an allergic reaction to a medicine","Pregnancy or breastfeeding, or older age","A history of liver, kidney or heart disease, stomach ulcer, or blood disorder","Thyroid disease, diabetes, high blood pressure, or you are frail","You are taking other medicines, such as a blood thinner like warfarin, a steroid, lithium or a diuretic","Teenagers who may have chickenpox or the flu","You drink alcohol regularly (3 or more drinks every day)"], stop:["Your symptoms have not improved after 5–6 doses","Signs of shock or anaphylaxis, such as difficulty breathing or a swollen face","A severe skin reaction (rash, peeling skin, etc.)","Stomach bleeding or pain"], caution:["Avoid taking it together with other anti-inflammatory painkillers or other medicines that contain acetaminophen.","Take it with plenty of water (it may upset your stomach)"]}
+  ko: {name:"게보린정", ing:"주성분: 아세트아미노펜 300mg, 카페인무수물 50mg, 이소프로필안티피린 150mg", dose:["만 15세 이상 성인: 1회 1정, 1일 3회까지 (4시간 이상 간격). 공복을 피하고, 단기간만 복용."], ban:["만 15세 미만 소아","이 약이나 다른 해열진통제로 천식 발작이 있었던 경우","술을 마신 직후","심한 간·신장·심장 질환이 있는 경우","출혈이 잘 안 멎는 체질이거나 위·장 궤양, 심한 혈액 이상이 있는 경우","G6PD(포도당-6-인산 탈수소효소) 결핍증, 급성 간헐성 포르피린증, 과립백혈구감소증이 있는 경우","바르비탈계 약물이나 삼환계 항우울제를 복용한 경우"], consult:["알레르기 체질이거나 약으로 알레르기가 있었던 경우","임신·수유 중, 고령","간·신장·심장 질환, 위궤양, 혈액 이상 병력","갑상선 질환, 당뇨병, 고혈압이 있거나 몸이 약한 경우","와파린 같은 항응고제, 스테로이드제, 리튬, 이뇨제 등 다른 약 복용 중","수두·독감이 의심되는 청소년","술을 정기적으로(매일 3잔 이상) 마시는 경우"], stop:["5~6회 복용해도 증상이 좋아지지 않는 경우","숨쉬기 힘들거나 얼굴이 붓는 등 쇼크·아나필락시스 증상","심한 피부 반응(발진, 피부 벗겨짐 등)","위장 출혈이나 통증"], caution:["다른 소염(항염) 진통제, 아세트아미노펜이 든 다른 약과 함께 복용하는 것은 피한다.","충분한 물과 함께 복용 (위장장애가 나타날 수 있음)"]},
+  en: {name:"Geworin Tablet", ing:"Active ingredients: Acetaminophen 300 mg, Caffeine anhydrous 50 mg, Isopropylantipyrine 150 mg", dose:["Adults 15 years and over: 1 tablet at a time, up to 3 times a day (at least 4 hours apart). Avoid taking it on an empty stomach, and take it for a short time only."], ban:["Children under 15","You have had an asthma attack from this medicine or another fever/pain reliever","You have just been drinking alcohol","You have severe liver, kidney or heart disease","You bleed easily or bleeding is hard to stop, or you have a stomach/intestinal ulcer or a serious blood disorder","G6PD (glucose-6-phosphate dehydrogenase) deficiency, acute intermittent porphyria, or granulocytopenia","You have taken a barbiturate or a tricyclic antidepressant"], consult:["You are allergic by nature, or have had an allergic reaction to a medicine","Pregnancy or breastfeeding, or older age","A history of liver, kidney or heart disease, stomach ulcer, or blood disorder","Thyroid disease, diabetes, high blood pressure, or you are frail","You are taking other medicines, such as a blood thinner like warfarin, a steroid, lithium or a diuretic","Teenagers who may have chickenpox or the flu","You drink alcohol regularly (3 or more drinks every day)"], stop:["Your symptoms have not improved after 5–6 doses","Signs of shock or anaphylaxis, such as difficulty breathing or a swollen face","A severe skin reaction (rash, peeling skin, etc.)","Stomach bleeding or pain"], caution:["Avoid taking it together with other anti-inflammatory painkillers or other medicines that contain acetaminophen.","Take it with plenty of water (it may upset your stomach)"]},
+  zh: {name:"Geworin Tablet", ing:"主要成分：Acetaminophen 300 mg, Caffeine anhydrous 50 mg, Isopropylantipyrine 150 mg", dose:["15岁以上成人：每次1片，每日最多3次(间隔至少4小时)。避免空腹服用，仅短期服用。"], ban:["15岁以下儿童","曾因本药或其他解热镇痛药引发哮喘发作","刚饮酒后","患有严重的肝、肾、心脏疾病","容易出血或出血不易止住，或有胃肠溃疡、严重血液疾病","G6PD(葡萄糖-6-磷酸脱氢酶)缺乏症、急性间歇性卟啉病、粒细胞减少症","服用过巴比妥类药物或三环类抗抑郁药"], consult:["过敏体质，或曾对药物过敏","怀孕或哺乳期，或高龄","曾患肝、肾、心脏疾病、胃溃疡、血液疾病","甲状腺疾病、糖尿病、高血压，或身体虚弱","正在服用其他药物，如华法林等抗凝药、类固醇、锂剂、利尿剂","疑似水痘或流感的青少年","经常饮酒(每天3杯以上)"], stop:["服用5～6次后症状仍未改善","出现休克或过敏性休克症状，如呼吸困难、面部肿胀","严重皮肤反应(皮疹、皮肤脱落等)","胃出血或胃痛"], caution:["避免与其他消炎止痛药或含对乙酰氨基酚的其他药物同时服用。","请用足量的水送服(可能引起胃肠不适)"]},
+  vi: {name:"Geworin Tablet", ing:"Thành phần chính: Acetaminophen 300 mg, Caffeine anhydrous 50 mg, Isopropylantipyrine 150 mg", dose:["Người lớn từ 15 tuổi trở lên: mỗi lần 1 viên, tối đa 3 lần mỗi ngày (cách nhau ít nhất 4 giờ). Tránh uống khi đói và chỉ dùng trong thời gian ngắn."], ban:["Trẻ dưới 15 tuổi","Từng lên cơn hen do thuốc này hoặc thuốc hạ sốt giảm đau khác","Bạn vừa uống rượu bia","Bệnh gan, thận hoặc tim nặng","Dễ chảy máu hoặc máu khó cầm, hoặc bị loét dạ dày/ruột hay rối loạn máu nghiêm trọng","Thiếu men G6PD (glucose-6-phosphate dehydrogenase), rối loạn chuyển hóa porphyrin cấp tính từng đợt, hoặc giảm bạch cầu hạt","Đã dùng thuốc nhóm barbiturat hoặc thuốc chống trầm cảm ba vòng"], consult:["Cơ địa dị ứng, hoặc từng bị dị ứng với thuốc","Mang thai hoặc cho con bú, hoặc cao tuổi","Từng bị bệnh gan, thận, tim, loét dạ dày hoặc rối loạn máu","Bệnh tuyến giáp, tiểu đường, cao huyết áp, hoặc cơ thể yếu","Đang dùng thuốc khác, như thuốc chống đông máu (warfarin), steroid, lithium hoặc thuốc lợi tiểu","Thanh thiếu niên nghi bị thủy đậu hoặc cúm","Thường xuyên uống rượu bia (từ 3 ly trở lên mỗi ngày)"], stop:["Triệu chứng không cải thiện sau khi dùng 5–6 lần","Dấu hiệu sốc hoặc sốc phản vệ, như khó thở hoặc sưng mặt","Phản ứng da nghiêm trọng (phát ban, bong tróc da, v.v.)","Chảy máu hoặc đau dạ dày"], caution:["Tránh dùng cùng thuốc giảm đau kháng viêm khác hoặc thuốc khác có chứa acetaminophen.","Uống với nhiều nước (có thể gây khó chịu dạ dày)"]},
+  th: {name:"Geworin Tablet", ing:"ตัวยาสำคัญ: Acetaminophen 300 mg, Caffeine anhydrous 50 mg, Isopropylantipyrine 150 mg", dose:["ผู้ใหญ่อายุ 15 ปีขึ้นไป: ครั้งละ 1 เม็ด วันละไม่เกิน 3 ครั้ง (ห่างกันอย่างน้อย 4 ชั่วโมง) หลีกเลี่ยงการกินตอนท้องว่าง และใช้ในระยะสั้นเท่านั้น"], ban:["เด็กอายุต่ำกว่า 15 ปี","เคยหอบหืดกำเริบจากยานี้หรือยาลดไข้แก้ปวดอื่น","เพิ่งดื่มแอลกอฮอล์","เป็นโรคตับ ไต หรือหัวใจรุนแรง","เลือดออกง่ายหรือเลือดหยุดยาก หรือเป็นแผลในกระเพาะอาหาร/ลำไส้ หรือมีความผิดปกติของเลือดรุนแรง","ภาวะพร่อง G6PD (กลูโคส-6-ฟอสเฟตดีไฮโดรจีเนส) โรคพอร์ฟิเรียเฉียบพลันเป็นพัก ๆ หรือภาวะเม็ดเลือดขาวแกรนูโลไซต์ต่ำ","เคยใช้ยากลุ่มบาร์บิทูเรตหรือยาต้านเศร้ากลุ่มไตรไซคลิก"], consult:["มีร่างกายแพ้ง่าย หรือเคยแพ้ยา","ตั้งครรภ์หรือให้นมบุตร หรือสูงอายุ","เคยเป็นโรคตับ ไต หัวใจ แผลในกระเพาะอาหาร หรือความผิดปกติของเลือด","โรคต่อมไทรอยด์ เบาหวาน ความดันโลหิตสูง หรือร่างกายอ่อนแอ","กำลังใช้ยาอื่น เช่น ยาต้านการแข็งตัวของเลือดอย่างวอร์ฟาริน สเตียรอยด์ ลิเทียม หรือยาขับปัสสาวะ","วัยรุ่นที่สงสัยว่าเป็นอีสุกอีใสหรือไข้หวัดใหญ่","ดื่มแอลกอฮอล์เป็นประจำ (ตั้งแต่ 3 แก้วขึ้นไปทุกวัน)"], stop:["อาการไม่ดีขึ้นหลังใช้ยา 5–6 ครั้ง","มีอาการช็อกหรือภาวะแพ้รุนแรง เช่น หายใจลำบากหรือใบหน้าบวม","ปฏิกิริยาทางผิวหนังรุนแรง (ผื่น ผิวหนังลอก ฯลฯ)","เลือดออกหรือปวดในกระเพาะอาหาร"], caution:["หลีกเลี่ยงการใช้ร่วมกับยาแก้ปวดต้านการอักเสบอื่น หรือยาอื่นที่มีพาราเซตามอล (อะเซตามิโนเฟน)","กินพร้อมน้ำมาก ๆ (อาจทำให้ระคายเคืองกระเพาะอาหาร)"]}
 };
 const LABEL = {
   ko: {dose:'1. 복용법 (용법·용량)', ban:'2. 복용 금지 대상',
@@ -156,7 +162,22 @@ const LABEL = {
        ban1:'(1) Do NOT take this medicine if you are in any of these groups',
        consult:'(2) Talk to a doctor or pharmacist BEFORE taking if',
        stop:'(3) STOP taking it right away and talk to a doctor or pharmacist if',
-       caution:'3. Precautions'}
+       caution:'3. Precautions'},
+  zh: {dose:'1. 用法用量', ban:'2. 禁止服用的人群',
+       ban1:'(1) 属于以下情况的人，请勿服用本药',
+       consult:'(2) 服药前需先咨询医生或药师的人群',
+       stop:'(3) 出现以下情况，请立即停药并咨询医生或药师',
+       caution:'3. 注意事项'},
+  vi: {dose:'1. Cách dùng (liều lượng)', ban:'2. Đối tượng không được dùng',
+       ban1:'(1) KHÔNG dùng thuốc này nếu bạn thuộc các trường hợp sau',
+       consult:'(2) Hỏi bác sĩ hoặc dược sĩ TRƯỚC khi dùng nếu',
+       stop:'(3) NGỪNG dùng thuốc ngay và hỏi bác sĩ hoặc dược sĩ nếu',
+       caution:'3. Lưu ý'},
+  th: {dose:'1. วิธีใช้ (ขนาดยา)', ban:'2. ผู้ที่ไม่ควรใช้ยา',
+       ban1:'(1) ห้ามใช้ยานี้หากอยู่ในกลุ่มต่อไปนี้',
+       consult:'(2) ปรึกษาแพทย์หรือเภสัชกรก่อนใช้ยา หาก',
+       stop:'(3) หยุดใช้ยาทันทีและปรึกษาแพทย์หรือเภสัชกร หาก',
+       caution:'3. ข้อควรระวัง'}
 };
 function fill(id, items){
   const ul = document.getElementById('l-' + id);
@@ -174,6 +195,7 @@ function setLang(l){
   const t = TEXT[l], lab = LABEL[l];
   document.documentElement.lang = l;
   document.getElementById('drug-name').textContent = t.name;
+  document.getElementById('drug-sub').textContent = t.ing;
   ['dose','ban','caution'].forEach(k => document.getElementById('h-' + k).textContent = lab[k]);
   ['ban1','consult','stop'].forEach(k => document.getElementById('h-' + k).textContent = lab[k]);
   fill('dose', t.dose); fill('ban', t.ban); fill('consult', t.consult);
@@ -184,8 +206,7 @@ function setLang(l){
   show('blk-stop', t.stop.length > 0);
   show('blk-ban', t.ban.length + t.consult.length + t.stop.length > 0);
   show('blk-caution', t.caution.length > 0);
-  document.getElementById('lang-ko').classList.toggle('on', l==='ko');
-  document.getElementById('lang-en').classList.toggle('on', l==='en');
+  ['ko','en','zh','vi','th'].forEach(x => document.getElementById('lang-' + x).classList.toggle('on', x===l));
 }
 const first = new URLSearchParams(location.search).get('view') || 'video';
 setView(first === 'text' ? 'text' : 'video');

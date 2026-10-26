@@ -9,7 +9,7 @@
       --amber:#B96A00;--amber-soft:#FBF0DF;--line:#E3E0D8;--muted:#6B7680;}
 *{margin:0;padding:0;box-sizing:border-box;}
 html{font-size:17px;}
-body{font-family:'Apple SD Gothic Neo','Noto Sans KR',sans-serif;
+body{font-family:'Apple SD Gothic Neo','Noto Sans KR','Noto Sans SC','Noto Sans Thai',sans-serif;
      background:var(--paper);color:var(--ink);line-height:1.65;}
 a{color:inherit;}
 /* ── 사이트 상단 바: 로고 + 메뉴 ── */
@@ -38,7 +38,7 @@ h1{font-size:1.6rem;line-height:1.3;font-weight:800;}
       color:var(--ink);cursor:pointer;}
 .viewtab button.on{background:var(--green);border-color:var(--green);color:#fff;}
 /* ── 언어 탭 (글 화면 안) ── */
-.langtab{display:flex;gap:8px;margin-top:20px;}
+.langtab{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px;}
 .langtab button{padding:8px 16px;border-radius:999px;font-size:.9rem;
       font-weight:600;border:1.5px solid var(--line);background:#fff;cursor:pointer;}
 .langtab button.on{background:var(--ink);border-color:var(--ink);color:#fff;}
@@ -100,7 +100,7 @@ footer.site{max-width:720px;margin:40px auto 0;padding:20px 20px 40px;
 <div class="wrap">
 <a class="back" href="index.html">&larr; 약 목록으로</a>
 <h1 style="margin-top:12px" id="drug-name">둘코락스좌약(비사코딜)</h1>
-<p class="sub"></p>
+<p class="sub" id="drug-sub"></p>
 <div class="viewtab">
   <button id="btn-video" onclick="setView('video')">수어·음성 영상</button>
   <button id="btn-text"  onclick="setView('text')">글로 보기</button>
@@ -117,6 +117,9 @@ footer.site{max-width:720px;margin:40px auto 0;padding:20px 20px 40px;
   <div class="langtab">
     <button id="lang-ko" class="on" onclick="setLang('ko')">한국어</button>
     <button id="lang-en" onclick="setLang('en')">English</button>
+    <button id="lang-zh" onclick="setLang('zh')">中文</button>
+    <button id="lang-vi" onclick="setLang('vi')">Tiếng Việt</button>
+    <button id="lang-th" onclick="setLang('th')">ไทย</button>
   </div>
 
   <div id="blk-dose">
@@ -143,8 +146,11 @@ footer.site{max-width:720px;margin:40px auto 0;padding:20px 20px 40px;
 안내이며, 정확한 복용은 제품 첨부문서와 의사·약사의 지시를 따르세요.</footer>
 <script>
 const TEXT = {
-  ko: {name:"둘코락스좌약(비사코딜)", dose:["성인: 1일 1회 10mg, 필요할 때 항문에 삽입.","소아(6~12세): 1일 1회 5mg, 필요할 때 항문에 삽입.","연령과 증상에 따라 적절히 조절."], ban:["급성 복부 질환(충수염, 장출혈, 궤양성 대장염 등)","장마비, 장폐색(창자막힘)","구역·구토를 동반한 심한 복통 (중증 상태일 수 있음)","경련성 변비","심하게 단단한 변","급성 맹장염 같은 급성 복부 수술 상태","항문 열창(찢긴 상처)","심한 탈수 상태","이 약이나 구성성분에 알레르기가 있는 경우"], consult:["임신 중이거나 임신 가능성이 있는 여성, 수유 중","소아"], stop:[], caution:[]},
-  en: {name:"Dulcolax Suppository (Bisacodyl)", dose:["Adults: 10 mg once a day, inserted into the rectum (anus) when needed.","Children (6–12 years): 5 mg once a day, inserted into the rectum when needed.","Adjust appropriately for age and symptoms."], ban:["Acute abdominal conditions (appendicitis, intestinal bleeding, ulcerative colitis, etc.)","Paralytic ileus or intestinal obstruction (blocked bowel)","Severe abdominal pain with nausea or vomiting (it may be a serious condition)","Spastic constipation","Severely hard stool","An acute abdominal surgical condition such as acute appendicitis","Anal fissure (torn skin)","Severe dehydration","You are allergic to this medicine or its ingredients"], consult:["Women who are pregnant or may be pregnant, or who are breastfeeding","Children"], stop:[], caution:[]}
+  ko: {name:"둘코락스좌약(비사코딜)", ing:"", dose:["성인: 1일 1회 10mg, 필요할 때 항문에 삽입.","소아(6~12세): 1일 1회 5mg, 필요할 때 항문에 삽입.","연령과 증상에 따라 적절히 조절."], ban:["급성 복부 질환(충수염, 장출혈, 궤양성 대장염 등)","장마비, 장폐색(창자막힘)","구역·구토를 동반한 심한 복통 (중증 상태일 수 있음)","경련성 변비","심하게 단단한 변","급성 맹장염 같은 급성 복부 수술 상태","항문 열창(찢긴 상처)","심한 탈수 상태","이 약이나 구성성분에 알레르기가 있는 경우"], consult:["임신 중이거나 임신 가능성이 있는 여성, 수유 중","소아"], stop:[], caution:[]},
+  en: {name:"Dulcolax Suppository (Bisacodyl)", ing:"", dose:["Adults: 10 mg once a day, inserted into the rectum (anus) when needed.","Children (6–12 years): 5 mg once a day, inserted into the rectum when needed.","Adjust appropriately for age and symptoms."], ban:["Acute abdominal conditions (appendicitis, intestinal bleeding, ulcerative colitis, etc.)","Paralytic ileus or intestinal obstruction (blocked bowel)","Severe abdominal pain with nausea or vomiting (it may be a serious condition)","Spastic constipation","Severely hard stool","An acute abdominal surgical condition such as acute appendicitis","Anal fissure (torn skin)","Severe dehydration","You are allergic to this medicine or its ingredients"], consult:["Women who are pregnant or may be pregnant, or who are breastfeeding","Children"], stop:[], caution:[]},
+  zh: {name:"Dulcolax Suppository (Bisacodyl)", ing:"", dose:["成人：每日1次10mg，需要时塞入肛门。","儿童(6～12岁)：每日1次5mg，需要时塞入肛门。","请根据年龄和症状适当调整。"], ban:["急性腹部疾病(阑尾炎、肠出血、溃疡性结肠炎等)","肠麻痹、肠梗阻(肠道堵塞)","伴有恶心、呕吐的严重腹痛(可能是严重情况)","痉挛性便秘","大便极度干硬","急性阑尾炎等需要急性腹部手术的状态","肛裂(撕裂伤口)","严重脱水","对本药或其成分过敏"], consult:["怀孕或可能怀孕的女性，哺乳期","儿童"], stop:[], caution:[]},
+  vi: {name:"Dulcolax Suppository (Bisacodyl)", ing:"", dose:["Người lớn: 10 mg mỗi ngày 1 lần, đặt vào hậu môn khi cần.","Trẻ em (6–12 tuổi): 5 mg mỗi ngày 1 lần, đặt vào hậu môn khi cần.","Điều chỉnh phù hợp theo tuổi và triệu chứng."], ban:["Bệnh lý bụng cấp tính (viêm ruột thừa, xuất huyết ruột, viêm loét đại tràng, v.v.)","Liệt ruột hoặc tắc ruột","Đau bụng dữ dội kèm buồn nôn, nôn (có thể là tình trạng nặng)","Táo bón do co thắt","Phân rất cứng","Tình trạng bụng cấp cần phẫu thuật như viêm ruột thừa cấp","Nứt hậu môn (vết rách)","Mất nước nặng","Bạn dị ứng với thuốc này hoặc các thành phần của thuốc"], consult:["Phụ nữ đang mang thai hoặc có thể mang thai, hoặc đang cho con bú","Trẻ em"], stop:[], caution:[]},
+  th: {name:"Dulcolax Suppository (Bisacodyl)", ing:"", dose:["ผู้ใหญ่: วันละ 1 ครั้ง ครั้งละ 10 มก. สอดเข้าทางทวารหนักเมื่อจำเป็น","เด็ก (6–12 ปี): วันละ 1 ครั้ง ครั้งละ 5 มก. สอดเข้าทางทวารหนักเมื่อจำเป็น","ปรับให้เหมาะสมตามอายุและอาการ"], ban:["โรคช่องท้องเฉียบพลัน (ไส้ติ่งอักเสบ เลือดออกในลำไส้ ลำไส้ใหญ่อักเสบเป็นแผล ฯลฯ)","ลำไส้อัมพาตหรือลำไส้อุดตัน","ปวดท้องรุนแรงร่วมกับคลื่นไส้ อาเจียน (อาจเป็นภาวะรุนแรง)","ท้องผูกจากการเกร็งตัวของลำไส้","อุจจาระแข็งมาก","ภาวะช่องท้องเฉียบพลันที่ต้องผ่าตัด เช่น ไส้ติ่งอักเสบเฉียบพลัน","แผลแตกที่ทวารหนัก (แผลฉีกขาด)","ภาวะขาดน้ำรุนแรง","แพ้ยานี้หรือส่วนประกอบของยา"], consult:["สตรีที่ตั้งครรภ์หรืออาจตั้งครรภ์ หรือให้นมบุตร","เด็ก"], stop:[], caution:[]}
 };
 const LABEL = {
   ko: {dose:'1. 복용법 (용법·용량)', ban:'2. 복용 금지 대상',
@@ -156,7 +162,22 @@ const LABEL = {
        ban1:'(1) Do NOT take this medicine if you are in any of these groups',
        consult:'(2) Talk to a doctor or pharmacist BEFORE taking if',
        stop:'(3) STOP taking it right away and talk to a doctor or pharmacist if',
-       caution:'3. Precautions'}
+       caution:'3. Precautions'},
+  zh: {dose:'1. 用法用量', ban:'2. 禁止服用的人群',
+       ban1:'(1) 属于以下情况的人，请勿服用本药',
+       consult:'(2) 服药前需先咨询医生或药师的人群',
+       stop:'(3) 出现以下情况，请立即停药并咨询医生或药师',
+       caution:'3. 注意事项'},
+  vi: {dose:'1. Cách dùng (liều lượng)', ban:'2. Đối tượng không được dùng',
+       ban1:'(1) KHÔNG dùng thuốc này nếu bạn thuộc các trường hợp sau',
+       consult:'(2) Hỏi bác sĩ hoặc dược sĩ TRƯỚC khi dùng nếu',
+       stop:'(3) NGỪNG dùng thuốc ngay và hỏi bác sĩ hoặc dược sĩ nếu',
+       caution:'3. Lưu ý'},
+  th: {dose:'1. วิธีใช้ (ขนาดยา)', ban:'2. ผู้ที่ไม่ควรใช้ยา',
+       ban1:'(1) ห้ามใช้ยานี้หากอยู่ในกลุ่มต่อไปนี้',
+       consult:'(2) ปรึกษาแพทย์หรือเภสัชกรก่อนใช้ยา หาก',
+       stop:'(3) หยุดใช้ยาทันทีและปรึกษาแพทย์หรือเภสัชกร หาก',
+       caution:'3. ข้อควรระวัง'}
 };
 function fill(id, items){
   const ul = document.getElementById('l-' + id);
@@ -174,6 +195,7 @@ function setLang(l){
   const t = TEXT[l], lab = LABEL[l];
   document.documentElement.lang = l;
   document.getElementById('drug-name').textContent = t.name;
+  document.getElementById('drug-sub').textContent = t.ing;
   ['dose','ban','caution'].forEach(k => document.getElementById('h-' + k).textContent = lab[k]);
   ['ban1','consult','stop'].forEach(k => document.getElementById('h-' + k).textContent = lab[k]);
   fill('dose', t.dose); fill('ban', t.ban); fill('consult', t.consult);
@@ -184,8 +206,7 @@ function setLang(l){
   show('blk-stop', t.stop.length > 0);
   show('blk-ban', t.ban.length + t.consult.length + t.stop.length > 0);
   show('blk-caution', t.caution.length > 0);
-  document.getElementById('lang-ko').classList.toggle('on', l==='ko');
-  document.getElementById('lang-en').classList.toggle('on', l==='en');
+  ['ko','en','zh','vi','th'].forEach(x => document.getElementById('lang-' + x).classList.toggle('on', x===l));
 }
 const first = new URLSearchParams(location.search).get('view') || 'video';
 setView(first === 'text' ? 'text' : 'video');

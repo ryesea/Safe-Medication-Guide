@@ -9,7 +9,7 @@
       --amber:#B96A00;--amber-soft:#FBF0DF;--line:#E3E0D8;--muted:#6B7680;}
 *{margin:0;padding:0;box-sizing:border-box;}
 html{font-size:17px;}
-body{font-family:'Apple SD Gothic Neo','Noto Sans KR',sans-serif;
+body{font-family:'Apple SD Gothic Neo','Noto Sans KR','Noto Sans SC','Noto Sans Thai',sans-serif;
      background:var(--paper);color:var(--ink);line-height:1.65;}
 a{color:inherit;}
 /* ── 사이트 상단 바: 로고 + 메뉴 ── */
@@ -38,7 +38,7 @@ h1{font-size:1.6rem;line-height:1.3;font-weight:800;}
       color:var(--ink);cursor:pointer;}
 .viewtab button.on{background:var(--green);border-color:var(--green);color:#fff;}
 /* ── 언어 탭 (글 화면 안) ── */
-.langtab{display:flex;gap:8px;margin-top:20px;}
+.langtab{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px;}
 .langtab button{padding:8px 16px;border-radius:999px;font-size:.9rem;
       font-weight:600;border:1.5px solid var(--line);background:#fff;cursor:pointer;}
 .langtab button.on{background:var(--ink);border-color:var(--ink);color:#fff;}
@@ -100,7 +100,7 @@ footer.site{max-width:720px;margin:40px auto 0;padding:20px 20px 40px;
 <div class="wrap">
 <a class="back" href="index.html">&larr; 약 목록으로</a>
 <h1 style="margin-top:12px" id="drug-name">훼스탈플러스정</h1>
-<p class="sub">주성분: 셀룰라제 10mg, 판크레아틴 315mg, 시메티콘 30mg, 우르소데옥시콜산 10mg</p>
+<p class="sub" id="drug-sub">주성분: 셀룰라제 10mg, 판크레아틴 315mg, 시메티콘 30mg, 우르소데옥시콜산 10mg</p>
 <div class="viewtab">
   <button id="btn-video" onclick="setView('video')">수어·음성 영상</button>
   <button id="btn-text"  onclick="setView('text')">글로 보기</button>
@@ -117,6 +117,9 @@ footer.site{max-width:720px;margin:40px auto 0;padding:20px 20px 40px;
   <div class="langtab">
     <button id="lang-ko" class="on" onclick="setLang('ko')">한국어</button>
     <button id="lang-en" onclick="setLang('en')">English</button>
+    <button id="lang-zh" onclick="setLang('zh')">中文</button>
+    <button id="lang-vi" onclick="setLang('vi')">Tiếng Việt</button>
+    <button id="lang-th" onclick="setLang('th')">ไทย</button>
   </div>
 
   <div id="blk-dose">
@@ -143,8 +146,11 @@ footer.site{max-width:720px;margin:40px auto 0;padding:20px 20px 40px;
 안내이며, 정확한 복용은 제품 첨부문서와 의사·약사의 지시를 따르세요.</footer>
 <script>
 const TEXT = {
-  ko: {name:"훼스탈플러스정", dose:["성인: 1회 1~2정, 1일 3회 식사 후 복용.","만 8~14세: 1회 1정, 1일 3회 식사 후 복용.","장용정이므로 씹거나 쪼개지 말고 그대로 삼키기 (쪼개면 약효를 못 얻거나 부작용 위험)."], ban:["만 7세 이하 어린이"], consult:["본인 또는 가족이 알레르기 체질인 경우","임신 중이거나 임신 가능성이 있는 경우","다른 약을 복용 중인 경우"], stop:["2주 정도 복용해도 증상이 좋아지지 않는 경우"], caution:["정해진 용법·용량을 지키고, 꼭 필요할 때만 복용","취침 전 음식 섭취, 과식, 자극적인 향신료·카페인은 피하기"]},
-  en: {name:"Festal Plus Tablet", dose:["Adults: 1–2 tablets at a time, 3 times a day, after meals.","Age 8–14: 1 tablet at a time, 3 times a day, after meals.","This is an enteric-coated tablet: swallow it whole, and do not chew or split it (splitting it may stop it from working or raise the risk of side effects)."], ban:["Children aged 7 and under"], consult:["You or a family member is allergic by nature","You are pregnant or may be pregnant","You are taking other medicines"], stop:["Your symptoms have not improved after about 2 weeks"], caution:["Follow the stated dose and take it only when really needed","Avoid eating before bed, overeating, and spicy seasonings or caffeine"]}
+  ko: {name:"훼스탈플러스정", ing:"주성분: 셀룰라제 10mg, 판크레아틴 315mg, 시메티콘 30mg, 우르소데옥시콜산 10mg", dose:["성인: 1회 1~2정, 1일 3회 식사 후 복용.","만 8~14세: 1회 1정, 1일 3회 식사 후 복용.","장용정이므로 씹거나 쪼개지 말고 그대로 삼키기 (쪼개면 약효를 못 얻거나 부작용 위험)."], ban:["만 7세 이하 어린이"], consult:["본인 또는 가족이 알레르기 체질인 경우","임신 중이거나 임신 가능성이 있는 경우","다른 약을 복용 중인 경우"], stop:["2주 정도 복용해도 증상이 좋아지지 않는 경우"], caution:["정해진 용법·용량을 지키고, 꼭 필요할 때만 복용","취침 전 음식 섭취, 과식, 자극적인 향신료·카페인은 피하기"]},
+  en: {name:"Festal Plus Tablet", ing:"Active ingredients: Cellulase 10 mg, Pancreatin 315 mg, Simethicone 30 mg, Ursodeoxycholic acid 10 mg", dose:["Adults: 1–2 tablets at a time, 3 times a day, after meals.","Age 8–14: 1 tablet at a time, 3 times a day, after meals.","This is an enteric-coated tablet: swallow it whole, and do not chew or split it (splitting it may stop it from working or raise the risk of side effects)."], ban:["Children aged 7 and under"], consult:["You or a family member is allergic by nature","You are pregnant or may be pregnant","You are taking other medicines"], stop:["Your symptoms have not improved after about 2 weeks"], caution:["Follow the stated dose and take it only when really needed","Avoid eating before bed, overeating, and spicy seasonings or caffeine"]},
+  zh: {name:"Festal Plus Tablet", ing:"主要成分：Cellulase 10 mg, Pancreatin 315 mg, Simethicone 30 mg, Ursodeoxycholic acid 10 mg", dose:["成人：每次1～2片，每日3次，饭后服用。","8～14岁：每次1片，每日3次，饭后服用。","本药为肠溶片，请整片吞服，不要咀嚼或掰开(掰开可能失效或增加副作用风险)。"], ban:["7岁以下儿童"], consult:["本人或家人为过敏体质","怀孕或可能怀孕","正在服用其他药物"], stop:["服药约2周后症状仍未改善"], caution:["请遵守规定的用法用量，仅在确有需要时服用","避免睡前进食、暴饮暴食，以及辛辣调味料和咖啡因"]},
+  vi: {name:"Festal Plus Tablet", ing:"Thành phần chính: Cellulase 10 mg, Pancreatin 315 mg, Simethicone 30 mg, Ursodeoxycholic acid 10 mg", dose:["Người lớn: mỗi lần 1–2 viên, 3 lần mỗi ngày, sau bữa ăn.","Từ 8–14 tuổi: mỗi lần 1 viên, 3 lần mỗi ngày, sau bữa ăn.","Đây là viên bao tan trong ruột: nuốt nguyên viên, không nhai hay bẻ đôi (bẻ đôi có thể làm thuốc mất tác dụng hoặc tăng nguy cơ tác dụng phụ)."], ban:["Trẻ từ 7 tuổi trở xuống"], consult:["Bản thân hoặc người nhà có cơ địa dị ứng","Đang mang thai hoặc có thể mang thai","Đang dùng thuốc khác"], stop:["Triệu chứng không cải thiện sau khoảng 2 tuần dùng thuốc"], caution:["Dùng đúng liều quy định và chỉ dùng khi thật sự cần thiết","Tránh ăn trước khi ngủ, ăn quá no, gia vị cay và caffeine"]},
+  th: {name:"Festal Plus Tablet", ing:"ตัวยาสำคัญ: Cellulase 10 mg, Pancreatin 315 mg, Simethicone 30 mg, Ursodeoxycholic acid 10 mg", dose:["ผู้ใหญ่: ครั้งละ 1–2 เม็ด วันละ 3 ครั้ง หลังอาหาร","อายุ 8–14 ปี: ครั้งละ 1 เม็ด วันละ 3 ครั้ง หลังอาหาร","เป็นยาเม็ดเคลือบละลายในลำไส้: กลืนทั้งเม็ด ห้ามเคี้ยวหรือหักครึ่ง (การหักอาจทำให้ยาไม่ได้ผลหรือเพิ่มความเสี่ยงผลข้างเคียง)"], ban:["เด็กอายุ 7 ปีลงมา"], consult:["ตนเองหรือคนในครอบครัวมีร่างกายแพ้ง่าย","ตั้งครรภ์หรืออาจตั้งครรภ์","กำลังใช้ยาอื่น"], stop:["อาการไม่ดีขึ้นหลังใช้ยาประมาณ 2 สัปดาห์"], caution:["ใช้ตามขนาดที่กำหนด และใช้เฉพาะเมื่อจำเป็นจริง ๆ","หลีกเลี่ยงการกินก่อนนอน กินมากเกินไป เครื่องเทศรสจัด และคาเฟอีน"]}
 };
 const LABEL = {
   ko: {dose:'1. 복용법 (용법·용량)', ban:'2. 복용 금지 대상',
@@ -156,7 +162,22 @@ const LABEL = {
        ban1:'(1) Do NOT take this medicine if you are in any of these groups',
        consult:'(2) Talk to a doctor or pharmacist BEFORE taking if',
        stop:'(3) STOP taking it right away and talk to a doctor or pharmacist if',
-       caution:'3. Precautions'}
+       caution:'3. Precautions'},
+  zh: {dose:'1. 用法用量', ban:'2. 禁止服用的人群',
+       ban1:'(1) 属于以下情况的人，请勿服用本药',
+       consult:'(2) 服药前需先咨询医生或药师的人群',
+       stop:'(3) 出现以下情况，请立即停药并咨询医生或药师',
+       caution:'3. 注意事项'},
+  vi: {dose:'1. Cách dùng (liều lượng)', ban:'2. Đối tượng không được dùng',
+       ban1:'(1) KHÔNG dùng thuốc này nếu bạn thuộc các trường hợp sau',
+       consult:'(2) Hỏi bác sĩ hoặc dược sĩ TRƯỚC khi dùng nếu',
+       stop:'(3) NGỪNG dùng thuốc ngay và hỏi bác sĩ hoặc dược sĩ nếu',
+       caution:'3. Lưu ý'},
+  th: {dose:'1. วิธีใช้ (ขนาดยา)', ban:'2. ผู้ที่ไม่ควรใช้ยา',
+       ban1:'(1) ห้ามใช้ยานี้หากอยู่ในกลุ่มต่อไปนี้',
+       consult:'(2) ปรึกษาแพทย์หรือเภสัชกรก่อนใช้ยา หาก',
+       stop:'(3) หยุดใช้ยาทันทีและปรึกษาแพทย์หรือเภสัชกร หาก',
+       caution:'3. ข้อควรระวัง'}
 };
 function fill(id, items){
   const ul = document.getElementById('l-' + id);
@@ -174,6 +195,7 @@ function setLang(l){
   const t = TEXT[l], lab = LABEL[l];
   document.documentElement.lang = l;
   document.getElementById('drug-name').textContent = t.name;
+  document.getElementById('drug-sub').textContent = t.ing;
   ['dose','ban','caution'].forEach(k => document.getElementById('h-' + k).textContent = lab[k]);
   ['ban1','consult','stop'].forEach(k => document.getElementById('h-' + k).textContent = lab[k]);
   fill('dose', t.dose); fill('ban', t.ban); fill('consult', t.consult);
@@ -184,8 +206,7 @@ function setLang(l){
   show('blk-stop', t.stop.length > 0);
   show('blk-ban', t.ban.length + t.consult.length + t.stop.length > 0);
   show('blk-caution', t.caution.length > 0);
-  document.getElementById('lang-ko').classList.toggle('on', l==='ko');
-  document.getElementById('lang-en').classList.toggle('on', l==='en');
+  ['ko','en','zh','vi','th'].forEach(x => document.getElementById('lang-' + x).classList.toggle('on', x===l));
 }
 const first = new URLSearchParams(location.search).get('view') || 'video';
 setView(first === 'text' ? 'text' : 'video');

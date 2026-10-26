@@ -9,7 +9,7 @@
       --amber:#B96A00;--amber-soft:#FBF0DF;--line:#E3E0D8;--muted:#6B7680;}
 *{margin:0;padding:0;box-sizing:border-box;}
 html{font-size:17px;}
-body{font-family:'Apple SD Gothic Neo','Noto Sans KR',sans-serif;
+body{font-family:'Apple SD Gothic Neo','Noto Sans KR','Noto Sans SC','Noto Sans Thai',sans-serif;
      background:var(--paper);color:var(--ink);line-height:1.65;}
 a{color:inherit;}
 /* ── 사이트 상단 바: 로고 + 메뉴 ── */
@@ -38,7 +38,7 @@ h1{font-size:1.6rem;line-height:1.3;font-weight:800;}
       color:var(--ink);cursor:pointer;}
 .viewtab button.on{background:var(--green);border-color:var(--green);color:#fff;}
 /* ── 언어 탭 (글 화면 안) ── */
-.langtab{display:flex;gap:8px;margin-top:20px;}
+.langtab{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px;}
 .langtab button{padding:8px 16px;border-radius:999px;font-size:.9rem;
       font-weight:600;border:1.5px solid var(--line);background:#fff;cursor:pointer;}
 .langtab button.on{background:var(--ink);border-color:var(--ink);color:#fff;}
@@ -100,7 +100,7 @@ footer.site{max-width:720px;margin:40px auto 0;padding:20px 20px 40px;
 <div class="wrap">
 <a class="back" href="index.html">&larr; 약 목록으로</a>
 <h1 style="margin-top:12px" id="drug-name">화이투벤씨플러스캡슐</h1>
-<p class="sub">주성분: 아세트아미노펜 200mg, 아스코르브산 83.3mg, 카페인무수물 10mg, 클로르페니라민말레산염 1.25mg, 클로페라스틴염산염 8mg, DL-메틸에페드린염산염 12.5mg, 리보플라빈 2mg, 티아민질산염 4.1mg</p>
+<p class="sub" id="drug-sub">주성분: 아세트아미노펜 200mg, 아스코르브산 83.3mg, 카페인무수물 10mg, 클로르페니라민말레산염 1.25mg, 클로페라스틴염산염 8mg, DL-메틸에페드린염산염 12.5mg, 리보플라빈 2mg, 티아민질산염 4.1mg</p>
 <div class="viewtab">
   <button id="btn-video" onclick="setView('video')">수어·음성 영상</button>
   <button id="btn-text"  onclick="setView('text')">글로 보기</button>
@@ -117,6 +117,9 @@ footer.site{max-width:720px;margin:40px auto 0;padding:20px 20px 40px;
   <div class="langtab">
     <button id="lang-ko" class="on" onclick="setLang('ko')">한국어</button>
     <button id="lang-en" onclick="setLang('en')">English</button>
+    <button id="lang-zh" onclick="setLang('zh')">中文</button>
+    <button id="lang-vi" onclick="setLang('vi')">Tiếng Việt</button>
+    <button id="lang-th" onclick="setLang('th')">ไทย</button>
   </div>
 
   <div id="blk-dose">
@@ -143,8 +146,11 @@ footer.site{max-width:720px;margin:40px auto 0;padding:20px 20px 40px;
 안내이며, 정확한 복용은 제품 첨부문서와 의사·약사의 지시를 따르세요.</footer>
 <script>
 const TEXT = {
-  ko: {name:"화이투벤씨플러스캡슐", dose:["만 15세 이상·성인: 1회 2캡슐 / 만 8~14세: 1회 1캡슐, 1일 3회 식후 30분."], ban:["이 약 성분에 알레르기가 있거나 감기약·해열진통제로 천식이 있었던 경우","만 3개월 미만 영아","MAO 억제제(항우울제 등)를 복용 중이거나 중단한 지 2주 이내인 경우","진해거담제, 다른 감기약, 해열진통제, 진정제, 항히스타민제(비염약, 멀미약, 알레르기약)를 함께 복용 중인 경우"], consult:["수두·독감이 의심되는 영아 및 15세 미만 어린이","알레르기 체질이거나 약으로 알레르기가 있었던 경우 (황색5호 포함)","간·신장·심장·갑상선 질환, 당뇨병, 고혈압, 녹내장, 배뇨곤란, 고령, 몸이 약한 경우","위궤양, 속쓰림 등 위장 문제나 출혈 문제","임신·수유 중","당뇨약, 통풍약, 관절염약, 항응고제, 스테로이드제 복용 중","술을 정기적으로(매일 3잔 이상) 마시는 경우"], stop:["5~6회 복용해도 증상이 좋아지지 않는 경우","발진, 가려움, 구역·구토, 식욕부진, 변비, 어지러움, 배뇨곤란, 불안","쇼크, 심한 피부 반응, 천식, 황달, 호흡곤란이 나타나는 경우"], caution:["아세트아미노펜이 든 다른 약(감기약·해열진통제)과 함께 복용 금지, 합쳐서 1일 4,000mg 초과 금지","복용 중에는 음주를 피하기","졸음이 올 수 있으므로 운전이나 위험한 기계 조작은 피하기"]},
-  en: {name:"Whituben C Plus Capsule", dose:["Adults and age 15 and over: 2 capsules at a time. Age 8–14: 1 capsule at a time. 3 times a day, 30 minutes after meals."], ban:["You are allergic to an ingredient of this medicine, or have had asthma from a cold medicine or fever/pain reliever","Infants under 3 months","You are taking an MAO inhibitor (such as some antidepressants), or stopped taking one within the last 2 weeks","You are taking another cough/expectorant, cold medicine, fever/pain reliever, sedative or antihistamine (for allergic rhinitis, motion sickness or allergies)"], consult:["Infants and children under 15 who may have chickenpox or the flu","You are allergic by nature, or have had an allergic reaction to a medicine (including Yellow No. 5)","Liver, kidney, heart or thyroid disease, diabetes, high blood pressure, glaucoma, difficulty urinating, older age, or being frail","Stomach problems such as stomach ulcer or heartburn, or bleeding problems","Pregnancy or breastfeeding","You are taking medicine for diabetes, gout or arthritis, a blood thinner or a steroid","You drink alcohol regularly (3 or more drinks every day)"], stop:["Your symptoms have not improved after 5–6 doses","Rash, itching, nausea/vomiting, loss of appetite, constipation, dizziness, difficulty urinating or anxiety","Signs of shock, a severe skin reaction, asthma, jaundice or difficulty breathing"], caution:["Do not take it together with other medicines that contain acetaminophen (cold medicines, fever/pain relievers), and do not take more than 4,000 mg per day in total","Avoid alcohol while taking it","It may make you drowsy, so avoid driving or operating dangerous machinery"]}
+  ko: {name:"화이투벤씨플러스캡슐", ing:"주성분: 아세트아미노펜 200mg, 아스코르브산 83.3mg, 카페인무수물 10mg, 클로르페니라민말레산염 1.25mg, 클로페라스틴염산염 8mg, DL-메틸에페드린염산염 12.5mg, 리보플라빈 2mg, 티아민질산염 4.1mg", dose:["만 15세 이상·성인: 1회 2캡슐 / 만 8~14세: 1회 1캡슐, 1일 3회 식후 30분."], ban:["이 약 성분에 알레르기가 있거나 감기약·해열진통제로 천식이 있었던 경우","만 3개월 미만 영아","MAO 억제제(항우울제 등)를 복용 중이거나 중단한 지 2주 이내인 경우","진해거담제, 다른 감기약, 해열진통제, 진정제, 항히스타민제(비염약, 멀미약, 알레르기약)를 함께 복용 중인 경우"], consult:["수두·독감이 의심되는 영아 및 15세 미만 어린이","알레르기 체질이거나 약으로 알레르기가 있었던 경우 (황색5호 포함)","간·신장·심장·갑상선 질환, 당뇨병, 고혈압, 녹내장, 배뇨곤란, 고령, 몸이 약한 경우","위궤양, 속쓰림 등 위장 문제나 출혈 문제","임신·수유 중","당뇨약, 통풍약, 관절염약, 항응고제, 스테로이드제 복용 중","술을 정기적으로(매일 3잔 이상) 마시는 경우"], stop:["5~6회 복용해도 증상이 좋아지지 않는 경우","발진, 가려움, 구역·구토, 식욕부진, 변비, 어지러움, 배뇨곤란, 불안","쇼크, 심한 피부 반응, 천식, 황달, 호흡곤란이 나타나는 경우"], caution:["아세트아미노펜이 든 다른 약(감기약·해열진통제)과 함께 복용 금지, 합쳐서 1일 4,000mg 초과 금지","복용 중에는 음주를 피하기","졸음이 올 수 있으므로 운전이나 위험한 기계 조작은 피하기"]},
+  en: {name:"Whituben C Plus Capsule", ing:"Active ingredients: Acetaminophen 200 mg, Ascorbic acid 83.3 mg, Caffeine anhydrous 10 mg, Chlorpheniramine maleate 1.25 mg, Cloperastine hydrochloride 8 mg, DL-Methylephedrine hydrochloride 12.5 mg, Riboflavin 2 mg, Thiamine nitrate 4.1 mg", dose:["Adults and age 15 and over: 2 capsules at a time. Age 8–14: 1 capsule at a time. 3 times a day, 30 minutes after meals."], ban:["You are allergic to an ingredient of this medicine, or have had asthma from a cold medicine or fever/pain reliever","Infants under 3 months","You are taking an MAO inhibitor (such as some antidepressants), or stopped taking one within the last 2 weeks","You are taking another cough/expectorant, cold medicine, fever/pain reliever, sedative or antihistamine (for allergic rhinitis, motion sickness or allergies)"], consult:["Infants and children under 15 who may have chickenpox or the flu","You are allergic by nature, or have had an allergic reaction to a medicine (including Yellow No. 5)","Liver, kidney, heart or thyroid disease, diabetes, high blood pressure, glaucoma, difficulty urinating, older age, or being frail","Stomach problems such as stomach ulcer or heartburn, or bleeding problems","Pregnancy or breastfeeding","You are taking medicine for diabetes, gout or arthritis, a blood thinner or a steroid","You drink alcohol regularly (3 or more drinks every day)"], stop:["Your symptoms have not improved after 5–6 doses","Rash, itching, nausea/vomiting, loss of appetite, constipation, dizziness, difficulty urinating or anxiety","Signs of shock, a severe skin reaction, asthma, jaundice or difficulty breathing"], caution:["Do not take it together with other medicines that contain acetaminophen (cold medicines, fever/pain relievers), and do not take more than 4,000 mg per day in total","Avoid alcohol while taking it","It may make you drowsy, so avoid driving or operating dangerous machinery"]},
+  zh: {name:"Whituben C Plus Capsule", ing:"主要成分：Acetaminophen 200 mg, Ascorbic acid 83.3 mg, Caffeine anhydrous 10 mg, Chlorpheniramine maleate 1.25 mg, Cloperastine hydrochloride 8 mg, DL-Methylephedrine hydrochloride 12.5 mg, Riboflavin 2 mg, Thiamine nitrate 4.1 mg", dose:["成人及15岁以上：每次2粒。8～14岁：每次1粒。每日3次，饭后30分钟。"], ban:["对本药成分过敏，或曾因感冒药、解热镇痛药引发哮喘","3个月以下婴儿","正在服用单胺氧化酶(MAO)抑制剂(如部分抗抑郁药)，或停药未满2周","正在同时服用其他镇咳祛痰药、感冒药、解热镇痛药、镇静药或抗组胺药(用于鼻炎、晕车、过敏)"], consult:["疑似水痘或流感的婴儿及15岁以下儿童","过敏体质，或曾对药物过敏(包括黄色5号色素)","肝、肾、心脏、甲状腺疾病、糖尿病、高血压、青光眼、排尿困难、高龄或身体虚弱","胃溃疡、烧心等胃肠问题，或出血问题","怀孕或哺乳期","正在服用糖尿病药、痛风药、关节炎药、抗凝药或类固醇","经常饮酒(每天3杯以上)"], stop:["服用5～6次后症状仍未改善","皮疹、瘙痒、恶心呕吐、食欲不振、便秘、头晕、排尿困难、焦虑","出现休克、严重皮肤反应、哮喘、黄疸或呼吸困难"], caution:["不要与其他含对乙酰氨基酚的药物(感冒药、解热镇痛药)同时服用，合计每日不得超过4,000mg","服药期间避免饮酒","可能引起嗜睡，请避免驾驶或操作危险机械"]},
+  vi: {name:"Whituben C Plus Capsule", ing:"Thành phần chính: Acetaminophen 200 mg, Ascorbic acid 83.3 mg, Caffeine anhydrous 10 mg, Chlorpheniramine maleate 1.25 mg, Cloperastine hydrochloride 8 mg, DL-Methylephedrine hydrochloride 12.5 mg, Riboflavin 2 mg, Thiamine nitrate 4.1 mg", dose:["Người lớn và từ 15 tuổi trở lên: mỗi lần 2 viên nang. Từ 8–14 tuổi: mỗi lần 1 viên nang. 3 lần mỗi ngày, sau bữa ăn 30 phút."], ban:["Bạn dị ứng với một thành phần của thuốc, hoặc từng bị hen do thuốc cảm hay thuốc hạ sốt giảm đau","Trẻ sơ sinh dưới 3 tháng tuổi","Đang dùng thuốc ức chế MAO (như một số thuốc chống trầm cảm), hoặc mới ngừng dùng trong vòng 2 tuần","Đang dùng cùng lúc thuốc ho/long đờm, thuốc cảm khác, thuốc hạ sốt giảm đau, thuốc an thần hoặc thuốc kháng histamin (thuốc viêm mũi, say tàu xe, dị ứng)"], consult:["Trẻ sơ sinh và trẻ dưới 15 tuổi nghi bị thủy đậu hoặc cúm","Cơ địa dị ứng hoặc từng bị dị ứng với thuốc (bao gồm phẩm màu vàng số 5)","Bệnh gan, thận, tim, tuyến giáp, tiểu đường, cao huyết áp, tăng nhãn áp, khó tiểu, cao tuổi hoặc cơ thể yếu","Vấn đề dạ dày như loét dạ dày, ợ nóng, hoặc rối loạn chảy máu","Mang thai hoặc cho con bú","Đang dùng thuốc tiểu đường, gút, viêm khớp, thuốc chống đông máu hoặc steroid","Thường xuyên uống rượu bia (từ 3 ly trở lên mỗi ngày)"], stop:["Triệu chứng không cải thiện sau khi dùng 5–6 lần","Phát ban, ngứa, buồn nôn/nôn, chán ăn, táo bón, chóng mặt, khó tiểu hoặc lo âu","Dấu hiệu sốc, phản ứng da nghiêm trọng, hen, vàng da hoặc khó thở"], caution:["Không dùng cùng thuốc khác có chứa acetaminophen (thuốc cảm, thuốc hạ sốt giảm đau), và tổng liều không quá 4.000 mg mỗi ngày","Tránh rượu bia khi đang dùng thuốc","Thuốc có thể gây buồn ngủ, nên tránh lái xe hoặc vận hành máy móc nguy hiểm"]},
+  th: {name:"Whituben C Plus Capsule", ing:"ตัวยาสำคัญ: Acetaminophen 200 mg, Ascorbic acid 83.3 mg, Caffeine anhydrous 10 mg, Chlorpheniramine maleate 1.25 mg, Cloperastine hydrochloride 8 mg, DL-Methylephedrine hydrochloride 12.5 mg, Riboflavin 2 mg, Thiamine nitrate 4.1 mg", dose:["ผู้ใหญ่และอายุ 15 ปีขึ้นไป: ครั้งละ 2 แคปซูล อายุ 8–14 ปี: ครั้งละ 1 แคปซูล วันละ 3 ครั้ง หลังอาหาร 30 นาที"], ban:["แพ้ส่วนประกอบของยานี้ หรือเคยเป็นหอบหืดจากยาแก้หวัดหรือยาลดไข้แก้ปวด","ทารกอายุต่ำกว่า 3 เดือน","กำลังใช้ยากลุ่มยับยั้ง MAO (เช่น ยาต้านเศร้าบางชนิด) หรือเพิ่งหยุดยาภายใน 2 สัปดาห์","กำลังใช้ยาแก้ไอ/ยาขับเสมหะ ยาแก้หวัดอื่น ยาลดไข้แก้ปวด ยาระงับประสาท หรือยาต้านฮิสตามีน (ยารักษาโรคจมูกอักเสบ แก้เมารถ แก้แพ้) ร่วมกัน"], consult:["ทารกและเด็กอายุต่ำกว่า 15 ปีที่สงสัยว่าเป็นอีสุกอีใสหรือไข้หวัดใหญ่","มีร่างกายแพ้ง่ายหรือเคยแพ้ยา (รวมถึงสีเหลืองเบอร์ 5)","โรคตับ ไต หัวใจ ต่อมไทรอยด์ เบาหวาน ความดันโลหิตสูง ต้อหิน ปัสสาวะลำบาก สูงอายุ หรือร่างกายอ่อนแอ","ปัญหาในกระเพาะอาหาร เช่น แผลในกระเพาะอาหาร แสบร้อนกลางอก หรือปัญหาเลือดออก","ตั้งครรภ์หรือให้นมบุตร","กำลังใช้ยารักษาเบาหวาน เกาต์ ข้ออักเสบ ยาต้านการแข็งตัวของเลือด หรือสเตียรอยด์","ดื่มแอลกอฮอล์เป็นประจำ (ตั้งแต่ 3 แก้วขึ้นไปทุกวัน)"], stop:["อาการไม่ดีขึ้นหลังใช้ยา 5–6 ครั้ง","ผื่น คัน คลื่นไส้/อาเจียน เบื่ออาหาร ท้องผูก เวียนศีรษะ ปัสสาวะลำบาก หรือวิตกกังวล","มีอาการช็อก ปฏิกิริยาทางผิวหนังรุนแรง หอบหืด ดีซ่าน หรือหายใจลำบาก"], caution:["ห้ามใช้ร่วมกับยาอื่นที่มีพาราเซตามอล (อะเซตามิโนเฟน) (ยาแก้หวัด ยาลดไข้แก้ปวด) และห้ามเกินรวม 4,000 มก. ต่อวัน","หลีกเลี่ยงแอลกอฮอล์ขณะใช้ยา","ยาอาจทำให้ง่วง จึงควรหลีกเลี่ยงการขับรถหรือใช้เครื่องจักรที่อันตราย"]}
 };
 const LABEL = {
   ko: {dose:'1. 복용법 (용법·용량)', ban:'2. 복용 금지 대상',
@@ -156,7 +162,22 @@ const LABEL = {
        ban1:'(1) Do NOT take this medicine if you are in any of these groups',
        consult:'(2) Talk to a doctor or pharmacist BEFORE taking if',
        stop:'(3) STOP taking it right away and talk to a doctor or pharmacist if',
-       caution:'3. Precautions'}
+       caution:'3. Precautions'},
+  zh: {dose:'1. 用法用量', ban:'2. 禁止服用的人群',
+       ban1:'(1) 属于以下情况的人，请勿服用本药',
+       consult:'(2) 服药前需先咨询医生或药师的人群',
+       stop:'(3) 出现以下情况，请立即停药并咨询医生或药师',
+       caution:'3. 注意事项'},
+  vi: {dose:'1. Cách dùng (liều lượng)', ban:'2. Đối tượng không được dùng',
+       ban1:'(1) KHÔNG dùng thuốc này nếu bạn thuộc các trường hợp sau',
+       consult:'(2) Hỏi bác sĩ hoặc dược sĩ TRƯỚC khi dùng nếu',
+       stop:'(3) NGỪNG dùng thuốc ngay và hỏi bác sĩ hoặc dược sĩ nếu',
+       caution:'3. Lưu ý'},
+  th: {dose:'1. วิธีใช้ (ขนาดยา)', ban:'2. ผู้ที่ไม่ควรใช้ยา',
+       ban1:'(1) ห้ามใช้ยานี้หากอยู่ในกลุ่มต่อไปนี้',
+       consult:'(2) ปรึกษาแพทย์หรือเภสัชกรก่อนใช้ยา หาก',
+       stop:'(3) หยุดใช้ยาทันทีและปรึกษาแพทย์หรือเภสัชกร หาก',
+       caution:'3. ข้อควรระวัง'}
 };
 function fill(id, items){
   const ul = document.getElementById('l-' + id);
@@ -174,6 +195,7 @@ function setLang(l){
   const t = TEXT[l], lab = LABEL[l];
   document.documentElement.lang = l;
   document.getElementById('drug-name').textContent = t.name;
+  document.getElementById('drug-sub').textContent = t.ing;
   ['dose','ban','caution'].forEach(k => document.getElementById('h-' + k).textContent = lab[k]);
   ['ban1','consult','stop'].forEach(k => document.getElementById('h-' + k).textContent = lab[k]);
   fill('dose', t.dose); fill('ban', t.ban); fill('consult', t.consult);
@@ -184,8 +206,7 @@ function setLang(l){
   show('blk-stop', t.stop.length > 0);
   show('blk-ban', t.ban.length + t.consult.length + t.stop.length > 0);
   show('blk-caution', t.caution.length > 0);
-  document.getElementById('lang-ko').classList.toggle('on', l==='ko');
-  document.getElementById('lang-en').classList.toggle('on', l==='en');
+  ['ko','en','zh','vi','th'].forEach(x => document.getElementById('lang-' + x).classList.toggle('on', x===l));
 }
 const first = new URLSearchParams(location.search).get('view') || 'video';
 setView(first === 'text' ? 'text' : 'video');

@@ -29,11 +29,14 @@
  *   #name_ko 타이레놀정 500mg
  *   #name_en Tylenol Tablet 500mg
  *   #ingredient 주성분: 아세트아미노펜 500mg   (없으면 생략 가능)
+ *   #ingredient_en Acetaminophen 500 mg        (한국어 외 언어에 표시, 영문 성분명)
  *   #video https://www.youtube.com/embed/영상ID
  *   #dose_ko                     <- 이 줄 아래에 "- 항목" 을 한 줄에 하나씩
  *   - 만 12세 이상: 1회 1~2정 ...
  *   #dose_en / #ban_ko / #ban_en / #consult_ko / #consult_en
  *   #stop_ko / #stop_en / #caution_ko / #caution_en  도 같은 방식
+ *   언어는 ko(한국어) en(영어) zh(중국어 간체) vi(베트남어) th(태국어) 5개.
+ *   약 이름은 한국어 외에는 name_en 을 같이 쓴다.
  *   (ban=복용하지 말 것, consult=상의, stop=즉각 중지)
  *   '#' 로 시작하는 줄 중 위 이름이 아닌 것과, 빈 줄은 무시한다.
  *
@@ -50,17 +53,20 @@
 
 /* 칸 종류와 언어 */
 enum { S_DOSE, S_BAN, S_CONSULT, S_STOP, S_CAUTION, N_SEC };
-enum { L_KO, L_EN, N_LANG };
+enum { L_KO, L_EN, L_ZH, L_VI, L_TH, N_LANG };
 
 static const char *SEC_KEY[N_SEC] = { "dose", "ban", "consult", "stop", "caution" };
-static const char *LANG_KEY[N_LANG] = { "ko", "en" };
+static const char *LANG_KEY[N_LANG] = { "ko", "en", "zh", "vi", "th" };
+/* 성분 줄 앞에 붙는 말 (한국어는 drugs.txt 의 #ingredient 에 "주성분: " 까지 직접 적는다) */
+static const char *ING_LABEL[N_LANG] = { "", "Active ingredients: ", "主要成分：", "Thành phần chính: ", "ตัวยาสำคัญ: " };
 
 /* 약품 1개의 정보를 담는 구조체 */
 typedef struct {
     char id[64];            /* 파일 이름용 영문 ID (예: tylenol) */
     char name_ko[256];      /* 약품명 (한국어) */
     char name_en[256];      /* 약품명 (영어) */
-    char ingredient[512];   /* 주성분 (없으면 빈 문자열) */
+    char ingredient[512];   /* 주성분 (한국어, 없으면 빈 문자열) */
+    char ingredient_en[512];/* 주성분 (영문 성분명, 한국어 외 모든 언어에서 사용) */
     char video_url[512];    /* 수어+음성 안내 영상 주소 */
     /* 칸마다 항목들을 '\x1f'(구분 문자)로 이어 붙여 저장한다. */
     char list[N_LANG][N_SEC][MAX_LIST];
@@ -129,6 +135,7 @@ static int load_drugs(const char *path)
             } else if (strcmp(key, "name_ko") == 0)    copy_value(drugs[n-1].name_ko,    sizeof(drugs[n-1].name_ko),    val);
             else if (strcmp(key, "name_en") == 0)      copy_value(drugs[n-1].name_en,    sizeof(drugs[n-1].name_en),    val);
             else if (strcmp(key, "ingredient") == 0)   copy_value(drugs[n-1].ingredient, sizeof(drugs[n-1].ingredient), val);
+            else if (strcmp(key, "ingredient_en") == 0) copy_value(drugs[n-1].ingredient_en, sizeof(drugs[n-1].ingredient_en), val);
             else if (strcmp(key, "video") == 0)        copy_value(drugs[n-1].video_url,  sizeof(drugs[n-1].video_url),  val);
             else {
                 int l, s;
@@ -162,13 +169,17 @@ static void check_drug(const Drug *d)
 {
     if (d->name_ko[0] == '\0' || d->name_en[0] == '\0')
         printf("[경고] %s : 약 이름(name_ko / name_en)이 비어 있습니다.\n", d->id);
+    if (d->ingredient[0] != '\0' && d->ingredient_en[0] == '\0')
+        printf("[경고] %s : #ingredient_en(영문 성분명)이 없어 한국어 외 언어에서 성분 줄이 비어 보입니다.\n", d->id);
     if (d->video_url[0] == '\0')
         printf("[경고] %s : #video 주소가 없습니다.\n", d->id);
     for (int s = 0; s < N_SEC; s++) {
         int has_ko = d->list[L_KO][s][0] != '\0';
-        int has_en = d->list[L_EN][s][0] != '\0';
-        if (has_ko != has_en)
-            printf("[경고] %s : %s 칸이 한국어/영어 중 한쪽에만 있습니다.\n", d->id, SEC_KEY[s]);
+        for (int l = 1; l < N_LANG; l++) {
+            int has = d->list[l][s][0] != '\0';
+            if (has_ko != has)
+                printf("[경고] %s : %s 칸이 한국어와 %s 중 한쪽에만 있습니다.\n", d->id, SEC_KEY[s], LANG_KEY[l]);
+        }
     }
 }
 
@@ -226,7 +237,7 @@ void write_css(FILE *out)
 "      --amber:#B96A00;--amber-soft:#FBF0DF;--line:#E3E0D8;--muted:#6B7680;}\n"
 "*{margin:0;padding:0;box-sizing:border-box;}\n"
 "html{font-size:17px;}\n"
-"body{font-family:'Apple SD Gothic Neo','Noto Sans KR',sans-serif;\n"
+"body{font-family:'Apple SD Gothic Neo','Noto Sans KR','Noto Sans SC','Noto Sans Thai',sans-serif;\n"
 "     background:var(--paper);color:var(--ink);line-height:1.65;}\n"
 "a{color:inherit;}\n"
 "/* ── 사이트 상단 바: 로고 + 메뉴 ── */\n"
@@ -255,7 +266,7 @@ void write_css(FILE *out)
 "      color:var(--ink);cursor:pointer;}\n"
 ".viewtab button.on{background:var(--green);border-color:var(--green);color:#fff;}\n"
 "/* ── 언어 탭 (글 화면 안) ── */\n"
-".langtab{display:flex;gap:8px;margin-top:20px;}\n"
+".langtab{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px;}\n"
 ".langtab button{padding:8px 16px;border-radius:999px;font-size:.9rem;\n"
 "      font-weight:600;border:1.5px solid var(--line);background:#fff;cursor:pointer;}\n"
 ".langtab button.on{background:var(--ink);border-color:var(--ink);color:#fff;}\n"
@@ -397,7 +408,7 @@ void generate_page(const Drug *d)
           "<a class=\"back\" href=\"index.html\">&larr; 약 목록으로</a>\n"
           "<h1 style=\"margin-top:12px\" id=\"drug-name\">", out);
     put_html(out, d->name_ko);
-    fputs("</h1>\n<p class=\"sub\">", out);
+    fputs("</h1>\n<p class=\"sub\" id=\"drug-sub\">", out);
     put_html(out, d->ingredient);
     fputs("</p>\n", out);
 
@@ -424,6 +435,9 @@ void generate_page(const Drug *d)
 "  <div class=\"langtab\">\n"
 "    <button id=\"lang-ko\" class=\"on\" onclick=\"setLang('ko')\">한국어</button>\n"
 "    <button id=\"lang-en\" onclick=\"setLang('en')\">English</button>\n"
+"    <button id=\"lang-zh\" onclick=\"setLang('zh')\">中文</button>\n"
+"    <button id=\"lang-vi\" onclick=\"setLang('vi')\">Tiếng Việt</button>\n"
+"    <button id=\"lang-th\" onclick=\"setLang('th')\">ไทย</button>\n"
 "  </div>\n"
 "\n"
 "  <div id=\"blk-dose\">\n"
@@ -455,12 +469,22 @@ void generate_page(const Drug *d)
 
     for (int l = 0; l < N_LANG; l++) {
         fprintf(out, "  %s: {name:", LANG_KEY[l]);
-        put_js_string(out, l == L_KO ? d->name_ko : d->name_en);
+        put_js_string(out, l == L_KO ? d->name_ko : d->name_en);   /* 한국어 외에는 영어 이름 */
+        fputs(", ing:", out);
+        if (l == L_KO) {
+            put_js_string(out, d->ingredient);
+        } else if (d->ingredient_en[0] != '\0') {
+            char tmp[1100];
+            snprintf(tmp, sizeof(tmp), "%s%s", ING_LABEL[l], d->ingredient_en);
+            put_js_string(out, tmp);
+        } else {
+            put_js_string(out, "");
+        }
         for (int s = 0; s < N_SEC; s++) {
             fprintf(out, ", %s:", SEC_KEY[s]);
             put_js_array(out, d->list[l][s]);
         }
-        fputs(l == L_KO ? "},\n" : "}\n", out);
+        fputs(l < N_LANG - 1 ? "},\n" : "}\n", out);
     }
 
     fputs(
@@ -475,7 +499,22 @@ void generate_page(const Drug *d)
 "       ban1:'(1) Do NOT take this medicine if you are in any of these groups',\n"
 "       consult:'(2) Talk to a doctor or pharmacist BEFORE taking if',\n"
 "       stop:'(3) STOP taking it right away and talk to a doctor or pharmacist if',\n"
-"       caution:'3. Precautions'}\n"
+"       caution:'3. Precautions'},\n"
+"  zh: {dose:'1. 用法用量', ban:'2. 禁止服用的人群',\n"
+"       ban1:'(1) 属于以下情况的人，请勿服用本药',\n"
+"       consult:'(2) 服药前需先咨询医生或药师的人群',\n"
+"       stop:'(3) 出现以下情况，请立即停药并咨询医生或药师',\n"
+"       caution:'3. 注意事项'},\n"
+"  vi: {dose:'1. Cách dùng (liều lượng)', ban:'2. Đối tượng không được dùng',\n"
+"       ban1:'(1) KHÔNG dùng thuốc này nếu bạn thuộc các trường hợp sau',\n"
+"       consult:'(2) Hỏi bác sĩ hoặc dược sĩ TRƯỚC khi dùng nếu',\n"
+"       stop:'(3) NGỪNG dùng thuốc ngay và hỏi bác sĩ hoặc dược sĩ nếu',\n"
+"       caution:'3. Lưu ý'},\n"
+"  th: {dose:'1. วิธีใช้ (ขนาดยา)', ban:'2. ผู้ที่ไม่ควรใช้ยา',\n"
+"       ban1:'(1) ห้ามใช้ยานี้หากอยู่ในกลุ่มต่อไปนี้',\n"
+"       consult:'(2) ปรึกษาแพทย์หรือเภสัชกรก่อนใช้ยา หาก',\n"
+"       stop:'(3) หยุดใช้ยาทันทีและปรึกษาแพทย์หรือเภสัชกร หาก',\n"
+"       caution:'3. ข้อควรระวัง'}\n"
 "};\n"
 "function fill(id, items){\n"
 "  const ul = document.getElementById('l-' + id);\n"
@@ -493,6 +532,7 @@ void generate_page(const Drug *d)
 "  const t = TEXT[l], lab = LABEL[l];\n"
 "  document.documentElement.lang = l;\n"
 "  document.getElementById('drug-name').textContent = t.name;\n"
+"  document.getElementById('drug-sub').textContent = t.ing;\n"
 "  ['dose','ban','caution'].forEach(k => document.getElementById('h-' + k).textContent = lab[k]);\n"
 "  ['ban1','consult','stop'].forEach(k => document.getElementById('h-' + k).textContent = lab[k]);\n"
 "  fill('dose', t.dose); fill('ban', t.ban); fill('consult', t.consult);\n"
@@ -503,8 +543,7 @@ void generate_page(const Drug *d)
 "  show('blk-stop', t.stop.length > 0);\n"
 "  show('blk-ban', t.ban.length + t.consult.length + t.stop.length > 0);\n"
 "  show('blk-caution', t.caution.length > 0);\n"
-"  document.getElementById('lang-ko').classList.toggle('on', l==='ko');\n"
-"  document.getElementById('lang-en').classList.toggle('on', l==='en');\n"
+"  ['ko','en','zh','vi','th'].forEach(x => document.getElementById('lang-' + x).classList.toggle('on', x===l));\n"
 "}\n"
 "const first = new URLSearchParams(location.search).get('view') || 'video';\n"
 "setView(first === 'text' ? 'text' : 'video');\n"

@@ -9,7 +9,7 @@
       --amber:#B96A00;--amber-soft:#FBF0DF;--line:#E3E0D8;--muted:#6B7680;}
 *{margin:0;padding:0;box-sizing:border-box;}
 html{font-size:17px;}
-body{font-family:'Apple SD Gothic Neo','Noto Sans KR',sans-serif;
+body{font-family:'Apple SD Gothic Neo','Noto Sans KR','Noto Sans SC','Noto Sans Thai',sans-serif;
      background:var(--paper);color:var(--ink);line-height:1.65;}
 a{color:inherit;}
 /* ── 사이트 상단 바: 로고 + 메뉴 ── */
@@ -38,7 +38,7 @@ h1{font-size:1.6rem;line-height:1.3;font-weight:800;}
       color:var(--ink);cursor:pointer;}
 .viewtab button.on{background:var(--green);border-color:var(--green);color:#fff;}
 /* ── 언어 탭 (글 화면 안) ── */
-.langtab{display:flex;gap:8px;margin-top:20px;}
+.langtab{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px;}
 .langtab button{padding:8px 16px;border-radius:999px;font-size:.9rem;
       font-weight:600;border:1.5px solid var(--line);background:#fff;cursor:pointer;}
 .langtab button.on{background:var(--ink);border-color:var(--ink);color:#fff;}
@@ -100,7 +100,7 @@ footer.site{max-width:720px;margin:40px auto 0;padding:20px 20px 40px;
 <div class="wrap">
 <a class="back" href="index.html">&larr; 약 목록으로</a>
 <h1 style="margin-top:12px" id="drug-name">타이레놀정 500mg</h1>
-<p class="sub">주성분: 아세트아미노펜 500mg</p>
+<p class="sub" id="drug-sub">주성분: 아세트아미노펜 500mg</p>
 <div class="viewtab">
   <button id="btn-video" onclick="setView('video')">수어·음성 영상</button>
   <button id="btn-text"  onclick="setView('text')">글로 보기</button>
@@ -117,6 +117,9 @@ footer.site{max-width:720px;margin:40px auto 0;padding:20px 20px 40px;
   <div class="langtab">
     <button id="lang-ko" class="on" onclick="setLang('ko')">한국어</button>
     <button id="lang-en" onclick="setLang('en')">English</button>
+    <button id="lang-zh" onclick="setLang('zh')">中文</button>
+    <button id="lang-vi" onclick="setLang('vi')">Tiếng Việt</button>
+    <button id="lang-th" onclick="setLang('th')">ไทย</button>
   </div>
 
   <div id="blk-dose">
@@ -143,8 +146,11 @@ footer.site{max-width:720px;margin:40px auto 0;padding:20px 20px 40px;
 안내이며, 정확한 복용은 제품 첨부문서와 의사·약사의 지시를 따르세요.</footer>
 <script>
 const TEXT = {
-  ko: {name:"타이레놀정 500mg", dose:["만 12세 이상: 1회 1~2정, 1일 3~4회 (4~6시간 간격) 필요시 복용. 1일 최대 8정(4g).","통증에는 성인 10일, 소아 5일, 발열에는 3일 이상 지속해서 복용 금지."], ban:["이 약에 알레르기가 있는 경우","위궤양이나 심한 간⋅신장⋅심장 질환이 있는 경우","아스피린 천식 병력이 있는 경우","항우울제나 수면진정제 복용 중인 경우","술을 마신 직후"], consult:["간⋅신장⋅심장 질환, 위궤양","출혈이 잘 안 멎는 체질","천식, 고령, 임신⋅수유 중","와파린과 같은 혈액을 묽게 하는 약 복용","술을 정기적으로 마시는 경우"], stop:["숨쉬기 힘들거나 얼굴⋅목이 붓는 경우","온몸에 발진이 퍼지거나 피부가 벗겨지는 경우","피를 토하거나 대변이 검게 나오는 경우","멍이 잘 들거나 피가 잘 안 멎는 경우","피부나 눈이 노랗게 변하는 경우"], caution:["장기복용 시 정기적인 임상검사(요검사, 혈액검사, 간기능검사 등)를 받고 이상이 있는 경우 줄이거나 중단하기","다른 소염(항염) 진통제, 아세트아미노펜이 든 다른 약과 함께 복용하는 것은 피한다"]},
-  en: {name:"Tylenol Tablet 500mg", dose:["Age 12 and over: 1–2 tablets at a time, 3–4 times a day (4–6 hours apart), only when needed. Maximum 8 tablets (4 g) per day.","Do not take it continuously for more than 10 days for pain in adults, 5 days for pain in children, or 3 days for fever."], ban:["You are allergic to this medicine","You have a stomach ulcer, or severe liver, kidney or heart disease","You have a history of aspirin-induced asthma","You are taking an antidepressant or a sleeping/sedative medicine","You have just been drinking alcohol"], consult:["Liver, kidney or heart disease, or stomach ulcer","You bleed easily or bleeding is hard to stop","Asthma, older age, pregnancy or breastfeeding","You are taking a blood thinner such as warfarin","You drink alcohol regularly"], stop:["Difficulty breathing, or swelling of the face or throat","A rash spreading over the whole body, or peeling skin","Vomiting blood, or black stools","You bruise easily or bleeding is hard to stop","Yellowing of the skin or eyes"], caution:["For long-term use, get regular lab tests (urine, blood, liver function, etc.), and reduce or stop the medicine if any problem is found","Avoid taking it together with other anti-inflammatory painkillers or other medicines that contain acetaminophen"]}
+  ko: {name:"타이레놀정 500mg", ing:"주성분: 아세트아미노펜 500mg", dose:["만 12세 이상: 1회 1~2정, 1일 3~4회 (4~6시간 간격) 필요시 복용. 1일 최대 8정(4g).","통증에는 성인 10일, 소아 5일, 발열에는 3일 이상 지속해서 복용 금지."], ban:["이 약에 알레르기가 있는 경우","위궤양이나 심한 간⋅신장⋅심장 질환이 있는 경우","아스피린 천식 병력이 있는 경우","항우울제나 수면진정제 복용 중인 경우","술을 마신 직후"], consult:["간⋅신장⋅심장 질환, 위궤양","출혈이 잘 안 멎는 체질","천식, 고령, 임신⋅수유 중","와파린과 같은 혈액을 묽게 하는 약 복용","술을 정기적으로 마시는 경우"], stop:["숨쉬기 힘들거나 얼굴⋅목이 붓는 경우","온몸에 발진이 퍼지거나 피부가 벗겨지는 경우","피를 토하거나 대변이 검게 나오는 경우","멍이 잘 들거나 피가 잘 안 멎는 경우","피부나 눈이 노랗게 변하는 경우"], caution:["장기복용 시 정기적인 임상검사(요검사, 혈액검사, 간기능검사 등)를 받고 이상이 있는 경우 줄이거나 중단하기","다른 소염(항염) 진통제, 아세트아미노펜이 든 다른 약과 함께 복용하는 것은 피한다"]},
+  en: {name:"Tylenol Tablet 500mg", ing:"Active ingredients: Acetaminophen 500 mg", dose:["Age 12 and over: 1–2 tablets at a time, 3–4 times a day (4–6 hours apart), only when needed. Maximum 8 tablets (4 g) per day.","Do not take it continuously for more than 10 days for pain in adults, 5 days for pain in children, or 3 days for fever."], ban:["You are allergic to this medicine","You have a stomach ulcer, or severe liver, kidney or heart disease","You have a history of aspirin-induced asthma","You are taking an antidepressant or a sleeping/sedative medicine","You have just been drinking alcohol"], consult:["Liver, kidney or heart disease, or stomach ulcer","You bleed easily or bleeding is hard to stop","Asthma, older age, pregnancy or breastfeeding","You are taking a blood thinner such as warfarin","You drink alcohol regularly"], stop:["Difficulty breathing, or swelling of the face or throat","A rash spreading over the whole body, or peeling skin","Vomiting blood, or black stools","You bruise easily or bleeding is hard to stop","Yellowing of the skin or eyes"], caution:["For long-term use, get regular lab tests (urine, blood, liver function, etc.), and reduce or stop the medicine if any problem is found","Avoid taking it together with other anti-inflammatory painkillers or other medicines that contain acetaminophen"]},
+  zh: {name:"Tylenol Tablet 500mg", ing:"主要成分：Acetaminophen 500 mg", dose:["12岁以上：每次1～2片，每日3～4次(间隔4～6小时)，需要时服用。每日最多8片(4g)。","疼痛时成人不可连续服用超过10天，儿童不超过5天；发热时不可连续服用超过3天。"], ban:["对本药过敏","患有胃溃疡，或严重的肝、肾、心脏疾病","有阿司匹林哮喘史","正在服用抗抑郁药或安眠镇静药","刚饮酒后"], consult:["肝、肾、心脏疾病，胃溃疡","容易出血或出血不易止住","哮喘、高龄、怀孕或哺乳期","正在服用华法林等抗凝(稀释血液)药物","经常饮酒"], stop:["呼吸困难，或面部、喉咙肿胀","全身出现皮疹或皮肤脱落","呕血或大便发黑","容易出现瘀青或出血不易止住","皮肤或眼睛发黄"], caution:["长期服用时，请定期做检查(尿液、血液、肝功能等)，如有异常应减量或停药","避免与其他消炎止痛药或含对乙酰氨基酚的其他药物同时服用"]},
+  vi: {name:"Tylenol Tablet 500mg", ing:"Thành phần chính: Acetaminophen 500 mg", dose:["Từ 12 tuổi trở lên: mỗi lần 1–2 viên, 3–4 lần mỗi ngày (cách nhau 4–6 giờ), dùng khi cần. Tối đa 8 viên (4 g) mỗi ngày.","Không dùng liên tục quá 10 ngày khi giảm đau ở người lớn, 5 ngày ở trẻ em, hoặc 3 ngày khi hạ sốt."], ban:["Bạn dị ứng với thuốc này","Bạn bị loét dạ dày, hoặc bệnh gan, thận, tim nặng","Bạn từng bị hen suyễn do aspirin","Bạn đang dùng thuốc chống trầm cảm hoặc thuốc ngủ/an thần","Bạn vừa uống rượu bia"], consult:["Bệnh gan, thận, tim hoặc loét dạ dày","Dễ chảy máu hoặc máu khó cầm","Hen suyễn, cao tuổi, mang thai hoặc cho con bú","Đang dùng thuốc chống đông máu như warfarin","Thường xuyên uống rượu bia"], stop:["Khó thở, hoặc sưng mặt, cổ họng","Phát ban lan khắp người hoặc bong tróc da","Nôn ra máu hoặc đi ngoài phân đen","Dễ bầm tím hoặc máu khó cầm","Da hoặc mắt vàng"], caution:["Khi dùng lâu dài, hãy xét nghiệm định kỳ (nước tiểu, máu, chức năng gan, v.v.) và giảm liều hoặc ngừng thuốc nếu có bất thường","Tránh dùng cùng thuốc giảm đau kháng viêm khác hoặc thuốc khác có chứa acetaminophen"]},
+  th: {name:"Tylenol Tablet 500mg", ing:"ตัวยาสำคัญ: Acetaminophen 500 mg", dose:["อายุ 12 ปีขึ้นไป: ครั้งละ 1–2 เม็ด วันละ 3–4 ครั้ง (ห่างกัน 4–6 ชั่วโมง) ใช้เมื่อจำเป็น สูงสุด 8 เม็ด (4 กรัม) ต่อวัน","ห้ามใช้ต่อเนื่องเกิน 10 วันเมื่อใช้แก้ปวดในผู้ใหญ่ เกิน 5 วันในเด็ก หรือเกิน 3 วันเมื่อใช้ลดไข้"], ban:["แพ้ยานี้","เป็นแผลในกระเพาะอาหาร หรือโรคตับ ไต หัวใจรุนแรง","เคยมีประวัติหอบหืดจากแอสไพริน","กำลังใช้ยาต้านเศร้าหรือยานอนหลับ/ยาระงับประสาท","เพิ่งดื่มแอลกอฮอล์"], consult:["โรคตับ ไต หัวใจ หรือแผลในกระเพาะอาหาร","เลือดออกง่ายหรือเลือดหยุดยาก","หอบหืด สูงอายุ ตั้งครรภ์หรือให้นมบุตร","กำลังใช้ยาต้านการแข็งตัวของเลือด เช่น วอร์ฟาริน","ดื่มแอลกอฮอล์เป็นประจำ"], stop:["หายใจลำบาก หรือใบหน้า/คอบวม","ผื่นขึ้นทั่วตัว หรือผิวหนังลอก","อาเจียนเป็นเลือด หรืออุจจาระสีดำ","เกิดรอยช้ำง่ายหรือเลือดหยุดยาก","ผิวหนังหรือตาเหลือง"], caution:["หากใช้ยาเป็นเวลานาน ควรตรวจร่างกายเป็นประจำ (ปัสสาวะ เลือด การทำงานของตับ ฯลฯ) และลดขนาดยาหรือหยุดยาหากพบความผิดปกติ","หลีกเลี่ยงการใช้ร่วมกับยาแก้ปวดต้านการอักเสบอื่น หรือยาอื่นที่มีพาราเซตามอล (อะเซตามิโนเฟน)"]}
 };
 const LABEL = {
   ko: {dose:'1. 복용법 (용법·용량)', ban:'2. 복용 금지 대상',
@@ -156,7 +162,22 @@ const LABEL = {
        ban1:'(1) Do NOT take this medicine if you are in any of these groups',
        consult:'(2) Talk to a doctor or pharmacist BEFORE taking if',
        stop:'(3) STOP taking it right away and talk to a doctor or pharmacist if',
-       caution:'3. Precautions'}
+       caution:'3. Precautions'},
+  zh: {dose:'1. 用法用量', ban:'2. 禁止服用的人群',
+       ban1:'(1) 属于以下情况的人，请勿服用本药',
+       consult:'(2) 服药前需先咨询医生或药师的人群',
+       stop:'(3) 出现以下情况，请立即停药并咨询医生或药师',
+       caution:'3. 注意事项'},
+  vi: {dose:'1. Cách dùng (liều lượng)', ban:'2. Đối tượng không được dùng',
+       ban1:'(1) KHÔNG dùng thuốc này nếu bạn thuộc các trường hợp sau',
+       consult:'(2) Hỏi bác sĩ hoặc dược sĩ TRƯỚC khi dùng nếu',
+       stop:'(3) NGỪNG dùng thuốc ngay và hỏi bác sĩ hoặc dược sĩ nếu',
+       caution:'3. Lưu ý'},
+  th: {dose:'1. วิธีใช้ (ขนาดยา)', ban:'2. ผู้ที่ไม่ควรใช้ยา',
+       ban1:'(1) ห้ามใช้ยานี้หากอยู่ในกลุ่มต่อไปนี้',
+       consult:'(2) ปรึกษาแพทย์หรือเภสัชกรก่อนใช้ยา หาก',
+       stop:'(3) หยุดใช้ยาทันทีและปรึกษาแพทย์หรือเภสัชกร หาก',
+       caution:'3. ข้อควรระวัง'}
 };
 function fill(id, items){
   const ul = document.getElementById('l-' + id);
@@ -174,6 +195,7 @@ function setLang(l){
   const t = TEXT[l], lab = LABEL[l];
   document.documentElement.lang = l;
   document.getElementById('drug-name').textContent = t.name;
+  document.getElementById('drug-sub').textContent = t.ing;
   ['dose','ban','caution'].forEach(k => document.getElementById('h-' + k).textContent = lab[k]);
   ['ban1','consult','stop'].forEach(k => document.getElementById('h-' + k).textContent = lab[k]);
   fill('dose', t.dose); fill('ban', t.ban); fill('consult', t.consult);
@@ -184,8 +206,7 @@ function setLang(l){
   show('blk-stop', t.stop.length > 0);
   show('blk-ban', t.ban.length + t.consult.length + t.stop.length > 0);
   show('blk-caution', t.caution.length > 0);
-  document.getElementById('lang-ko').classList.toggle('on', l==='ko');
-  document.getElementById('lang-en').classList.toggle('on', l==='en');
+  ['ko','en','zh','vi','th'].forEach(x => document.getElementById('lang-' + x).classList.toggle('on', x===l));
 }
 const first = new URLSearchParams(location.search).get('view') || 'video';
 setView(first === 'text' ? 'text' : 'video');

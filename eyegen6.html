@@ -9,7 +9,7 @@
       --amber:#B96A00;--amber-soft:#FBF0DF;--line:#E3E0D8;--muted:#6B7680;}
 *{margin:0;padding:0;box-sizing:border-box;}
 html{font-size:17px;}
-body{font-family:'Apple SD Gothic Neo','Noto Sans KR',sans-serif;
+body{font-family:'Apple SD Gothic Neo','Noto Sans KR','Noto Sans SC','Noto Sans Thai',sans-serif;
      background:var(--paper);color:var(--ink);line-height:1.65;}
 a{color:inherit;}
 /* ── 사이트 상단 바: 로고 + 메뉴 ── */
@@ -38,7 +38,7 @@ h1{font-size:1.6rem;line-height:1.3;font-weight:800;}
       color:var(--ink);cursor:pointer;}
 .viewtab button.on{background:var(--green);border-color:var(--green);color:#fff;}
 /* ── 언어 탭 (글 화면 안) ── */
-.langtab{display:flex;gap:8px;margin-top:20px;}
+.langtab{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px;}
 .langtab button{padding:8px 16px;border-radius:999px;font-size:.9rem;
       font-weight:600;border:1.5px solid var(--line);background:#fff;cursor:pointer;}
 .langtab button.on{background:var(--ink);border-color:var(--ink);color:#fff;}
@@ -100,7 +100,7 @@ footer.site{max-width:720px;margin:40px auto 0;padding:20px 20px 40px;
 <div class="wrap">
 <a class="back" href="index.html">&larr; 약 목록으로</a>
 <h1 style="margin-top:12px" id="drug-name">이지엔6이브연질캡슐</h1>
-<p class="sub">주성분: 이부프로펜 200mg, 파마브롬 25mg</p>
+<p class="sub" id="drug-sub">주성분: 이부프로펜 200mg, 파마브롬 25mg</p>
 <div class="viewtab">
   <button id="btn-video" onclick="setView('video')">수어·음성 영상</button>
   <button id="btn-text"  onclick="setView('text')">글로 보기</button>
@@ -117,6 +117,9 @@ footer.site{max-width:720px;margin:40px auto 0;padding:20px 20px 40px;
   <div class="langtab">
     <button id="lang-ko" class="on" onclick="setLang('ko')">한국어</button>
     <button id="lang-en" onclick="setLang('en')">English</button>
+    <button id="lang-zh" onclick="setLang('zh')">中文</button>
+    <button id="lang-vi" onclick="setLang('vi')">Tiếng Việt</button>
+    <button id="lang-th" onclick="setLang('th')">ไทย</button>
   </div>
 
   <div id="blk-dose">
@@ -143,8 +146,11 @@ footer.site{max-width:720px;margin:40px auto 0;padding:20px 20px 40px;
 안내이며, 정확한 복용은 제품 첨부문서와 의사·약사의 지시를 따르세요.</footer>
 <script>
 const TEXT = {
-  ko: {name:"이지엔6이브연질캡슐", dose:["만 15세 이상: 1회 1~2캡슐, 1일 1~3회 (4시간 이상 간격)","만 8~14세: 1회 1캡슐, 1일 1~3회 (4시간 이상 간격).","공복을 피해 충분한 물과 함께 복용."], ban:["만 3개월 미만 영아","이 약이나 다른 해열진통제·감기약으로 천식이 있었던 경우","임신 30주 이후","다른 해열진통제, 감기약, 진정제를 함께 복용 중인 경우"], consult:["수두·독감이 의심되는 15세 미만 어린이","임신(특히 20주 이후) 또는 임신 가능성, 수유 중, 고령","간·신장·갑상선 질환, 당뇨병, 고혈압, 몸이 약하거나 고열이 있는 경우","속쓰림, 위통, 위궤양, 위장 출혈 문제나 병력","조절되지 않는 고혈압, 심부전, 허혈성 심장질환","저용량 아스피린, 당뇨약, 통풍약, 관절염약, 항응고제, 스테로이드제, 이뇨제 복용 중","알레르기 체질이거나 약으로 알레르기가 있었던 경우","술을 정기적으로(매일 3잔 이상) 마시는 경우 (위장출혈 위험)"], stop:["5~6회 복용해도 증상이 좋아지지 않는 경우","발진, 가려움, 구역·구토, 위통, 소화관 출혈","숨쉬기 힘듦, 얼굴 붓기, 어지러움, 심한 피부 반응, 천식"], caution:["정해진 용법·용량을 지키고, 장기간 계속 복용하지 않기","복용 중에는 음주를 피하고, 다른 소염진통제와 함께 복용하지 않기","어린이에게는 보호자의 지도 감독 아래 복용"]},
-  en: {name:"Easy End Six Eve Soft Capsule", dose:["Age 15 and over: 1–2 capsules at a time, 1–3 times a day (at least 4 hours apart)","Age 8–14: 1 capsule at a time, 1–3 times a day (at least 4 hours apart).","Avoid taking it on an empty stomach; take it with plenty of water."], ban:["Infants under 3 months","You have had asthma from this medicine or another fever/pain reliever or cold medicine","After 30 weeks of pregnancy","You are already taking another fever/pain reliever, cold medicine or sedative"], consult:["Children under 15 who may have chickenpox or the flu","Pregnancy (especially after 20 weeks) or possible pregnancy, breastfeeding, or older age","Liver, kidney or thyroid disease, diabetes, high blood pressure, being frail, or a high fever","Heartburn, stomach pain, stomach ulcer, or a history of stomach bleeding problems","Uncontrolled high blood pressure, heart failure, or ischemic heart disease","You are taking low-dose aspirin, or medicine for diabetes, gout or arthritis, a blood thinner, a steroid or a diuretic","You are allergic by nature, or have had an allergic reaction to a medicine","You drink alcohol regularly (3 or more drinks every day) (risk of stomach bleeding)"], stop:["Your symptoms have not improved after 5–6 doses","Rash, itching, nausea/vomiting, stomach pain, or bleeding in the digestive tract","Difficulty breathing, a swollen face, dizziness, a severe skin reaction, or asthma"], caution:["Follow the stated dose and do not keep taking it for a long time","Avoid alcohol while taking it, and do not take it with other anti-inflammatory painkillers","Children should take it under the supervision of a guardian"]}
+  ko: {name:"이지엔6이브연질캡슐", ing:"주성분: 이부프로펜 200mg, 파마브롬 25mg", dose:["만 15세 이상: 1회 1~2캡슐, 1일 1~3회 (4시간 이상 간격)","만 8~14세: 1회 1캡슐, 1일 1~3회 (4시간 이상 간격).","공복을 피해 충분한 물과 함께 복용."], ban:["만 3개월 미만 영아","이 약이나 다른 해열진통제·감기약으로 천식이 있었던 경우","임신 30주 이후","다른 해열진통제, 감기약, 진정제를 함께 복용 중인 경우"], consult:["수두·독감이 의심되는 15세 미만 어린이","임신(특히 20주 이후) 또는 임신 가능성, 수유 중, 고령","간·신장·갑상선 질환, 당뇨병, 고혈압, 몸이 약하거나 고열이 있는 경우","속쓰림, 위통, 위궤양, 위장 출혈 문제나 병력","조절되지 않는 고혈압, 심부전, 허혈성 심장질환","저용량 아스피린, 당뇨약, 통풍약, 관절염약, 항응고제, 스테로이드제, 이뇨제 복용 중","알레르기 체질이거나 약으로 알레르기가 있었던 경우","술을 정기적으로(매일 3잔 이상) 마시는 경우 (위장출혈 위험)"], stop:["5~6회 복용해도 증상이 좋아지지 않는 경우","발진, 가려움, 구역·구토, 위통, 소화관 출혈","숨쉬기 힘듦, 얼굴 붓기, 어지러움, 심한 피부 반응, 천식"], caution:["정해진 용법·용량을 지키고, 장기간 계속 복용하지 않기","복용 중에는 음주를 피하고, 다른 소염진통제와 함께 복용하지 않기","어린이에게는 보호자의 지도 감독 아래 복용"]},
+  en: {name:"Easy End Six Eve Soft Capsule", ing:"Active ingredients: Ibuprofen 200 mg, Pamabrom 25 mg", dose:["Age 15 and over: 1–2 capsules at a time, 1–3 times a day (at least 4 hours apart)","Age 8–14: 1 capsule at a time, 1–3 times a day (at least 4 hours apart).","Avoid taking it on an empty stomach; take it with plenty of water."], ban:["Infants under 3 months","You have had asthma from this medicine or another fever/pain reliever or cold medicine","After 30 weeks of pregnancy","You are already taking another fever/pain reliever, cold medicine or sedative"], consult:["Children under 15 who may have chickenpox or the flu","Pregnancy (especially after 20 weeks) or possible pregnancy, breastfeeding, or older age","Liver, kidney or thyroid disease, diabetes, high blood pressure, being frail, or a high fever","Heartburn, stomach pain, stomach ulcer, or a history of stomach bleeding problems","Uncontrolled high blood pressure, heart failure, or ischemic heart disease","You are taking low-dose aspirin, or medicine for diabetes, gout or arthritis, a blood thinner, a steroid or a diuretic","You are allergic by nature, or have had an allergic reaction to a medicine","You drink alcohol regularly (3 or more drinks every day) (risk of stomach bleeding)"], stop:["Your symptoms have not improved after 5–6 doses","Rash, itching, nausea/vomiting, stomach pain, or bleeding in the digestive tract","Difficulty breathing, a swollen face, dizziness, a severe skin reaction, or asthma"], caution:["Follow the stated dose and do not keep taking it for a long time","Avoid alcohol while taking it, and do not take it with other anti-inflammatory painkillers","Children should take it under the supervision of a guardian"]},
+  zh: {name:"Easy End Six Eve Soft Capsule", ing:"主要成分：Ibuprofen 200 mg, Pamabrom 25 mg", dose:["15岁以上：每次1～2粒，每日1～3次(间隔至少4小时)","8～14岁：每次1粒，每日1～3次(间隔至少4小时)。","避免空腹，请用足量的水送服。"], ban:["3个月以下婴儿","曾因本药或其他解热镇痛药、感冒药引发哮喘","怀孕30周以后","正在同时服用其他解热镇痛药、感冒药或镇静药"], consult:["疑似水痘或流感的15岁以下儿童","怀孕(尤其20周以后)或可能怀孕、哺乳期、高龄","肝、肾、甲状腺疾病、糖尿病、高血压、身体虚弱或高热","烧心、胃痛、胃溃疡，或有胃出血问题或病史","未控制的高血压、心力衰竭、缺血性心脏病","正在服用小剂量阿司匹林，或糖尿病药、痛风药、关节炎药、抗凝药、类固醇、利尿剂","过敏体质，或曾对药物过敏","经常饮酒(每天3杯以上)(有胃出血风险)"], stop:["服用5～6次后症状仍未改善","皮疹、瘙痒、恶心呕吐、胃痛、消化道出血","呼吸困难、面部肿胀、头晕、严重皮肤反应、哮喘"], caution:["请遵守规定的用法用量，不要长期连续服用","服药期间避免饮酒，不要与其他消炎止痛药同时服用","儿童应在监护人的指导和监督下服用"]},
+  vi: {name:"Easy End Six Eve Soft Capsule", ing:"Thành phần chính: Ibuprofen 200 mg, Pamabrom 25 mg", dose:["Từ 15 tuổi trở lên: mỗi lần 1–2 viên nang, 1–3 lần mỗi ngày (cách nhau ít nhất 4 giờ)","Từ 8–14 tuổi: mỗi lần 1 viên nang, 1–3 lần mỗi ngày (cách nhau ít nhất 4 giờ).","Tránh uống khi đói; uống với nhiều nước."], ban:["Trẻ sơ sinh dưới 3 tháng tuổi","Từng bị hen do thuốc này hoặc thuốc hạ sốt giảm đau, thuốc cảm khác","Sau tuần thứ 30 của thai kỳ","Đang dùng thuốc hạ sốt giảm đau, thuốc cảm hoặc thuốc an thần khác"], consult:["Trẻ dưới 15 tuổi nghi bị thủy đậu hoặc cúm","Mang thai (đặc biệt sau tuần 20) hoặc có thể mang thai, cho con bú, cao tuổi","Bệnh gan, thận, tuyến giáp, tiểu đường, cao huyết áp, cơ thể yếu hoặc sốt cao","Ợ nóng, đau dạ dày, loét dạ dày, hoặc có vấn đề/tiền sử chảy máu dạ dày","Cao huyết áp không kiểm soát được, suy tim, hoặc bệnh tim thiếu máu cục bộ","Đang dùng aspirin liều thấp, hoặc thuốc tiểu đường, gút, viêm khớp, thuốc chống đông máu, steroid hoặc thuốc lợi tiểu","Cơ địa dị ứng, hoặc từng bị dị ứng với thuốc","Thường xuyên uống rượu bia (từ 3 ly trở lên mỗi ngày) (nguy cơ chảy máu dạ dày)"], stop:["Triệu chứng không cải thiện sau khi dùng 5–6 lần","Phát ban, ngứa, buồn nôn/nôn, đau dạ dày hoặc chảy máu đường tiêu hóa","Khó thở, sưng mặt, chóng mặt, phản ứng da nghiêm trọng hoặc hen suyễn"], caution:["Dùng đúng liều quy định và không dùng liên tục trong thời gian dài","Tránh rượu bia khi đang dùng thuốc và không dùng cùng thuốc giảm đau kháng viêm khác","Trẻ em phải dùng dưới sự hướng dẫn, giám sát của người giám hộ"]},
+  th: {name:"Easy End Six Eve Soft Capsule", ing:"ตัวยาสำคัญ: Ibuprofen 200 mg, Pamabrom 25 mg", dose:["อายุ 15 ปีขึ้นไป: ครั้งละ 1–2 แคปซูล วันละ 1–3 ครั้ง (ห่างกันอย่างน้อย 4 ชั่วโมง)","อายุ 8–14 ปี: ครั้งละ 1 แคปซูล วันละ 1–3 ครั้ง (ห่างกันอย่างน้อย 4 ชั่วโมง)","หลีกเลี่ยงการกินตอนท้องว่าง และกินพร้อมน้ำมาก ๆ"], ban:["ทารกอายุต่ำกว่า 3 เดือน","เคยเป็นหอบหืดจากยานี้หรือยาลดไข้แก้ปวด/ยาแก้หวัดอื่น","ตั้งครรภ์เกิน 30 สัปดาห์","กำลังใช้ยาลดไข้แก้ปวด ยาแก้หวัด หรือยาระงับประสาทอื่นอยู่"], consult:["เด็กอายุต่ำกว่า 15 ปีที่สงสัยว่าเป็นอีสุกอีใสหรือไข้หวัดใหญ่","ตั้งครรภ์ (โดยเฉพาะหลัง 20 สัปดาห์) หรืออาจตั้งครรภ์ ให้นมบุตร หรือสูงอายุ","โรคตับ ไต ต่อมไทรอยด์ เบาหวาน ความดันโลหิตสูง ร่างกายอ่อนแอ หรือมีไข้สูง","แสบร้อนกลางอก ปวดท้อง แผลในกระเพาะอาหาร หรือมีปัญหา/ประวัติเลือดออกในกระเพาะอาหาร","ความดันโลหิตสูงที่ควบคุมไม่ได้ หัวใจล้มเหลว หรือโรคหัวใจขาดเลือด","กำลังใช้แอสไพรินขนาดต่ำ หรือยารักษาเบาหวาน เกาต์ ข้ออักเสบ ยาต้านการแข็งตัวของเลือด สเตียรอยด์ หรือยาขับปัสสาวะ","มีร่างกายแพ้ง่าย หรือเคยแพ้ยา","ดื่มแอลกอฮอล์เป็นประจำ (ตั้งแต่ 3 แก้วขึ้นไปทุกวัน) (เสี่ยงเลือดออกในกระเพาะอาหาร)"], stop:["อาการไม่ดีขึ้นหลังใช้ยา 5–6 ครั้ง","ผื่น คัน คลื่นไส้/อาเจียน ปวดท้อง หรือเลือดออกในทางเดินอาหาร","หายใจลำบาก ใบหน้าบวม เวียนศีรษะ ปฏิกิริยาทางผิวหนังรุนแรง หรือหอบหืด"], caution:["ใช้ตามขนาดที่กำหนด และไม่ใช้ต่อเนื่องเป็นเวลานาน","หลีกเลี่ยงแอลกอฮอล์ขณะใช้ยา และไม่ใช้ร่วมกับยาแก้ปวดต้านการอักเสบอื่น","เด็กควรใช้ภายใต้การดูแลของผู้ปกครอง"]}
 };
 const LABEL = {
   ko: {dose:'1. 복용법 (용법·용량)', ban:'2. 복용 금지 대상',
@@ -156,7 +162,22 @@ const LABEL = {
        ban1:'(1) Do NOT take this medicine if you are in any of these groups',
        consult:'(2) Talk to a doctor or pharmacist BEFORE taking if',
        stop:'(3) STOP taking it right away and talk to a doctor or pharmacist if',
-       caution:'3. Precautions'}
+       caution:'3. Precautions'},
+  zh: {dose:'1. 用法用量', ban:'2. 禁止服用的人群',
+       ban1:'(1) 属于以下情况的人，请勿服用本药',
+       consult:'(2) 服药前需先咨询医生或药师的人群',
+       stop:'(3) 出现以下情况，请立即停药并咨询医生或药师',
+       caution:'3. 注意事项'},
+  vi: {dose:'1. Cách dùng (liều lượng)', ban:'2. Đối tượng không được dùng',
+       ban1:'(1) KHÔNG dùng thuốc này nếu bạn thuộc các trường hợp sau',
+       consult:'(2) Hỏi bác sĩ hoặc dược sĩ TRƯỚC khi dùng nếu',
+       stop:'(3) NGỪNG dùng thuốc ngay và hỏi bác sĩ hoặc dược sĩ nếu',
+       caution:'3. Lưu ý'},
+  th: {dose:'1. วิธีใช้ (ขนาดยา)', ban:'2. ผู้ที่ไม่ควรใช้ยา',
+       ban1:'(1) ห้ามใช้ยานี้หากอยู่ในกลุ่มต่อไปนี้',
+       consult:'(2) ปรึกษาแพทย์หรือเภสัชกรก่อนใช้ยา หาก',
+       stop:'(3) หยุดใช้ยาทันทีและปรึกษาแพทย์หรือเภสัชกร หาก',
+       caution:'3. ข้อควรระวัง'}
 };
 function fill(id, items){
   const ul = document.getElementById('l-' + id);
@@ -174,6 +195,7 @@ function setLang(l){
   const t = TEXT[l], lab = LABEL[l];
   document.documentElement.lang = l;
   document.getElementById('drug-name').textContent = t.name;
+  document.getElementById('drug-sub').textContent = t.ing;
   ['dose','ban','caution'].forEach(k => document.getElementById('h-' + k).textContent = lab[k]);
   ['ban1','consult','stop'].forEach(k => document.getElementById('h-' + k).textContent = lab[k]);
   fill('dose', t.dose); fill('ban', t.ban); fill('consult', t.consult);
@@ -184,8 +206,7 @@ function setLang(l){
   show('blk-stop', t.stop.length > 0);
   show('blk-ban', t.ban.length + t.consult.length + t.stop.length > 0);
   show('blk-caution', t.caution.length > 0);
-  document.getElementById('lang-ko').classList.toggle('on', l==='ko');
-  document.getElementById('lang-en').classList.toggle('on', l==='en');
+  ['ko','en','zh','vi','th'].forEach(x => document.getElementById('lang-' + x).classList.toggle('on', x===l));
 }
 const first = new URLSearchParams(location.search).get('view') || 'video';
 setView(first === 'text' ? 'text' : 'video');

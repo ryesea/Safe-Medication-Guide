@@ -5,6 +5,7 @@
 #name_ko 타이레놀정 500mg
 #name_en Tylenol Tablet 500mg
 #ingredient 주성분: 아세트아미노펜 500mg
+#ingredient_en Acetaminophen 500 mg
 #video https://www.youtube.com/embed/VIDEO_ID_1
 #dose_ko
 - 만 12세 이상: 1회 1~2정, 1일 3~4회 (4~6시간 간격) 필요시 복용. 1일 최대 8정(4g).
@@ -12,6 +13,15 @@
 #dose_en
 - Age 12 and over: 1–2 tablets at a time, 3–4 times a day (4–6 hours apart), only when needed. Maximum 8 tablets (4 g) per day.
 - Do not take it continuously for more than 10 days for pain in adults, 5 days for pain in children, or 3 days for fever.
+#dose_zh
+- 12岁以上：每次1～2片，每日3～4次(间隔4～6小时)，需要时服用。每日最多8片(4g)。
+- 疼痛时成人不可连续服用超过10天，儿童不超过5天；发热时不可连续服用超过3天。
+#dose_vi
+- Từ 12 tuổi trở lên: mỗi lần 1–2 viên, 3–4 lần mỗi ngày (cách nhau 4–6 giờ), dùng khi cần. Tối đa 8 viên (4 g) mỗi ngày.
+- Không dùng liên tục quá 10 ngày khi giảm đau ở người lớn, 5 ngày ở trẻ em, hoặc 3 ngày khi hạ sốt.
+#dose_th
+- อายุ 12 ปีขึ้นไป: ครั้งละ 1–2 เม็ด วันละ 3–4 ครั้ง (ห่างกัน 4–6 ชั่วโมง) ใช้เมื่อจำเป็น สูงสุด 8 เม็ด (4 กรัม) ต่อวัน
+- ห้ามใช้ต่อเนื่องเกิน 10 วันเมื่อใช้แก้ปวดในผู้ใหญ่ เกิน 5 วันในเด็ก หรือเกิน 3 วันเมื่อใช้ลดไข้
 #ban_ko
 - 이 약에 알레르기가 있는 경우
 - 위궤양이나 심한 간⋅신장⋅심장 질환이 있는 경우
@@ -24,6 +34,24 @@
 - You have a history of aspirin-induced asthma
 - You are taking an antidepressant or a sleeping/sedative medicine
 - You have just been drinking alcohol
+#ban_zh
+- 对本药过敏
+- 患有胃溃疡，或严重的肝、肾、心脏疾病
+- 有阿司匹林哮喘史
+- 正在服用抗抑郁药或安眠镇静药
+- 刚饮酒后
+#ban_vi
+- Bạn dị ứng với thuốc này
+- Bạn bị loét dạ dày, hoặc bệnh gan, thận, tim nặng
+- Bạn từng bị hen suyễn do aspirin
+- Bạn đang dùng thuốc chống trầm cảm hoặc thuốc ngủ/an thần
+- Bạn vừa uống rượu bia
+#ban_th
+- แพ้ยานี้
+- เป็นแผลในกระเพาะอาหาร หรือโรคตับ ไต หัวใจรุนแรง
+- เคยมีประวัติหอบหืดจากแอสไพริน
+- กำลังใช้ยาต้านเศร้าหรือยานอนหลับ/ยาระงับประสาท
+- เพิ่งดื่มแอลกอฮอล์
 #consult_ko
 - 간⋅신장⋅심장 질환, 위궤양
 - 출혈이 잘 안 멎는 체질
@@ -36,6 +64,24 @@
 - Asthma, older age, pregnancy or breastfeeding
 - You are taking a blood thinner such as warfarin
 - You drink alcohol regularly
+#consult_zh
+- 肝、肾、心脏疾病，胃溃疡
+- 容易出血或出血不易止住
+- 哮喘、高龄、怀孕或哺乳期
+- 正在服用华法林等抗凝(稀释血液)药物
+- 经常饮酒
+#consult_vi
+- Bệnh gan, thận, tim hoặc loét dạ dày
+- Dễ chảy máu hoặc máu khó cầm
+- Hen suyễn, cao tuổi, mang thai hoặc cho con bú
+- Đang dùng thuốc chống đông máu như warfarin
+- Thường xuyên uống rượu bia
+#consult_th
+- โรคตับ ไต หัวใจ หรือแผลในกระเพาะอาหาร
+- เลือดออกง่ายหรือเลือดหยุดยาก
+- หอบหืด สูงอายุ ตั้งครรภ์หรือให้นมบุตร
+- กำลังใช้ยาต้านการแข็งตัวของเลือด เช่น วอร์ฟาริน
+- ดื่มแอลกอฮอล์เป็นประจำ
 #stop_ko
 - 숨쉬기 힘들거나 얼굴⋅목이 붓는 경우
 - 온몸에 발진이 퍼지거나 피부가 벗겨지는 경우
@@ -48,22 +94,56 @@
 - Vomiting blood, or black stools
 - You bruise easily or bleeding is hard to stop
 - Yellowing of the skin or eyes
+#stop_zh
+- 呼吸困难，或面部、喉咙肿胀
+- 全身出现皮疹或皮肤脱落
+- 呕血或大便发黑
+- 容易出现瘀青或出血不易止住
+- 皮肤或眼睛发黄
+#stop_vi
+- Khó thở, hoặc sưng mặt, cổ họng
+- Phát ban lan khắp người hoặc bong tróc da
+- Nôn ra máu hoặc đi ngoài phân đen
+- Dễ bầm tím hoặc máu khó cầm
+- Da hoặc mắt vàng
+#stop_th
+- หายใจลำบาก หรือใบหน้า/คอบวม
+- ผื่นขึ้นทั่วตัว หรือผิวหนังลอก
+- อาเจียนเป็นเลือด หรืออุจจาระสีดำ
+- เกิดรอยช้ำง่ายหรือเลือดหยุดยาก
+- ผิวหนังหรือตาเหลือง
 #caution_ko
 - 장기복용 시 정기적인 임상검사(요검사, 혈액검사, 간기능검사 등)를 받고 이상이 있는 경우 줄이거나 중단하기
 - 다른 소염(항염) 진통제, 아세트아미노펜이 든 다른 약과 함께 복용하는 것은 피한다
 #caution_en
 - For long-term use, get regular lab tests (urine, blood, liver function, etc.), and reduce or stop the medicine if any problem is found
 - Avoid taking it together with other anti-inflammatory painkillers or other medicines that contain acetaminophen
+#caution_zh
+- 长期服用时，请定期做检查(尿液、血液、肝功能等)，如有异常应减量或停药
+- 避免与其他消炎止痛药或含对乙酰氨基酚的其他药物同时服用
+#caution_vi
+- Khi dùng lâu dài, hãy xét nghiệm định kỳ (nước tiểu, máu, chức năng gan, v.v.) và giảm liều hoặc ngừng thuốc nếu có bất thường
+- Tránh dùng cùng thuốc giảm đau kháng viêm khác hoặc thuốc khác có chứa acetaminophen
+#caution_th
+- หากใช้ยาเป็นเวลานาน ควรตรวจร่างกายเป็นประจำ (ปัสสาวะ เลือด การทำงานของตับ ฯลฯ) และลดขนาดยาหรือหยุดยาหากพบความผิดปกติ
+- หลีกเลี่ยงการใช้ร่วมกับยาแก้ปวดต้านการอักเสบอื่น หรือยาอื่นที่มีพาราเซตามอล (อะเซตามิโนเฟน)
 
 #id geworin
 #name_ko 게보린정
 #name_en Geworin Tablet
 #ingredient 주성분: 아세트아미노펜 300mg, 카페인무수물 50mg, 이소프로필안티피린 150mg
+#ingredient_en Acetaminophen 300 mg, Caffeine anhydrous 50 mg, Isopropylantipyrine 150 mg
 #video https://www.youtube.com/embed/VIDEO_ID_2
 #dose_ko
 - 만 15세 이상 성인: 1회 1정, 1일 3회까지 (4시간 이상 간격). 공복을 피하고, 단기간만 복용.
 #dose_en
 - Adults 15 years and over: 1 tablet at a time, up to 3 times a day (at least 4 hours apart). Avoid taking it on an empty stomach, and take it for a short time only.
+#dose_zh
+- 15岁以上成人：每次1片，每日最多3次(间隔至少4小时)。避免空腹服用，仅短期服用。
+#dose_vi
+- Người lớn từ 15 tuổi trở lên: mỗi lần 1 viên, tối đa 3 lần mỗi ngày (cách nhau ít nhất 4 giờ). Tránh uống khi đói và chỉ dùng trong thời gian ngắn.
+#dose_th
+- ผู้ใหญ่อายุ 15 ปีขึ้นไป: ครั้งละ 1 เม็ด วันละไม่เกิน 3 ครั้ง (ห่างกันอย่างน้อย 4 ชั่วโมง) หลีกเลี่ยงการกินตอนท้องว่าง และใช้ในระยะสั้นเท่านั้น
 #ban_ko
 - 만 15세 미만 소아
 - 이 약이나 다른 해열진통제로 천식 발작이 있었던 경우
@@ -80,6 +160,30 @@
 - You bleed easily or bleeding is hard to stop, or you have a stomach/intestinal ulcer or a serious blood disorder
 - G6PD (glucose-6-phosphate dehydrogenase) deficiency, acute intermittent porphyria, or granulocytopenia
 - You have taken a barbiturate or a tricyclic antidepressant
+#ban_zh
+- 15岁以下儿童
+- 曾因本药或其他解热镇痛药引发哮喘发作
+- 刚饮酒后
+- 患有严重的肝、肾、心脏疾病
+- 容易出血或出血不易止住，或有胃肠溃疡、严重血液疾病
+- G6PD(葡萄糖-6-磷酸脱氢酶)缺乏症、急性间歇性卟啉病、粒细胞减少症
+- 服用过巴比妥类药物或三环类抗抑郁药
+#ban_vi
+- Trẻ dưới 15 tuổi
+- Từng lên cơn hen do thuốc này hoặc thuốc hạ sốt giảm đau khác
+- Bạn vừa uống rượu bia
+- Bệnh gan, thận hoặc tim nặng
+- Dễ chảy máu hoặc máu khó cầm, hoặc bị loét dạ dày/ruột hay rối loạn máu nghiêm trọng
+- Thiếu men G6PD (glucose-6-phosphate dehydrogenase), rối loạn chuyển hóa porphyrin cấp tính từng đợt, hoặc giảm bạch cầu hạt
+- Đã dùng thuốc nhóm barbiturat hoặc thuốc chống trầm cảm ba vòng
+#ban_th
+- เด็กอายุต่ำกว่า 15 ปี
+- เคยหอบหืดกำเริบจากยานี้หรือยาลดไข้แก้ปวดอื่น
+- เพิ่งดื่มแอลกอฮอล์
+- เป็นโรคตับ ไต หรือหัวใจรุนแรง
+- เลือดออกง่ายหรือเลือดหยุดยาก หรือเป็นแผลในกระเพาะอาหาร/ลำไส้ หรือมีความผิดปกติของเลือดรุนแรง
+- ภาวะพร่อง G6PD (กลูโคส-6-ฟอสเฟตดีไฮโดรจีเนส) โรคพอร์ฟิเรียเฉียบพลันเป็นพัก ๆ หรือภาวะเม็ดเลือดขาวแกรนูโลไซต์ต่ำ
+- เคยใช้ยากลุ่มบาร์บิทูเรตหรือยาต้านเศร้ากลุ่มไตรไซคลิก
 #consult_ko
 - 알레르기 체질이거나 약으로 알레르기가 있었던 경우
 - 임신·수유 중, 고령
@@ -96,6 +200,30 @@
 - You are taking other medicines, such as a blood thinner like warfarin, a steroid, lithium or a diuretic
 - Teenagers who may have chickenpox or the flu
 - You drink alcohol regularly (3 or more drinks every day)
+#consult_zh
+- 过敏体质，或曾对药物过敏
+- 怀孕或哺乳期，或高龄
+- 曾患肝、肾、心脏疾病、胃溃疡、血液疾病
+- 甲状腺疾病、糖尿病、高血压，或身体虚弱
+- 正在服用其他药物，如华法林等抗凝药、类固醇、锂剂、利尿剂
+- 疑似水痘或流感的青少年
+- 经常饮酒(每天3杯以上)
+#consult_vi
+- Cơ địa dị ứng, hoặc từng bị dị ứng với thuốc
+- Mang thai hoặc cho con bú, hoặc cao tuổi
+- Từng bị bệnh gan, thận, tim, loét dạ dày hoặc rối loạn máu
+- Bệnh tuyến giáp, tiểu đường, cao huyết áp, hoặc cơ thể yếu
+- Đang dùng thuốc khác, như thuốc chống đông máu (warfarin), steroid, lithium hoặc thuốc lợi tiểu
+- Thanh thiếu niên nghi bị thủy đậu hoặc cúm
+- Thường xuyên uống rượu bia (từ 3 ly trở lên mỗi ngày)
+#consult_th
+- มีร่างกายแพ้ง่าย หรือเคยแพ้ยา
+- ตั้งครรภ์หรือให้นมบุตร หรือสูงอายุ
+- เคยเป็นโรคตับ ไต หัวใจ แผลในกระเพาะอาหาร หรือความผิดปกติของเลือด
+- โรคต่อมไทรอยด์ เบาหวาน ความดันโลหิตสูง หรือร่างกายอ่อนแอ
+- กำลังใช้ยาอื่น เช่น ยาต้านการแข็งตัวของเลือดอย่างวอร์ฟาริน สเตียรอยด์ ลิเทียม หรือยาขับปัสสาวะ
+- วัยรุ่นที่สงสัยว่าเป็นอีสุกอีใสหรือไข้หวัดใหญ่
+- ดื่มแอลกอฮอล์เป็นประจำ (ตั้งแต่ 3 แก้วขึ้นไปทุกวัน)
 #stop_ko
 - 5~6회 복용해도 증상이 좋아지지 않는 경우
 - 숨쉬기 힘들거나 얼굴이 붓는 등 쇼크·아나필락시스 증상
@@ -106,17 +234,42 @@
 - Signs of shock or anaphylaxis, such as difficulty breathing or a swollen face
 - A severe skin reaction (rash, peeling skin, etc.)
 - Stomach bleeding or pain
+#stop_zh
+- 服用5～6次后症状仍未改善
+- 出现休克或过敏性休克症状，如呼吸困难、面部肿胀
+- 严重皮肤反应(皮疹、皮肤脱落等)
+- 胃出血或胃痛
+#stop_vi
+- Triệu chứng không cải thiện sau khi dùng 5–6 lần
+- Dấu hiệu sốc hoặc sốc phản vệ, như khó thở hoặc sưng mặt
+- Phản ứng da nghiêm trọng (phát ban, bong tróc da, v.v.)
+- Chảy máu hoặc đau dạ dày
+#stop_th
+- อาการไม่ดีขึ้นหลังใช้ยา 5–6 ครั้ง
+- มีอาการช็อกหรือภาวะแพ้รุนแรง เช่น หายใจลำบากหรือใบหน้าบวม
+- ปฏิกิริยาทางผิวหนังรุนแรง (ผื่น ผิวหนังลอก ฯลฯ)
+- เลือดออกหรือปวดในกระเพาะอาหาร
 #caution_ko
 - 다른 소염(항염) 진통제, 아세트아미노펜이 든 다른 약과 함께 복용하는 것은 피한다.
 - 충분한 물과 함께 복용 (위장장애가 나타날 수 있음)
 #caution_en
 - Avoid taking it together with other anti-inflammatory painkillers or other medicines that contain acetaminophen.
 - Take it with plenty of water (it may upset your stomach)
+#caution_zh
+- 避免与其他消炎止痛药或含对乙酰氨基酚的其他药物同时服用。
+- 请用足量的水送服(可能引起胃肠不适)
+#caution_vi
+- Tránh dùng cùng thuốc giảm đau kháng viêm khác hoặc thuốc khác có chứa acetaminophen.
+- Uống với nhiều nước (có thể gây khó chịu dạ dày)
+#caution_th
+- หลีกเลี่ยงการใช้ร่วมกับยาแก้ปวดต้านการอักเสบอื่น หรือยาอื่นที่มีพาราเซตามอล (อะเซตามิโนเฟน)
+- กินพร้อมน้ำมาก ๆ (อาจทำให้ระคายเคืองกระเพาะอาหาร)
 
 #id eyegen6
 #name_ko 이지엔6이브연질캡슐
 #name_en Easy End Six Eve Soft Capsule
 #ingredient 주성분: 이부프로펜 200mg, 파마브롬 25mg
+#ingredient_en Ibuprofen 200 mg, Pamabrom 25 mg
 #video https://www.youtube.com/embed/VIDEO_ID_3
 #dose_ko
 - 만 15세 이상: 1회 1~2캡슐, 1일 1~3회 (4시간 이상 간격)
@@ -126,6 +279,18 @@
 - Age 15 and over: 1–2 capsules at a time, 1–3 times a day (at least 4 hours apart)
 - Age 8–14: 1 capsule at a time, 1–3 times a day (at least 4 hours apart).
 - Avoid taking it on an empty stomach; take it with plenty of water.
+#dose_zh
+- 15岁以上：每次1～2粒，每日1～3次(间隔至少4小时)
+- 8～14岁：每次1粒，每日1～3次(间隔至少4小时)。
+- 避免空腹，请用足量的水送服。
+#dose_vi
+- Từ 15 tuổi trở lên: mỗi lần 1–2 viên nang, 1–3 lần mỗi ngày (cách nhau ít nhất 4 giờ)
+- Từ 8–14 tuổi: mỗi lần 1 viên nang, 1–3 lần mỗi ngày (cách nhau ít nhất 4 giờ).
+- Tránh uống khi đói; uống với nhiều nước.
+#dose_th
+- อายุ 15 ปีขึ้นไป: ครั้งละ 1–2 แคปซูล วันละ 1–3 ครั้ง (ห่างกันอย่างน้อย 4 ชั่วโมง)
+- อายุ 8–14 ปี: ครั้งละ 1 แคปซูล วันละ 1–3 ครั้ง (ห่างกันอย่างน้อย 4 ชั่วโมง)
+- หลีกเลี่ยงการกินตอนท้องว่าง และกินพร้อมน้ำมาก ๆ
 #ban_ko
 - 만 3개월 미만 영아
 - 이 약이나 다른 해열진통제·감기약으로 천식이 있었던 경우
@@ -136,6 +301,21 @@
 - You have had asthma from this medicine or another fever/pain reliever or cold medicine
 - After 30 weeks of pregnancy
 - You are already taking another fever/pain reliever, cold medicine or sedative
+#ban_zh
+- 3个月以下婴儿
+- 曾因本药或其他解热镇痛药、感冒药引发哮喘
+- 怀孕30周以后
+- 正在同时服用其他解热镇痛药、感冒药或镇静药
+#ban_vi
+- Trẻ sơ sinh dưới 3 tháng tuổi
+- Từng bị hen do thuốc này hoặc thuốc hạ sốt giảm đau, thuốc cảm khác
+- Sau tuần thứ 30 của thai kỳ
+- Đang dùng thuốc hạ sốt giảm đau, thuốc cảm hoặc thuốc an thần khác
+#ban_th
+- ทารกอายุต่ำกว่า 3 เดือน
+- เคยเป็นหอบหืดจากยานี้หรือยาลดไข้แก้ปวด/ยาแก้หวัดอื่น
+- ตั้งครรภ์เกิน 30 สัปดาห์
+- กำลังใช้ยาลดไข้แก้ปวด ยาแก้หวัด หรือยาระงับประสาทอื่นอยู่
 #consult_ko
 - 수두·독감이 의심되는 15세 미만 어린이
 - 임신(특히 20주 이후) 또는 임신 가능성, 수유 중, 고령
@@ -154,6 +334,33 @@
 - You are taking low-dose aspirin, or medicine for diabetes, gout or arthritis, a blood thinner, a steroid or a diuretic
 - You are allergic by nature, or have had an allergic reaction to a medicine
 - You drink alcohol regularly (3 or more drinks every day) (risk of stomach bleeding)
+#consult_zh
+- 疑似水痘或流感的15岁以下儿童
+- 怀孕(尤其20周以后)或可能怀孕、哺乳期、高龄
+- 肝、肾、甲状腺疾病、糖尿病、高血压、身体虚弱或高热
+- 烧心、胃痛、胃溃疡，或有胃出血问题或病史
+- 未控制的高血压、心力衰竭、缺血性心脏病
+- 正在服用小剂量阿司匹林，或糖尿病药、痛风药、关节炎药、抗凝药、类固醇、利尿剂
+- 过敏体质，或曾对药物过敏
+- 经常饮酒(每天3杯以上)(有胃出血风险)
+#consult_vi
+- Trẻ dưới 15 tuổi nghi bị thủy đậu hoặc cúm
+- Mang thai (đặc biệt sau tuần 20) hoặc có thể mang thai, cho con bú, cao tuổi
+- Bệnh gan, thận, tuyến giáp, tiểu đường, cao huyết áp, cơ thể yếu hoặc sốt cao
+- Ợ nóng, đau dạ dày, loét dạ dày, hoặc có vấn đề/tiền sử chảy máu dạ dày
+- Cao huyết áp không kiểm soát được, suy tim, hoặc bệnh tim thiếu máu cục bộ
+- Đang dùng aspirin liều thấp, hoặc thuốc tiểu đường, gút, viêm khớp, thuốc chống đông máu, steroid hoặc thuốc lợi tiểu
+- Cơ địa dị ứng, hoặc từng bị dị ứng với thuốc
+- Thường xuyên uống rượu bia (từ 3 ly trở lên mỗi ngày) (nguy cơ chảy máu dạ dày)
+#consult_th
+- เด็กอายุต่ำกว่า 15 ปีที่สงสัยว่าเป็นอีสุกอีใสหรือไข้หวัดใหญ่
+- ตั้งครรภ์ (โดยเฉพาะหลัง 20 สัปดาห์) หรืออาจตั้งครรภ์ ให้นมบุตร หรือสูงอายุ
+- โรคตับ ไต ต่อมไทรอยด์ เบาหวาน ความดันโลหิตสูง ร่างกายอ่อนแอ หรือมีไข้สูง
+- แสบร้อนกลางอก ปวดท้อง แผลในกระเพาะอาหาร หรือมีปัญหา/ประวัติเลือดออกในกระเพาะอาหาร
+- ความดันโลหิตสูงที่ควบคุมไม่ได้ หัวใจล้มเหลว หรือโรคหัวใจขาดเลือด
+- กำลังใช้แอสไพรินขนาดต่ำ หรือยารักษาเบาหวาน เกาต์ ข้ออักเสบ ยาต้านการแข็งตัวของเลือด สเตียรอยด์ หรือยาขับปัสสาวะ
+- มีร่างกายแพ้ง่าย หรือเคยแพ้ยา
+- ดื่มแอลกอฮอล์เป็นประจำ (ตั้งแต่ 3 แก้วขึ้นไปทุกวัน) (เสี่ยงเลือดออกในกระเพาะอาหาร)
 #stop_ko
 - 5~6회 복용해도 증상이 좋아지지 않는 경우
 - 발진, 가려움, 구역·구토, 위통, 소화관 출혈
@@ -162,6 +369,18 @@
 - Your symptoms have not improved after 5–6 doses
 - Rash, itching, nausea/vomiting, stomach pain, or bleeding in the digestive tract
 - Difficulty breathing, a swollen face, dizziness, a severe skin reaction, or asthma
+#stop_zh
+- 服用5～6次后症状仍未改善
+- 皮疹、瘙痒、恶心呕吐、胃痛、消化道出血
+- 呼吸困难、面部肿胀、头晕、严重皮肤反应、哮喘
+#stop_vi
+- Triệu chứng không cải thiện sau khi dùng 5–6 lần
+- Phát ban, ngứa, buồn nôn/nôn, đau dạ dày hoặc chảy máu đường tiêu hóa
+- Khó thở, sưng mặt, chóng mặt, phản ứng da nghiêm trọng hoặc hen suyễn
+#stop_th
+- อาการไม่ดีขึ้นหลังใช้ยา 5–6 ครั้ง
+- ผื่น คัน คลื่นไส้/อาเจียน ปวดท้อง หรือเลือดออกในทางเดินอาหาร
+- หายใจลำบาก ใบหน้าบวม เวียนศีรษะ ปฏิกิริยาทางผิวหนังรุนแรง หรือหอบหืด
 #caution_ko
 - 정해진 용법·용량을 지키고, 장기간 계속 복용하지 않기
 - 복용 중에는 음주를 피하고, 다른 소염진통제와 함께 복용하지 않기
@@ -170,11 +389,24 @@
 - Follow the stated dose and do not keep taking it for a long time
 - Avoid alcohol while taking it, and do not take it with other anti-inflammatory painkillers
 - Children should take it under the supervision of a guardian
+#caution_zh
+- 请遵守规定的用法用量，不要长期连续服用
+- 服药期间避免饮酒，不要与其他消炎止痛药同时服用
+- 儿童应在监护人的指导和监督下服用
+#caution_vi
+- Dùng đúng liều quy định và không dùng liên tục trong thời gian dài
+- Tránh rượu bia khi đang dùng thuốc và không dùng cùng thuốc giảm đau kháng viêm khác
+- Trẻ em phải dùng dưới sự hướng dẫn, giám sát của người giám hộ
+#caution_th
+- ใช้ตามขนาดที่กำหนด และไม่ใช้ต่อเนื่องเป็นเวลานาน
+- หลีกเลี่ยงแอลกอฮอล์ขณะใช้ยา และไม่ใช้ร่วมกับยาแก้ปวดต้านการอักเสบอื่น
+- เด็กควรใช้ภายใต้การดูแลของผู้ปกครอง
 
 #id festal
 #name_ko 훼스탈플러스정
 #name_en Festal Plus Tablet
 #ingredient 주성분: 셀룰라제 10mg, 판크레아틴 315mg, 시메티콘 30mg, 우르소데옥시콜산 10mg
+#ingredient_en Cellulase 10 mg, Pancreatin 315 mg, Simethicone 30 mg, Ursodeoxycholic acid 10 mg
 #video https://www.youtube.com/embed/VIDEO_ID_4
 #dose_ko
 - 성인: 1회 1~2정, 1일 3회 식사 후 복용.
@@ -184,10 +416,28 @@
 - Adults: 1–2 tablets at a time, 3 times a day, after meals.
 - Age 8–14: 1 tablet at a time, 3 times a day, after meals.
 - This is an enteric-coated tablet: swallow it whole, and do not chew or split it (splitting it may stop it from working or raise the risk of side effects).
+#dose_zh
+- 成人：每次1～2片，每日3次，饭后服用。
+- 8～14岁：每次1片，每日3次，饭后服用。
+- 本药为肠溶片，请整片吞服，不要咀嚼或掰开(掰开可能失效或增加副作用风险)。
+#dose_vi
+- Người lớn: mỗi lần 1–2 viên, 3 lần mỗi ngày, sau bữa ăn.
+- Từ 8–14 tuổi: mỗi lần 1 viên, 3 lần mỗi ngày, sau bữa ăn.
+- Đây là viên bao tan trong ruột: nuốt nguyên viên, không nhai hay bẻ đôi (bẻ đôi có thể làm thuốc mất tác dụng hoặc tăng nguy cơ tác dụng phụ).
+#dose_th
+- ผู้ใหญ่: ครั้งละ 1–2 เม็ด วันละ 3 ครั้ง หลังอาหาร
+- อายุ 8–14 ปี: ครั้งละ 1 เม็ด วันละ 3 ครั้ง หลังอาหาร
+- เป็นยาเม็ดเคลือบละลายในลำไส้: กลืนทั้งเม็ด ห้ามเคี้ยวหรือหักครึ่ง (การหักอาจทำให้ยาไม่ได้ผลหรือเพิ่มความเสี่ยงผลข้างเคียง)
 #ban_ko
 - 만 7세 이하 어린이
 #ban_en
 - Children aged 7 and under
+#ban_zh
+- 7岁以下儿童
+#ban_vi
+- Trẻ từ 7 tuổi trở xuống
+#ban_th
+- เด็กอายุ 7 ปีลงมา
 #consult_ko
 - 본인 또는 가족이 알레르기 체질인 경우
 - 임신 중이거나 임신 가능성이 있는 경우
@@ -196,30 +446,70 @@
 - You or a family member is allergic by nature
 - You are pregnant or may be pregnant
 - You are taking other medicines
+#consult_zh
+- 本人或家人为过敏体质
+- 怀孕或可能怀孕
+- 正在服用其他药物
+#consult_vi
+- Bản thân hoặc người nhà có cơ địa dị ứng
+- Đang mang thai hoặc có thể mang thai
+- Đang dùng thuốc khác
+#consult_th
+- ตนเองหรือคนในครอบครัวมีร่างกายแพ้ง่าย
+- ตั้งครรภ์หรืออาจตั้งครรภ์
+- กำลังใช้ยาอื่น
 #stop_ko
 - 2주 정도 복용해도 증상이 좋아지지 않는 경우
 #stop_en
 - Your symptoms have not improved after about 2 weeks
+#stop_zh
+- 服药约2周后症状仍未改善
+#stop_vi
+- Triệu chứng không cải thiện sau khoảng 2 tuần dùng thuốc
+#stop_th
+- อาการไม่ดีขึ้นหลังใช้ยาประมาณ 2 สัปดาห์
 #caution_ko
 - 정해진 용법·용량을 지키고, 꼭 필요할 때만 복용
 - 취침 전 음식 섭취, 과식, 자극적인 향신료·카페인은 피하기
 #caution_en
 - Follow the stated dose and take it only when really needed
 - Avoid eating before bed, overeating, and spicy seasonings or caffeine
+#caution_zh
+- 请遵守规定的用法用量，仅在确有需要时服用
+- 避免睡前进食、暴饮暴食，以及辛辣调味料和咖啡因
+#caution_vi
+- Dùng đúng liều quy định và chỉ dùng khi thật sự cần thiết
+- Tránh ăn trước khi ngủ, ăn quá no, gia vị cay và caffeine
+#caution_th
+- ใช้ตามขนาดที่กำหนด และใช้เฉพาะเมื่อจำเป็นจริง ๆ
+- หลีกเลี่ยงการกินก่อนนอน กินมากเกินไป เครื่องเทศรสจัด และคาเฟอีน
 
 #id gaviscon
 #name_ko 개비스콘더블액션현탁액
 #name_en Gaviscon Double Action Suspension
 #ingredient 주성분: 탄산칼슘 3.25g/100mL, 알긴산나트륨 5g/100mL, 탄산수소나트륨 2.13g/100mL
+#ingredient_en Calcium carbonate 3.25 g/100 mL, Sodium alginate 5 g/100 mL, Sodium bicarbonate 2.13 g/100 mL
 #video https://www.youtube.com/embed/VIDEO_ID_5
 #dose_ko
 - 성인·만 12세 이상: 1회 10~20mL, 1일 4회 (식후, 취침 전). 먹기 전에 충분히 흔들기.
 #dose_en
 - Adults and age 12 and over: 10–20 mL at a time, 4 times a day (after meals and at bedtime). Shake well before taking.
+#dose_zh
+- 成人及12岁以上：每次10～20mL，每日4次(饭后和睡前)。服用前充分摇匀。
+#dose_vi
+- Người lớn và từ 12 tuổi trở lên: mỗi lần 10–20 mL, 4 lần mỗi ngày (sau bữa ăn và trước khi ngủ). Lắc kỹ trước khi uống.
+#dose_th
+- ผู้ใหญ่และอายุ 12 ปีขึ้นไป: ครั้งละ 10–20 มล. วันละ 4 ครั้ง (หลังอาหารและก่อนนอน) เขย่าให้เข้ากันดีก่อนใช้
 #ban_ko
 - 이 약이나 구성성분에 알레르기(과민반응)가 있는 경우
 #ban_en
 - You are allergic (hypersensitive) to this medicine or its ingredients
+#ban_zh
+- 对本药或其成分过敏(过敏反应)
+#ban_vi
+- Bạn dị ứng (quá mẫn) với thuốc này hoặc các thành phần của thuốc
+#ban_th
+- แพ้ยานี้หรือส่วนประกอบของยา (ภาวะภูมิไวเกิน)
 #consult_ko
 - 만 12세 미만은 의사의 지시가 없으면 권장되지 않음.
 - 나트륨을 제한해야 하는 경우: 울혈심부전, 신장질환
@@ -228,12 +518,33 @@
 - Not recommended under age 12 unless a doctor tells you to.
 - If you must limit sodium: congestive heart failure, kidney disease
 - Calcium-related conditions: high blood calcium, nephrocalcinosis, recurrent calcium kidney stones
+#consult_zh
+- 12岁以下不建议使用，除非医生指示。
+- 需要限制钠摄入者：充血性心力衰竭、肾脏疾病
+- 与钙相关的疾病：高钙血症、肾钙质沉着症、复发性钙质肾结石
+#consult_vi
+- Không khuyến cáo cho trẻ dưới 12 tuổi trừ khi có chỉ định của bác sĩ.
+- Cần hạn chế natri: suy tim sung huyết, bệnh thận
+- Bệnh liên quan đến canxi: tăng canxi máu, vôi hóa thận, sỏi thận canxi tái phát
+#consult_th
+- ไม่แนะนำสำหรับเด็กอายุต่ำกว่า 12 ปี เว้นแต่แพทย์สั่ง
+- ผู้ที่ต้องจำกัดโซเดียม: หัวใจล้มเหลวแบบคั่งเลือด โรคไต
+- โรคที่เกี่ยวกับแคลเซียม: แคลเซียมในเลือดสูง แคลเซียมสะสมในไต นิ่วในไตชนิดแคลเซียมที่เป็นซ้ำ
 #stop_ko
 - 7일 복용해도 증상이 좋아지지 않는 경우
 - 가려움, 기관지 수축 등 알레르기 증상이 나타나는 경우
 #stop_en
 - Your symptoms have not improved after 7 days
 - Allergic symptoms such as itching or bronchial constriction (tightening of the airways)
+#stop_zh
+- 服药7天后症状仍未改善
+- 出现瘙痒、支气管收缩(气道变窄)等过敏症状
+#stop_vi
+- Triệu chứng không cải thiện sau 7 ngày
+- Triệu chứng dị ứng như ngứa hoặc co thắt phế quản (hẹp đường thở)
+#stop_th
+- อาการไม่ดีขึ้นหลังใช้ยา 7 วัน
+- อาการแพ้ เช่น คัน หรือหลอดลมตีบ (ทางเดินหายใจแคบลง)
 #caution_ko
 - 다른 약(테트라사이클린, 디곡신, 플루오로퀴놀론, 철분제, 케토코나졸, 혈압약, 스테로이드 등)과는 2시간 이상 간격을 두고 복용
 - 권장량보다 많이 먹으면 변비, 알칼리증, 고칼슘혈증이 생길 수 있음
@@ -242,16 +553,35 @@
 - Leave at least 2 hours between this and other medicines (tetracyclines, digoxin, fluoroquinolones, iron supplements, ketoconazole, blood pressure medicines, steroids, etc.)
 - Taking more than the recommended amount may cause constipation, alkalosis or high blood calcium
 - Store in a cool place at room temperature (1–30 °C). Do not refrigerate. Use within 6 months of opening
+#caution_zh
+- 与其他药物(四环素、地高辛、氟喹诺酮类、铁剂、酮康唑、降压药、类固醇等)至少间隔2小时服用
+- 超过推荐量服用可能引起便秘、碱中毒、高钙血症
+- 常温(1～30℃)阴凉处保存，不可冷藏，开封后6个月内用完
+#caution_vi
+- Cách các thuốc khác (tetracyclin, digoxin, fluoroquinolon, thuốc bổ sắt, ketoconazol, thuốc huyết áp, steroid, v.v.) ít nhất 2 giờ
+- Dùng nhiều hơn liều khuyến cáo có thể gây táo bón, nhiễm kiềm hoặc tăng canxi máu
+- Bảo quản nơi mát ở nhiệt độ phòng (1–30 °C). Không để tủ lạnh. Dùng trong vòng 6 tháng sau khi mở
+#caution_th
+- ใช้ห่างจากยาอื่น (เตตราไซคลิน ดิจอกซิน ฟลูออโรควิโนโลน ยาธาตุเหล็ก คีโตโคนาโซล ยาความดันโลหิต สเตียรอยด์ ฯลฯ) อย่างน้อย 2 ชั่วโมง
+- การใช้เกินปริมาณที่แนะนำอาจทำให้ท้องผูก ภาวะด่างในเลือด หรือแคลเซียมในเลือดสูง
+- เก็บในที่เย็นที่อุณหภูมิห้อง (1–30 °C) ห้ามแช่เย็น ใช้ให้หมดภายใน 6 เดือนหลังเปิด
 
 #id pancold
 #name_ko 판콜에스내복액
 #name_en Pan Cold-S Oral Solution
 #ingredient 주성분: 아세트아미노펜 300mg, 카페인무수물 30mg, 클로르페니라민말레산염 2.5mg, DL-메틸에페드린염산염 17.5mg, 구아이페네신 83.3mg
+#ingredient_en Acetaminophen 300 mg, Caffeine anhydrous 30 mg, Chlorpheniramine maleate 2.5 mg, DL-Methylephedrine hydrochloride 17.5 mg, Guaifenesin 83.3 mg
 #video https://www.youtube.com/embed/VIDEO_ID_6
 #dose_ko
 - 성인: 1회 1병(30mL), 1일 3회 식후 30분, 충분한 물과 함께 복용.
 #dose_en
 - Adults: 1 bottle (30 mL) at a time, 3 times a day, 30 minutes after meals, with plenty of water.
+#dose_zh
+- 成人：每次1瓶(30mL)，每日3次，饭后30分钟，用足量的水送服。
+#dose_vi
+- Người lớn: mỗi lần 1 chai (30 mL), 3 lần mỗi ngày, sau bữa ăn 30 phút, uống với nhiều nước.
+#dose_th
+- ผู้ใหญ่: ครั้งละ 1 ขวด (30 มล.) วันละ 3 ครั้ง หลังอาหาร 30 นาที พร้อมน้ำมาก ๆ
 #ban_ko
 - 이 약 성분에 알레르기가 있는 경우
 - 이 약이나 감기약·해열진통제로 천식이 있었던 경우
@@ -264,6 +594,24 @@
 - Infants under 3 months
 - You are taking an MAO inhibitor (such as some antidepressants), or stopped taking one within the last 2 weeks
 - You are taking another cough/expectorant, cold medicine, fever/pain reliever, sedative or antihistamine (for allergic rhinitis, motion sickness or allergies)
+#ban_zh
+- 对本药成分过敏
+- 曾因本药、感冒药或解热镇痛药引发哮喘
+- 3个月以下婴儿
+- 正在服用单胺氧化酶(MAO)抑制剂(如部分抗抑郁药)，或停药未满2周
+- 正在同时服用其他镇咳祛痰药、感冒药、解热镇痛药、镇静药或抗组胺药(用于鼻炎、晕车、过敏)
+#ban_vi
+- Bạn dị ứng với một thành phần của thuốc
+- Từng bị hen do thuốc này, thuốc cảm hoặc thuốc hạ sốt giảm đau
+- Trẻ sơ sinh dưới 3 tháng tuổi
+- Đang dùng thuốc ức chế MAO (như một số thuốc chống trầm cảm), hoặc mới ngừng dùng trong vòng 2 tuần
+- Đang dùng cùng lúc thuốc ho/long đờm, thuốc cảm khác, thuốc hạ sốt giảm đau, thuốc an thần hoặc thuốc kháng histamin (thuốc viêm mũi, say tàu xe, dị ứng)
+#ban_th
+- แพ้ส่วนประกอบของยานี้
+- เคยเป็นหอบหืดจากยานี้ ยาแก้หวัด หรือยาลดไข้แก้ปวด
+- ทารกอายุต่ำกว่า 3 เดือน
+- กำลังใช้ยากลุ่มยับยั้ง MAO (เช่น ยาต้านเศร้าบางชนิด) หรือเพิ่งหยุดยาภายใน 2 สัปดาห์
+- กำลังใช้ยาแก้ไอ/ยาขับเสมหะ ยาแก้หวัดอื่น ยาลดไข้แก้ปวด ยาระงับประสาท หรือยาต้านฮิสตามีน (ยารักษาโรคจมูกอักเสบ แก้เมารถ แก้แพ้) ร่วมกัน
 #consult_ko
 - 수두·독감이 의심되는 영아 및 15세 미만 어린이
 - 알레르기 체질이거나 약으로 알레르기가 있었던 경우
@@ -282,6 +630,33 @@
 - You are taking medicine for diabetes, gout or arthritis, a blood thinner or a steroid
 - You have a lot of phlegm (from smoking, asthma, chronic bronchitis, etc.) or a cough lasting more than 1 week
 - You drink alcohol regularly (3 or more drinks every day)
+#consult_zh
+- 疑似水痘或流感的婴儿及15岁以下儿童
+- 过敏体质，或曾对药物过敏
+- 肝、肾、心脏、甲状腺疾病、糖尿病、高血压、青光眼、排尿困难、高龄或身体虚弱
+- 胃溃疡、烧心等胃肠问题，或出血问题
+- 怀孕或哺乳期
+- 正在服用糖尿病药、痛风药、关节炎药、抗凝药或类固醇
+- 因吸烟、哮喘、慢性支气管炎等痰多，或咳嗽持续1周以上
+- 经常饮酒(每天3杯以上)
+#consult_vi
+- Trẻ sơ sinh và trẻ dưới 15 tuổi nghi bị thủy đậu hoặc cúm
+- Cơ địa dị ứng, hoặc từng bị dị ứng với thuốc
+- Bệnh gan, thận, tim, tuyến giáp, tiểu đường, cao huyết áp, tăng nhãn áp, khó tiểu, cao tuổi hoặc cơ thể yếu
+- Vấn đề dạ dày như loét dạ dày, ợ nóng, hoặc rối loạn chảy máu
+- Mang thai hoặc cho con bú
+- Đang dùng thuốc tiểu đường, gút, viêm khớp, thuốc chống đông máu hoặc steroid
+- Nhiều đờm (do hút thuốc, hen, viêm phế quản mạn, v.v.) hoặc ho kéo dài hơn 1 tuần
+- Thường xuyên uống rượu bia (từ 3 ly trở lên mỗi ngày)
+#consult_th
+- ทารกและเด็กอายุต่ำกว่า 15 ปีที่สงสัยว่าเป็นอีสุกอีใสหรือไข้หวัดใหญ่
+- มีร่างกายแพ้ง่าย หรือเคยแพ้ยา
+- โรคตับ ไต หัวใจ ต่อมไทรอยด์ เบาหวาน ความดันโลหิตสูง ต้อหิน ปัสสาวะลำบาก สูงอายุ หรือร่างกายอ่อนแอ
+- ปัญหาในกระเพาะอาหาร เช่น แผลในกระเพาะอาหาร แสบร้อนกลางอก หรือปัญหาเลือดออก
+- ตั้งครรภ์หรือให้นมบุตร
+- กำลังใช้ยารักษาเบาหวาน เกาต์ ข้ออักเสบ ยาต้านการแข็งตัวของเลือด หรือสเตียรอยด์
+- มีเสมหะมาก (จากการสูบบุหรี่ หอบหืด หลอดลมอักเสบเรื้อรัง ฯลฯ) หรือไอติดต่อกันเกิน 1 สัปดาห์
+- ดื่มแอลกอฮอล์เป็นประจำ (ตั้งแต่ 3 แก้วขึ้นไปทุกวัน)
 #stop_ko
 - 5~6회 복용해도 증상이 좋아지지 않는 경우
 - 발진, 가려움, 구역·구토, 식욕부진, 어지러움, 불안, 불면
@@ -290,6 +665,18 @@
 - Your symptoms have not improved after 5–6 doses
 - Rash, itching, nausea/vomiting, loss of appetite, dizziness, anxiety or sleeplessness
 - Signs of shock, a severe skin reaction, asthma, jaundice or difficulty breathing
+#stop_zh
+- 服用5～6次后症状仍未改善
+- 皮疹、瘙痒、恶心呕吐、食欲不振、头晕、焦虑、失眠
+- 出现休克、严重皮肤反应、哮喘、黄疸或呼吸困难
+#stop_vi
+- Triệu chứng không cải thiện sau khi dùng 5–6 lần
+- Phát ban, ngứa, buồn nôn/nôn, chán ăn, chóng mặt, lo âu hoặc mất ngủ
+- Dấu hiệu sốc, phản ứng da nghiêm trọng, hen, vàng da hoặc khó thở
+#stop_th
+- อาการไม่ดีขึ้นหลังใช้ยา 5–6 ครั้ง
+- ผื่น คัน คลื่นไส้/อาเจียน เบื่ออาหาร เวียนศีรษะ วิตกกังวล หรือนอนไม่หลับ
+- มีอาการช็อก ปฏิกิริยาทางผิวหนังรุนแรง หอบหืด ดีซ่าน หรือหายใจลำบาก
 #caution_ko
 - 아세트아미노펜이 든 다른 약(감기약·해열진통제)과 함께 복용 금지
 - 복용 기간 중에는 음주 금지
@@ -300,16 +687,38 @@
 - Do not drink alcohol while taking it
 - It may make you drowsy, so avoid driving or operating dangerous machinery
 - It may cause dry mouth or difficulty urinating, so drink plenty of water
+#caution_zh
+- 不要与其他含对乙酰氨基酚的药物(感冒药、解热镇痛药)同时服用
+- 服药期间禁止饮酒
+- 可能引起嗜睡，请避免驾驶或操作危险机械
+- 可能引起口干或排尿困难，请多喝水
+#caution_vi
+- Không dùng cùng thuốc khác có chứa acetaminophen (thuốc cảm, thuốc hạ sốt giảm đau)
+- Không uống rượu bia khi đang dùng thuốc
+- Thuốc có thể gây buồn ngủ, nên tránh lái xe hoặc vận hành máy móc nguy hiểm
+- Thuốc có thể gây khô miệng hoặc khó tiểu, vì vậy hãy uống nhiều nước
+#caution_th
+- ห้ามใช้ร่วมกับยาอื่นที่มีพาราเซตามอล (อะเซตามิโนเฟน) (ยาแก้หวัด ยาลดไข้แก้ปวด)
+- ห้ามดื่มแอลกอฮอล์ขณะใช้ยา
+- ยาอาจทำให้ง่วง จึงควรหลีกเลี่ยงการขับรถหรือใช้เครื่องจักรที่อันตราย
+- ยาอาจทำให้ปากแห้งหรือปัสสาวะลำบาก ดังนั้นควรดื่มน้ำมาก ๆ
 
 #id whituben
 #name_ko 화이투벤씨플러스캡슐
 #name_en Whituben C Plus Capsule
 #ingredient 주성분: 아세트아미노펜 200mg, 아스코르브산 83.3mg, 카페인무수물 10mg, 클로르페니라민말레산염 1.25mg, 클로페라스틴염산염 8mg, DL-메틸에페드린염산염 12.5mg, 리보플라빈 2mg, 티아민질산염 4.1mg
+#ingredient_en Acetaminophen 200 mg, Ascorbic acid 83.3 mg, Caffeine anhydrous 10 mg, Chlorpheniramine maleate 1.25 mg, Cloperastine hydrochloride 8 mg, DL-Methylephedrine hydrochloride 12.5 mg, Riboflavin 2 mg, Thiamine nitrate 4.1 mg
 #video https://www.youtube.com/embed/VIDEO_ID_7
 #dose_ko
 - 만 15세 이상·성인: 1회 2캡슐 / 만 8~14세: 1회 1캡슐, 1일 3회 식후 30분.
 #dose_en
 - Adults and age 15 and over: 2 capsules at a time. Age 8–14: 1 capsule at a time. 3 times a day, 30 minutes after meals.
+#dose_zh
+- 成人及15岁以上：每次2粒。8～14岁：每次1粒。每日3次，饭后30分钟。
+#dose_vi
+- Người lớn và từ 15 tuổi trở lên: mỗi lần 2 viên nang. Từ 8–14 tuổi: mỗi lần 1 viên nang. 3 lần mỗi ngày, sau bữa ăn 30 phút.
+#dose_th
+- ผู้ใหญ่และอายุ 15 ปีขึ้นไป: ครั้งละ 2 แคปซูล อายุ 8–14 ปี: ครั้งละ 1 แคปซูล วันละ 3 ครั้ง หลังอาหาร 30 นาที
 #ban_ko
 - 이 약 성분에 알레르기가 있거나 감기약·해열진통제로 천식이 있었던 경우
 - 만 3개월 미만 영아
@@ -320,6 +729,21 @@
 - Infants under 3 months
 - You are taking an MAO inhibitor (such as some antidepressants), or stopped taking one within the last 2 weeks
 - You are taking another cough/expectorant, cold medicine, fever/pain reliever, sedative or antihistamine (for allergic rhinitis, motion sickness or allergies)
+#ban_zh
+- 对本药成分过敏，或曾因感冒药、解热镇痛药引发哮喘
+- 3个月以下婴儿
+- 正在服用单胺氧化酶(MAO)抑制剂(如部分抗抑郁药)，或停药未满2周
+- 正在同时服用其他镇咳祛痰药、感冒药、解热镇痛药、镇静药或抗组胺药(用于鼻炎、晕车、过敏)
+#ban_vi
+- Bạn dị ứng với một thành phần của thuốc, hoặc từng bị hen do thuốc cảm hay thuốc hạ sốt giảm đau
+- Trẻ sơ sinh dưới 3 tháng tuổi
+- Đang dùng thuốc ức chế MAO (như một số thuốc chống trầm cảm), hoặc mới ngừng dùng trong vòng 2 tuần
+- Đang dùng cùng lúc thuốc ho/long đờm, thuốc cảm khác, thuốc hạ sốt giảm đau, thuốc an thần hoặc thuốc kháng histamin (thuốc viêm mũi, say tàu xe, dị ứng)
+#ban_th
+- แพ้ส่วนประกอบของยานี้ หรือเคยเป็นหอบหืดจากยาแก้หวัดหรือยาลดไข้แก้ปวด
+- ทารกอายุต่ำกว่า 3 เดือน
+- กำลังใช้ยากลุ่มยับยั้ง MAO (เช่น ยาต้านเศร้าบางชนิด) หรือเพิ่งหยุดยาภายใน 2 สัปดาห์
+- กำลังใช้ยาแก้ไอ/ยาขับเสมหะ ยาแก้หวัดอื่น ยาลดไข้แก้ปวด ยาระงับประสาท หรือยาต้านฮิสตามีน (ยารักษาโรคจมูกอักเสบ แก้เมารถ แก้แพ้) ร่วมกัน
 #consult_ko
 - 수두·독감이 의심되는 영아 및 15세 미만 어린이
 - 알레르기 체질이거나 약으로 알레르기가 있었던 경우 (황색5호 포함)
@@ -336,6 +760,30 @@
 - Pregnancy or breastfeeding
 - You are taking medicine for diabetes, gout or arthritis, a blood thinner or a steroid
 - You drink alcohol regularly (3 or more drinks every day)
+#consult_zh
+- 疑似水痘或流感的婴儿及15岁以下儿童
+- 过敏体质，或曾对药物过敏(包括黄色5号色素)
+- 肝、肾、心脏、甲状腺疾病、糖尿病、高血压、青光眼、排尿困难、高龄或身体虚弱
+- 胃溃疡、烧心等胃肠问题，或出血问题
+- 怀孕或哺乳期
+- 正在服用糖尿病药、痛风药、关节炎药、抗凝药或类固醇
+- 经常饮酒(每天3杯以上)
+#consult_vi
+- Trẻ sơ sinh và trẻ dưới 15 tuổi nghi bị thủy đậu hoặc cúm
+- Cơ địa dị ứng hoặc từng bị dị ứng với thuốc (bao gồm phẩm màu vàng số 5)
+- Bệnh gan, thận, tim, tuyến giáp, tiểu đường, cao huyết áp, tăng nhãn áp, khó tiểu, cao tuổi hoặc cơ thể yếu
+- Vấn đề dạ dày như loét dạ dày, ợ nóng, hoặc rối loạn chảy máu
+- Mang thai hoặc cho con bú
+- Đang dùng thuốc tiểu đường, gút, viêm khớp, thuốc chống đông máu hoặc steroid
+- Thường xuyên uống rượu bia (từ 3 ly trở lên mỗi ngày)
+#consult_th
+- ทารกและเด็กอายุต่ำกว่า 15 ปีที่สงสัยว่าเป็นอีสุกอีใสหรือไข้หวัดใหญ่
+- มีร่างกายแพ้ง่ายหรือเคยแพ้ยา (รวมถึงสีเหลืองเบอร์ 5)
+- โรคตับ ไต หัวใจ ต่อมไทรอยด์ เบาหวาน ความดันโลหิตสูง ต้อหิน ปัสสาวะลำบาก สูงอายุ หรือร่างกายอ่อนแอ
+- ปัญหาในกระเพาะอาหาร เช่น แผลในกระเพาะอาหาร แสบร้อนกลางอก หรือปัญหาเลือดออก
+- ตั้งครรภ์หรือให้นมบุตร
+- กำลังใช้ยารักษาเบาหวาน เกาต์ ข้ออักเสบ ยาต้านการแข็งตัวของเลือด หรือสเตียรอยด์
+- ดื่มแอลกอฮอล์เป็นประจำ (ตั้งแต่ 3 แก้วขึ้นไปทุกวัน)
 #stop_ko
 - 5~6회 복용해도 증상이 좋아지지 않는 경우
 - 발진, 가려움, 구역·구토, 식욕부진, 변비, 어지러움, 배뇨곤란, 불안
@@ -344,6 +792,18 @@
 - Your symptoms have not improved after 5–6 doses
 - Rash, itching, nausea/vomiting, loss of appetite, constipation, dizziness, difficulty urinating or anxiety
 - Signs of shock, a severe skin reaction, asthma, jaundice or difficulty breathing
+#stop_zh
+- 服用5～6次后症状仍未改善
+- 皮疹、瘙痒、恶心呕吐、食欲不振、便秘、头晕、排尿困难、焦虑
+- 出现休克、严重皮肤反应、哮喘、黄疸或呼吸困难
+#stop_vi
+- Triệu chứng không cải thiện sau khi dùng 5–6 lần
+- Phát ban, ngứa, buồn nôn/nôn, chán ăn, táo bón, chóng mặt, khó tiểu hoặc lo âu
+- Dấu hiệu sốc, phản ứng da nghiêm trọng, hen, vàng da hoặc khó thở
+#stop_th
+- อาการไม่ดีขึ้นหลังใช้ยา 5–6 ครั้ง
+- ผื่น คัน คลื่นไส้/อาเจียน เบื่ออาหาร ท้องผูก เวียนศีรษะ ปัสสาวะลำบาก หรือวิตกกังวล
+- มีอาการช็อก ปฏิกิริยาทางผิวหนังรุนแรง หอบหืด ดีซ่าน หรือหายใจลำบาก
 #caution_ko
 - 아세트아미노펜이 든 다른 약(감기약·해열진통제)과 함께 복용 금지, 합쳐서 1일 4,000mg 초과 금지
 - 복용 중에는 음주를 피하기
@@ -352,6 +812,18 @@
 - Do not take it together with other medicines that contain acetaminophen (cold medicines, fever/pain relievers), and do not take more than 4,000 mg per day in total
 - Avoid alcohol while taking it
 - It may make you drowsy, so avoid driving or operating dangerous machinery
+#caution_zh
+- 不要与其他含对乙酰氨基酚的药物(感冒药、解热镇痛药)同时服用，合计每日不得超过4,000mg
+- 服药期间避免饮酒
+- 可能引起嗜睡，请避免驾驶或操作危险机械
+#caution_vi
+- Không dùng cùng thuốc khác có chứa acetaminophen (thuốc cảm, thuốc hạ sốt giảm đau), và tổng liều không quá 4.000 mg mỗi ngày
+- Tránh rượu bia khi đang dùng thuốc
+- Thuốc có thể gây buồn ngủ, nên tránh lái xe hoặc vận hành máy móc nguy hiểm
+#caution_th
+- ห้ามใช้ร่วมกับยาอื่นที่มีพาราเซตามอล (อะเซตามิโนเฟน) (ยาแก้หวัด ยาลดไข้แก้ปวด) และห้ามเกินรวม 4,000 มก. ต่อวัน
+- หลีกเลี่ยงแอลกอฮอล์ขณะใช้ยา
+- ยาอาจทำให้ง่วง จึงควรหลีกเลี่ยงการขับรถหรือใช้เครื่องจักรที่อันตราย
 
 #id daitop
 #name_ko 다이톱현탁액
@@ -363,12 +835,30 @@
 #dose_en
 - Adults: 3 g at a time, 3 times a day. For acute diarrhea, the daily dose may be doubled for the first 3 days.
 - For esophagitis, take it after meals; otherwise take it between meals.
+#dose_zh
+- 成人：每次3g，每日3次。急性腹泻时，前3天每日剂量可加倍。
+- 食管炎饭后服用，其他情况在两餐之间服用。
+#dose_vi
+- Người lớn: mỗi lần 3 g, 3 lần mỗi ngày. Khi tiêu chảy cấp, có thể tăng gấp đôi liều hằng ngày trong 3 ngày đầu.
+- Với viêm thực quản, uống sau bữa ăn; các trường hợp khác uống giữa các bữa ăn.
+#dose_th
+- ผู้ใหญ่: ครั้งละ 3 กรัม วันละ 3 ครั้ง กรณีท้องเสียเฉียบพลัน อาจเพิ่มขนาดยาต่อวันเป็น 2 เท่าใน 3 วันแรก
+- กรณีหลอดอาหารอักเสบให้กินหลังอาหาร กรณีอื่นให้กินระหว่างมื้ออาหาร
 #ban_ko
 - 소아
 - 임신 중이거나 임신 가능성이 있는 여성, 수유 중
 #ban_en
 - Children
 - Women who are pregnant or may be pregnant, or who are breastfeeding
+#ban_zh
+- 儿童
+- 怀孕或可能怀孕的女性，哺乳期
+#ban_vi
+- Trẻ em
+- Phụ nữ đang mang thai hoặc có thể mang thai, hoặc đang cho con bú
+#ban_th
+- เด็ก
+- สตรีที่ตั้งครรภ์หรืออาจตั้งครรภ์ หรือให้นมบุตร
 #consult_ko
 - 다른 약을 복용 중인 경우 (약 흡수에 영향을 줄 수 있으므로 간격을 두고 복용)
 - 심한 만성 변비
@@ -377,6 +867,18 @@
 - You are taking other medicines (this medicine can affect their absorption, so take them at different times)
 - Severe chronic constipation
 - A history of intestinal obstruction (blocked bowel)
+#consult_zh
+- 正在服用其他药物(可能影响药物吸收，请间隔一段时间服用)
+- 严重慢性便秘
+- 有肠梗阻(肠道堵塞)病史
+#consult_vi
+- Đang dùng thuốc khác (thuốc này có thể ảnh hưởng đến sự hấp thu, nên hãy uống cách nhau)
+- Táo bón mạn tính nặng
+- Từng bị tắc ruột
+#consult_th
+- กำลังใช้ยาอื่น (ยานี้อาจมีผลต่อการดูดซึมยา จึงควรกินห่างกัน)
+- ท้องผูกเรื้อรังรุนแรง
+- เคยมีลำไส้อุดตัน
 #stop_ko
 - 복부팽만감, 구토, 변비가 나타나는 경우
 - 두드러기, 발진, 가려움, 혈관 부종 등 알레르기 증상
@@ -385,12 +887,33 @@
 - Bloating, vomiting or constipation occurs
 - Allergic symptoms such as hives, rash, itching or angioedema (swelling under the skin)
 - Your symptoms have not improved after 7 days
+#stop_zh
+- 出现腹胀、呕吐、便秘
+- 荨麻疹、皮疹、瘙痒、血管性水肿等过敏症状
+- 服药7天后症状仍未改善
+#stop_vi
+- Xuất hiện đầy hơi, nôn hoặc táo bón
+- Triệu chứng dị ứng như mày đay, phát ban, ngứa hoặc phù mạch (sưng dưới da)
+- Triệu chứng không cải thiện sau 7 ngày
+#stop_th
+- มีอาการท้องอืด อาเจียน หรือท้องผูก
+- อาการแพ้ เช่น ลมพิษ ผื่น คัน หรือหลอดเลือดบวม (บวมใต้ผิวหนัง)
+- อาการไม่ดีขึ้นหลังใช้ยา 7 วัน
 #caution_ko
 - 정해진 용법·용량을 지키기
 - 이 약은 수분을 보충해 주는 약이 아니므로, 탈수 증상이 나타나면 수액 등 수분 보충을 받기
 #caution_en
 - Follow the stated dose
 - This medicine does not replace lost fluids. If you show signs of dehydration, get fluids such as an IV drip
+#caution_zh
+- 请遵守规定的用法用量
+- 本药不能补充水分，出现脱水症状时，应接受输液等补液治疗
+#caution_vi
+- Dùng đúng liều quy định
+- Thuốc này không bù nước đã mất. Nếu có dấu hiệu mất nước, hãy được bù dịch như truyền dịch
+#caution_th
+- ใช้ตามขนาดที่กำหนด
+- ยานี้ไม่ได้ทดแทนน้ำที่สูญเสียไป หากมีอาการขาดน้ำ ควรได้รับการให้สารน้ำ เช่น น้ำเกลือ
 
 #id almagel
 #name_ko 알마겔현탁액(알마게이트)
@@ -402,6 +925,15 @@
 #dose_en
 - Adults and age 12 and over: 1–1.5 g at a time, 3 times a day, 30 minutes to 1 hour after meals.
 - If needed, take one more dose at bedtime.
+#dose_zh
+- 成人及12岁以上：每次1～1.5g，每日3次，饭后30分钟至1小时服用。
+- 必要时睡前可再服1次。
+#dose_vi
+- Người lớn và từ 12 tuổi trở lên: mỗi lần 1–1,5 g, 3 lần mỗi ngày, sau bữa ăn 30 phút đến 1 giờ.
+- Nếu cần, uống thêm 1 lần trước khi ngủ.
+#dose_th
+- ผู้ใหญ่และอายุ 12 ปีขึ้นไป: ครั้งละ 1–1.5 กรัม วันละ 3 ครั้ง หลังอาหาร 30 นาทีถึง 1 ชั่วโมง
+- หากจำเป็น กินเพิ่มอีก 1 ครั้งก่อนนอน
 #ban_ko
 - 이 약이나 구성성분에 알레르기(과민반응)가 있는 경우
 - 알츠하이머병
@@ -418,14 +950,50 @@
 - Toxemia of pregnancy (preeclampsia)
 - Diarrhea
 - Undiagnosed bleeding in the digestive tract
+#ban_zh
+- 对本药或其成分过敏(过敏反应)
+- 阿尔茨海默病
+- 痔疮
+- 体液潴留(水肿)
+- 妊娠中毒症(子痫前期)
+- 腹泻
+- 原因不明的消化道出血
+#ban_vi
+- Bạn dị ứng (quá mẫn) với thuốc này hoặc các thành phần của thuốc
+- Bệnh Alzheimer
+- Bệnh trĩ
+- Ứ dịch (phù)
+- Nhiễm độc thai nghén (tiền sản giật)
+- Tiêu chảy
+- Chảy máu đường tiêu hóa chưa được chẩn đoán
+#ban_th
+- แพ้ยานี้หรือส่วนประกอบของยา (ภาวะภูมิไวเกิน)
+- โรคอัลไซเมอร์
+- ริดสีดวงทวาร
+- ภาวะคั่งของเหลว (บวม)
+- ภาวะพิษแห่งครรภ์ (ครรภ์เป็นพิษ)
+- ท้องเสีย
+- เลือดออกในทางเดินอาหารที่ยังไม่ได้รับการวินิจฉัย
 #consult_ko
 #consult_en
+#consult_zh
+#consult_vi
+#consult_th
 #stop_ko
 #stop_en
+#stop_zh
+#stop_vi
+#stop_th
 #caution_ko
 - 테트라사이클린계 항생제와 함께 복용 금지 (흡수가 억제됨)
 #caution_en
 - Do not take it together with tetracycline antibiotics (they reduce absorption)
+#caution_zh
+- 不要与四环素类抗生素同时服用(会减少吸收)
+#caution_vi
+- Không dùng cùng kháng sinh nhóm tetracyclin (làm giảm hấp thu)
+#caution_th
+- ห้ามใช้ร่วมกับยาปฏิชีวนะกลุ่มเตตราไซคลิน (ทำให้การดูดซึมลดลง)
 
 #id dulcolax
 #name_ko 둘코락스좌약(비사코딜)
@@ -439,6 +1007,18 @@
 - Adults: 10 mg once a day, inserted into the rectum (anus) when needed.
 - Children (6–12 years): 5 mg once a day, inserted into the rectum when needed.
 - Adjust appropriately for age and symptoms.
+#dose_zh
+- 成人：每日1次10mg，需要时塞入肛门。
+- 儿童(6～12岁)：每日1次5mg，需要时塞入肛门。
+- 请根据年龄和症状适当调整。
+#dose_vi
+- Người lớn: 10 mg mỗi ngày 1 lần, đặt vào hậu môn khi cần.
+- Trẻ em (6–12 tuổi): 5 mg mỗi ngày 1 lần, đặt vào hậu môn khi cần.
+- Điều chỉnh phù hợp theo tuổi và triệu chứng.
+#dose_th
+- ผู้ใหญ่: วันละ 1 ครั้ง ครั้งละ 10 มก. สอดเข้าทางทวารหนักเมื่อจำเป็น
+- เด็ก (6–12 ปี): วันละ 1 ครั้ง ครั้งละ 5 มก. สอดเข้าทางทวารหนักเมื่อจำเป็น
+- ปรับให้เหมาะสมตามอายุและอาการ
 #ban_ko
 - 급성 복부 질환(충수염, 장출혈, 궤양성 대장염 등)
 - 장마비, 장폐색(창자막힘)
@@ -459,13 +1039,58 @@
 - Anal fissure (torn skin)
 - Severe dehydration
 - You are allergic to this medicine or its ingredients
+#ban_zh
+- 急性腹部疾病(阑尾炎、肠出血、溃疡性结肠炎等)
+- 肠麻痹、肠梗阻(肠道堵塞)
+- 伴有恶心、呕吐的严重腹痛(可能是严重情况)
+- 痉挛性便秘
+- 大便极度干硬
+- 急性阑尾炎等需要急性腹部手术的状态
+- 肛裂(撕裂伤口)
+- 严重脱水
+- 对本药或其成分过敏
+#ban_vi
+- Bệnh lý bụng cấp tính (viêm ruột thừa, xuất huyết ruột, viêm loét đại tràng, v.v.)
+- Liệt ruột hoặc tắc ruột
+- Đau bụng dữ dội kèm buồn nôn, nôn (có thể là tình trạng nặng)
+- Táo bón do co thắt
+- Phân rất cứng
+- Tình trạng bụng cấp cần phẫu thuật như viêm ruột thừa cấp
+- Nứt hậu môn (vết rách)
+- Mất nước nặng
+- Bạn dị ứng với thuốc này hoặc các thành phần của thuốc
+#ban_th
+- โรคช่องท้องเฉียบพลัน (ไส้ติ่งอักเสบ เลือดออกในลำไส้ ลำไส้ใหญ่อักเสบเป็นแผล ฯลฯ)
+- ลำไส้อัมพาตหรือลำไส้อุดตัน
+- ปวดท้องรุนแรงร่วมกับคลื่นไส้ อาเจียน (อาจเป็นภาวะรุนแรง)
+- ท้องผูกจากการเกร็งตัวของลำไส้
+- อุจจาระแข็งมาก
+- ภาวะช่องท้องเฉียบพลันที่ต้องผ่าตัด เช่น ไส้ติ่งอักเสบเฉียบพลัน
+- แผลแตกที่ทวารหนัก (แผลฉีกขาด)
+- ภาวะขาดน้ำรุนแรง
+- แพ้ยานี้หรือส่วนประกอบของยา
 #consult_ko
 - 임신 중이거나 임신 가능성이 있는 여성, 수유 중
 - 소아
 #consult_en
 - Women who are pregnant or may be pregnant, or who are breastfeeding
 - Children
+#consult_zh
+- 怀孕或可能怀孕的女性，哺乳期
+- 儿童
+#consult_vi
+- Phụ nữ đang mang thai hoặc có thể mang thai, hoặc đang cho con bú
+- Trẻ em
+#consult_th
+- สตรีที่ตั้งครรภ์หรืออาจตั้งครรภ์ หรือให้นมบุตร
+- เด็ก
 #stop_ko
 #stop_en
+#stop_zh
+#stop_vi
+#stop_th
 #caution_ko
 #caution_en
+#caution_zh
+#caution_vi
+#caution_th
