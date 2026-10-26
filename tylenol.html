@@ -49,6 +49,19 @@ h1{font-size:1.6rem;line-height:1.3;font-weight:800;}
 .caution-card li:last-child{margin-bottom:0;}
 iframe{width:100%;aspect-ratio:16/9;border:0;border-radius:10px;background:#000;}
 .hidden{display:none;}
+/* ── 글 화면: 복용 금지 대상 (3칸) ── */
+.sec-title{font-size:1.05rem;font-weight:800;margin-top:22px;}
+.card ul{margin-top:8px;padding-left:20px;}
+.card li{margin-bottom:8px;}
+.card li:last-child{margin-bottom:0;}
+.sub-block{margin-top:14px;padding-top:12px;border-top:1px dashed var(--line);}
+.sub-block:first-of-type{margin-top:6px;padding-top:0;border-top:0;}
+.sub-label{font-size:.92rem;font-weight:800;}
+.ban-card{background:#FDECEC;border-color:#F1C9C9;}
+.ban-card .sub-block{border-top-color:#F1C9C9;}
+.ban-card .lv1{color:#B3261E;}
+.ban-card .lv2{color:#9A5B00;}
+.ban-card .lv3{color:#B3261E;}
 .hero{background:var(--green-soft);border-radius:18px;padding:28px 22px;margin-top:4px;}
 .hero .tag{display:inline-block;background:#fff;color:var(--green);font-weight:700;
      font-size:.78rem;border-radius:999px;padding:4px 12px;}
@@ -105,13 +118,24 @@ footer.site{max-width:720px;margin:40px auto 0;padding:20px 20px 40px;
     <button id="lang-ko" class="on" onclick="setLang('ko')">한국어</button>
     <button id="lang-en" onclick="setLang('en')">English</button>
   </div>
-  <div class="card">
-    <div class="label" id="t-dose-label">복용법</div>
-    <p id="t-dose" style="margin-top:6px"></p>
+
+  <div id="blk-dose">
+    <div class="sec-title" id="h-dose"></div>
+    <div class="card"><ul id="l-dose"></ul></div>
   </div>
-  <div class="card caution-card">
-    <div class="label" id="t-caution-label">주의사항</div>
-    <ul id="t-caution" style="margin-top:10px;padding-left:20px"></ul>
+
+  <div id="blk-ban">
+    <div class="sec-title" id="h-ban"></div>
+    <div class="card ban-card">
+      <div class="sub-block" id="blk-ban1"><div class="sub-label lv1" id="h-ban1"></div><ul id="l-ban"></ul></div>
+      <div class="sub-block" id="blk-consult"><div class="sub-label lv2" id="h-consult"></div><ul id="l-consult"></ul></div>
+      <div class="sub-block" id="blk-stop"><div class="sub-label lv3" id="h-stop"></div><ul id="l-stop"></ul></div>
+    </div>
+  </div>
+
+  <div id="blk-caution">
+    <div class="sec-title" id="h-caution"></div>
+    <div class="card caution-card"><ul id="l-caution"></ul></div>
   </div>
 </div>
 </div>
@@ -119,11 +143,27 @@ footer.site{max-width:720px;margin:40px auto 0;padding:20px 20px 40px;
 안내이며, 정확한 복용은 제품 첨부문서와 의사·약사의 지시를 따르세요.</footer>
 <script>
 const TEXT = {
-  ko: {name:"타이레놀정 500mg", doseLabel:"복용법", dose:"만 12세 이상 청소년 및 성인 기준 1회 1~2정, 1일 3~4회(4~6시간 간격)로 필요할 때 복용하세요. 1일 최대 8정(4g)을 넘기지 마세요. 통증에는 성인 10일, 소아 5일, 발열에는 3일을 넘겨 계속 복용하지 마세요.",
-       cautionLabel:"주의사항", caution:"하루 최대 아세트아미노펜 4,000mg을 넘기면 간 손상 위험이 있으니, 다른 감기약·진통제와 함께 먹지 마세요.^매일 3잔 이상 정기적으로 술을 마신다면 간 손상 위험이 있으므로 복용 전 의사·약사와 상의하세요.^다음이면 복용하지 마세요: 이 약에 과민증이 있는 경우, 술을 마신 직후, 위궤양이나 심한 간·신장·심장 질환이 있는 경우, 아스피린 천식 병력이 있는 경우, 특정 항우울제나 바르비탈계 약물을 복용 중인 경우.^간·신장·심장 질환, 위궤양, 출혈경향, 천식이 있거나 고령이거나 임신·수유 중이거나 와파린 등을 복용 중이라면 먹기 전에 의사·약사와 상의하세요.^다른 소염진통제와 함께 먹지 마세요.^발진, 가려움, 구역, 구토, 소화기 출혈 같은 증상이 나타나면 즉시 복용을 멈추고 전문가와 상의하세요.^실온(1~30℃)에서 밀폐 보관하고 어린이 손이 닿지 않는 곳에 두세요."},
-  en: {name:"Tylenol Tablet 500mg", doseLabel:"How to take", dose:"For adolescents 12+ and adults: take 1-2 tablets, 3-4 times a day (every 4-6 hours) as needed. Do not exceed 8 tablets (4g) per day. Do not use for more than 10 days (adults) or 5 days (children) for pain, or more than 3 days for fever, without medical advice.",
-       cautionLabel:"Warnings", caution:"Taking more than 4,000mg of acetaminophen a day risks liver damage, so don't combine with other cold or pain medicines containing acetaminophen.^If you drink 3 or more alcoholic drinks daily, ask a doctor or pharmacist first due to liver damage risk.^Do not take this medicine if: you're allergic to it, you've just had alcohol, you have a peptic ulcer or severe liver, kidney, or heart disease, you have a history of aspirin-induced asthma, or you take certain antidepressants or barbiturates.^If you have liver, kidney, or heart disease, a peptic ulcer, a bleeding tendency, asthma, are elderly, pregnant or breastfeeding, or take warfarin, talk to a doctor or pharmacist before use.^Do not take with other anti-inflammatory pain relievers.^Stop immediately and consult a professional if you notice rash, itching, nausea, vomiting, or digestive bleeding.^Store in a sealed container at room temperature (1-30°C), out of reach of children."}
+  ko: {name:"타이레놀정 500mg", dose:["만 12세 이상: 1회 1~2정, 1일 3~4회 (4~6시간 간격) 필요시 복용. 1일 최대 8정(4g).","통증에는 성인 10일, 소아 5일, 발열에는 3일 이상 지속해서 복용 금지."], ban:["이 약에 알레르기가 있는 경우","위궤양이나 심한 간⋅신장⋅심장 질환이 있는 경우","아스피린 천식 병력이 있는 경우","항우울제나 수면진정제 복용 중인 경우","술을 마신 직후"], consult:["간⋅신장⋅심장 질환, 위궤양","출혈이 잘 안 멎는 체질","천식, 고령, 임신⋅수유 중","와파린과 같은 혈액을 묽게 하는 약 복용","술을 정기적으로 마시는 경우"], stop:["숨쉬기 힘들거나 얼굴⋅목이 붓는 경우","온몸에 발진이 퍼지거나 피부가 벗겨지는 경우","피를 토하거나 대변이 검게 나오는 경우","멍이 잘 들거나 피가 잘 안 멎는 경우","피부나 눈이 노랗게 변하는 경우"], caution:["장기복용 시 정기적인 임상검사(요검사, 혈액검사, 간기능검사 등)를 받고 이상이 있는 경우 줄이거나 중단하기","다른 소염(항염) 진통제, 아세트아미노펜이 든 다른 약과 함께 복용하는 것은 피한다"]},
+  en: {name:"Tylenol Tablet 500mg", dose:["Age 12 and over: 1–2 tablets at a time, 3–4 times a day (4–6 hours apart), only when needed. Maximum 8 tablets (4 g) per day.","Do not take it continuously for more than 10 days for pain in adults, 5 days for pain in children, or 3 days for fever."], ban:["You are allergic to this medicine","You have a stomach ulcer, or severe liver, kidney or heart disease","You have a history of aspirin-induced asthma","You are taking an antidepressant or a sleeping/sedative medicine","You have just been drinking alcohol"], consult:["Liver, kidney or heart disease, or stomach ulcer","You bleed easily or bleeding is hard to stop","Asthma, older age, pregnancy or breastfeeding","You are taking a blood thinner such as warfarin","You drink alcohol regularly"], stop:["Difficulty breathing, or swelling of the face or throat","A rash spreading over the whole body, or peeling skin","Vomiting blood, or black stools","You bruise easily or bleeding is hard to stop","Yellowing of the skin or eyes"], caution:["For long-term use, get regular lab tests (urine, blood, liver function, etc.), and reduce or stop the medicine if any problem is found","Avoid taking it together with other anti-inflammatory painkillers or other medicines that contain acetaminophen"]}
 };
+const LABEL = {
+  ko: {dose:'1. 복용법 (용법·용량)', ban:'2. 복용 금지 대상',
+       ban1:'(1) 다음과 같은 사람은 이 약을 복용하지 말 것',
+       consult:'(2) 복용 전 의사·약사와 상의해야 하는 대상',
+       stop:'(3) 즉각 복용 중지하고 의사, 약사와 상의해야 하는 대상',
+       caution:'3. 주의 사항'},
+  en: {dose:'1. How to take (dose)', ban:'2. Who should not take this medicine',
+       ban1:'(1) Do NOT take this medicine if you are in any of these groups',
+       consult:'(2) Talk to a doctor or pharmacist BEFORE taking if',
+       stop:'(3) STOP taking it right away and talk to a doctor or pharmacist if',
+       caution:'3. Precautions'}
+};
+function fill(id, items){
+  const ul = document.getElementById('l-' + id);
+  ul.innerHTML = '';
+  items.forEach(t => { const li = document.createElement('li'); li.textContent = t; ul.appendChild(li); });
+}
+function show(blockId, on){ document.getElementById(blockId).classList.toggle('hidden', !on); }
 function setView(v){
   document.getElementById('view-video').classList.toggle('hidden', v!=='video');
   document.getElementById('view-text').classList.toggle('hidden', v!=='text');
@@ -131,18 +171,19 @@ function setView(v){
   document.getElementById('btn-text').classList.toggle('on', v==='text');
 }
 function setLang(l){
-  const t = TEXT[l];
+  const t = TEXT[l], lab = LABEL[l];
+  document.documentElement.lang = l;
   document.getElementById('drug-name').textContent = t.name;
-  document.getElementById('t-dose-label').textContent = t.doseLabel;
-  document.getElementById('t-dose').textContent = t.dose;
-  document.getElementById('t-caution-label').textContent = t.cautionLabel;
-  const list = document.getElementById('t-caution');
-  list.innerHTML = '';
-  t.caution.split('^').forEach(item => {
-    const li = document.createElement('li');
-    li.textContent = item;
-    list.appendChild(li);
-  });
+  ['dose','ban','caution'].forEach(k => document.getElementById('h-' + k).textContent = lab[k]);
+  ['ban1','consult','stop'].forEach(k => document.getElementById('h-' + k).textContent = lab[k]);
+  fill('dose', t.dose); fill('ban', t.ban); fill('consult', t.consult);
+  fill('stop', t.stop); fill('caution', t.caution);
+  show('blk-dose', t.dose.length > 0);
+  show('blk-ban1', t.ban.length > 0);
+  show('blk-consult', t.consult.length > 0);
+  show('blk-stop', t.stop.length > 0);
+  show('blk-ban', t.ban.length + t.consult.length + t.stop.length > 0);
+  show('blk-caution', t.caution.length > 0);
   document.getElementById('lang-ko').classList.toggle('on', l==='ko');
   document.getElementById('lang-en').classList.toggle('on', l==='en');
 }

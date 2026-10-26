@@ -1,0 +1,471 @@
+# Co-Co drugs.txt  (형식 설명은 page_generator.c 맨 위 주석 참고)
+# 각 칸: #키 아래에 '- 항목'을 한 줄에 하나씩. 항목이 없으면 그 칸은 화면에서 빠짐.
+
+#id tylenol
+#name_ko 타이레놀정 500mg
+#name_en Tylenol Tablet 500mg
+#ingredient 주성분: 아세트아미노펜 500mg
+#video https://www.youtube.com/embed/VIDEO_ID_1
+#dose_ko
+- 만 12세 이상: 1회 1~2정, 1일 3~4회 (4~6시간 간격) 필요시 복용. 1일 최대 8정(4g).
+- 통증에는 성인 10일, 소아 5일, 발열에는 3일 이상 지속해서 복용 금지.
+#dose_en
+- Age 12 and over: 1–2 tablets at a time, 3–4 times a day (4–6 hours apart), only when needed. Maximum 8 tablets (4 g) per day.
+- Do not take it continuously for more than 10 days for pain in adults, 5 days for pain in children, or 3 days for fever.
+#ban_ko
+- 이 약에 알레르기가 있는 경우
+- 위궤양이나 심한 간⋅신장⋅심장 질환이 있는 경우
+- 아스피린 천식 병력이 있는 경우
+- 항우울제나 수면진정제 복용 중인 경우
+- 술을 마신 직후
+#ban_en
+- You are allergic to this medicine
+- You have a stomach ulcer, or severe liver, kidney or heart disease
+- You have a history of aspirin-induced asthma
+- You are taking an antidepressant or a sleeping/sedative medicine
+- You have just been drinking alcohol
+#consult_ko
+- 간⋅신장⋅심장 질환, 위궤양
+- 출혈이 잘 안 멎는 체질
+- 천식, 고령, 임신⋅수유 중
+- 와파린과 같은 혈액을 묽게 하는 약 복용
+- 술을 정기적으로 마시는 경우
+#consult_en
+- Liver, kidney or heart disease, or stomach ulcer
+- You bleed easily or bleeding is hard to stop
+- Asthma, older age, pregnancy or breastfeeding
+- You are taking a blood thinner such as warfarin
+- You drink alcohol regularly
+#stop_ko
+- 숨쉬기 힘들거나 얼굴⋅목이 붓는 경우
+- 온몸에 발진이 퍼지거나 피부가 벗겨지는 경우
+- 피를 토하거나 대변이 검게 나오는 경우
+- 멍이 잘 들거나 피가 잘 안 멎는 경우
+- 피부나 눈이 노랗게 변하는 경우
+#stop_en
+- Difficulty breathing, or swelling of the face or throat
+- A rash spreading over the whole body, or peeling skin
+- Vomiting blood, or black stools
+- You bruise easily or bleeding is hard to stop
+- Yellowing of the skin or eyes
+#caution_ko
+- 장기복용 시 정기적인 임상검사(요검사, 혈액검사, 간기능검사 등)를 받고 이상이 있는 경우 줄이거나 중단하기
+- 다른 소염(항염) 진통제, 아세트아미노펜이 든 다른 약과 함께 복용하는 것은 피한다
+#caution_en
+- For long-term use, get regular lab tests (urine, blood, liver function, etc.), and reduce or stop the medicine if any problem is found
+- Avoid taking it together with other anti-inflammatory painkillers or other medicines that contain acetaminophen
+
+#id geworin
+#name_ko 게보린정
+#name_en Geworin Tablet
+#ingredient 주성분: 아세트아미노펜 300mg, 카페인무수물 50mg, 이소프로필안티피린 150mg
+#video https://www.youtube.com/embed/VIDEO_ID_2
+#dose_ko
+- 만 15세 이상 성인: 1회 1정, 1일 3회까지 (4시간 이상 간격). 공복을 피하고, 단기간만 복용.
+#dose_en
+- Adults 15 years and over: 1 tablet at a time, up to 3 times a day (at least 4 hours apart). Avoid taking it on an empty stomach, and take it for a short time only.
+#ban_ko
+- 만 15세 미만 소아
+- 이 약이나 다른 해열진통제로 천식 발작이 있었던 경우
+- 술을 마신 직후
+- 심한 간·신장·심장 질환이 있는 경우
+- 출혈이 잘 안 멎는 체질이거나 위·장 궤양, 심한 혈액 이상이 있는 경우
+- G6PD(포도당-6-인산 탈수소효소) 결핍증, 급성 간헐성 포르피린증, 과립백혈구감소증이 있는 경우
+- 바르비탈계 약물이나 삼환계 항우울제를 복용한 경우
+#ban_en
+- Children under 15
+- You have had an asthma attack from this medicine or another fever/pain reliever
+- You have just been drinking alcohol
+- You have severe liver, kidney or heart disease
+- You bleed easily or bleeding is hard to stop, or you have a stomach/intestinal ulcer or a serious blood disorder
+- G6PD (glucose-6-phosphate dehydrogenase) deficiency, acute intermittent porphyria, or granulocytopenia
+- You have taken a barbiturate or a tricyclic antidepressant
+#consult_ko
+- 알레르기 체질이거나 약으로 알레르기가 있었던 경우
+- 임신·수유 중, 고령
+- 간·신장·심장 질환, 위궤양, 혈액 이상 병력
+- 갑상선 질환, 당뇨병, 고혈압이 있거나 몸이 약한 경우
+- 와파린 같은 항응고제, 스테로이드제, 리튬, 이뇨제 등 다른 약 복용 중
+- 수두·독감이 의심되는 청소년
+- 술을 정기적으로(매일 3잔 이상) 마시는 경우
+#consult_en
+- You are allergic by nature, or have had an allergic reaction to a medicine
+- Pregnancy or breastfeeding, or older age
+- A history of liver, kidney or heart disease, stomach ulcer, or blood disorder
+- Thyroid disease, diabetes, high blood pressure, or you are frail
+- You are taking other medicines, such as a blood thinner like warfarin, a steroid, lithium or a diuretic
+- Teenagers who may have chickenpox or the flu
+- You drink alcohol regularly (3 or more drinks every day)
+#stop_ko
+- 5~6회 복용해도 증상이 좋아지지 않는 경우
+- 숨쉬기 힘들거나 얼굴이 붓는 등 쇼크·아나필락시스 증상
+- 심한 피부 반응(발진, 피부 벗겨짐 등)
+- 위장 출혈이나 통증
+#stop_en
+- Your symptoms have not improved after 5–6 doses
+- Signs of shock or anaphylaxis, such as difficulty breathing or a swollen face
+- A severe skin reaction (rash, peeling skin, etc.)
+- Stomach bleeding or pain
+#caution_ko
+- 다른 소염(항염) 진통제, 아세트아미노펜이 든 다른 약과 함께 복용하는 것은 피한다.
+- 충분한 물과 함께 복용 (위장장애가 나타날 수 있음)
+#caution_en
+- Avoid taking it together with other anti-inflammatory painkillers or other medicines that contain acetaminophen.
+- Take it with plenty of water (it may upset your stomach)
+
+#id eyegen6
+#name_ko 이지엔6이브연질캡슐
+#name_en Easy End Six Eve Soft Capsule
+#ingredient 주성분: 이부프로펜 200mg, 파마브롬 25mg
+#video https://www.youtube.com/embed/VIDEO_ID_3
+#dose_ko
+- 만 15세 이상: 1회 1~2캡슐, 1일 1~3회 (4시간 이상 간격)
+- 만 8~14세: 1회 1캡슐, 1일 1~3회 (4시간 이상 간격).
+- 공복을 피해 충분한 물과 함께 복용.
+#dose_en
+- Age 15 and over: 1–2 capsules at a time, 1–3 times a day (at least 4 hours apart)
+- Age 8–14: 1 capsule at a time, 1–3 times a day (at least 4 hours apart).
+- Avoid taking it on an empty stomach; take it with plenty of water.
+#ban_ko
+- 만 3개월 미만 영아
+- 이 약이나 다른 해열진통제·감기약으로 천식이 있었던 경우
+- 임신 30주 이후
+- 다른 해열진통제, 감기약, 진정제를 함께 복용 중인 경우
+#ban_en
+- Infants under 3 months
+- You have had asthma from this medicine or another fever/pain reliever or cold medicine
+- After 30 weeks of pregnancy
+- You are already taking another fever/pain reliever, cold medicine or sedative
+#consult_ko
+- 수두·독감이 의심되는 15세 미만 어린이
+- 임신(특히 20주 이후) 또는 임신 가능성, 수유 중, 고령
+- 간·신장·갑상선 질환, 당뇨병, 고혈압, 몸이 약하거나 고열이 있는 경우
+- 속쓰림, 위통, 위궤양, 위장 출혈 문제나 병력
+- 조절되지 않는 고혈압, 심부전, 허혈성 심장질환
+- 저용량 아스피린, 당뇨약, 통풍약, 관절염약, 항응고제, 스테로이드제, 이뇨제 복용 중
+- 알레르기 체질이거나 약으로 알레르기가 있었던 경우
+- 술을 정기적으로(매일 3잔 이상) 마시는 경우 (위장출혈 위험)
+#consult_en
+- Children under 15 who may have chickenpox or the flu
+- Pregnancy (especially after 20 weeks) or possible pregnancy, breastfeeding, or older age
+- Liver, kidney or thyroid disease, diabetes, high blood pressure, being frail, or a high fever
+- Heartburn, stomach pain, stomach ulcer, or a history of stomach bleeding problems
+- Uncontrolled high blood pressure, heart failure, or ischemic heart disease
+- You are taking low-dose aspirin, or medicine for diabetes, gout or arthritis, a blood thinner, a steroid or a diuretic
+- You are allergic by nature, or have had an allergic reaction to a medicine
+- You drink alcohol regularly (3 or more drinks every day) (risk of stomach bleeding)
+#stop_ko
+- 5~6회 복용해도 증상이 좋아지지 않는 경우
+- 발진, 가려움, 구역·구토, 위통, 소화관 출혈
+- 숨쉬기 힘듦, 얼굴 붓기, 어지러움, 심한 피부 반응, 천식
+#stop_en
+- Your symptoms have not improved after 5–6 doses
+- Rash, itching, nausea/vomiting, stomach pain, or bleeding in the digestive tract
+- Difficulty breathing, a swollen face, dizziness, a severe skin reaction, or asthma
+#caution_ko
+- 정해진 용법·용량을 지키고, 장기간 계속 복용하지 않기
+- 복용 중에는 음주를 피하고, 다른 소염진통제와 함께 복용하지 않기
+- 어린이에게는 보호자의 지도 감독 아래 복용
+#caution_en
+- Follow the stated dose and do not keep taking it for a long time
+- Avoid alcohol while taking it, and do not take it with other anti-inflammatory painkillers
+- Children should take it under the supervision of a guardian
+
+#id festal
+#name_ko 훼스탈플러스정
+#name_en Festal Plus Tablet
+#ingredient 주성분: 셀룰라제 10mg, 판크레아틴 315mg, 시메티콘 30mg, 우르소데옥시콜산 10mg
+#video https://www.youtube.com/embed/VIDEO_ID_4
+#dose_ko
+- 성인: 1회 1~2정, 1일 3회 식사 후 복용.
+- 만 8~14세: 1회 1정, 1일 3회 식사 후 복용.
+- 장용정이므로 씹거나 쪼개지 말고 그대로 삼키기 (쪼개면 약효를 못 얻거나 부작용 위험).
+#dose_en
+- Adults: 1–2 tablets at a time, 3 times a day, after meals.
+- Age 8–14: 1 tablet at a time, 3 times a day, after meals.
+- This is an enteric-coated tablet: swallow it whole, and do not chew or split it (splitting it may stop it from working or raise the risk of side effects).
+#ban_ko
+- 만 7세 이하 어린이
+#ban_en
+- Children aged 7 and under
+#consult_ko
+- 본인 또는 가족이 알레르기 체질인 경우
+- 임신 중이거나 임신 가능성이 있는 경우
+- 다른 약을 복용 중인 경우
+#consult_en
+- You or a family member is allergic by nature
+- You are pregnant or may be pregnant
+- You are taking other medicines
+#stop_ko
+- 2주 정도 복용해도 증상이 좋아지지 않는 경우
+#stop_en
+- Your symptoms have not improved after about 2 weeks
+#caution_ko
+- 정해진 용법·용량을 지키고, 꼭 필요할 때만 복용
+- 취침 전 음식 섭취, 과식, 자극적인 향신료·카페인은 피하기
+#caution_en
+- Follow the stated dose and take it only when really needed
+- Avoid eating before bed, overeating, and spicy seasonings or caffeine
+
+#id gaviscon
+#name_ko 개비스콘더블액션현탁액
+#name_en Gaviscon Double Action Suspension
+#ingredient 주성분: 탄산칼슘 3.25g/100mL, 알긴산나트륨 5g/100mL, 탄산수소나트륨 2.13g/100mL
+#video https://www.youtube.com/embed/VIDEO_ID_5
+#dose_ko
+- 성인·만 12세 이상: 1회 10~20mL, 1일 4회 (식후, 취침 전). 먹기 전에 충분히 흔들기.
+#dose_en
+- Adults and age 12 and over: 10–20 mL at a time, 4 times a day (after meals and at bedtime). Shake well before taking.
+#ban_ko
+- 이 약이나 구성성분에 알레르기(과민반응)가 있는 경우
+#ban_en
+- You are allergic (hypersensitive) to this medicine or its ingredients
+#consult_ko
+- 만 12세 미만은 의사의 지시가 없으면 권장되지 않음.
+- 나트륨을 제한해야 하는 경우: 울혈심부전, 신장질환
+- 칼슘 관련 질환: 고칼슘혈증, 신석회침착증, 재발성 칼슘 신결석
+#consult_en
+- Not recommended under age 12 unless a doctor tells you to.
+- If you must limit sodium: congestive heart failure, kidney disease
+- Calcium-related conditions: high blood calcium, nephrocalcinosis, recurrent calcium kidney stones
+#stop_ko
+- 7일 복용해도 증상이 좋아지지 않는 경우
+- 가려움, 기관지 수축 등 알레르기 증상이 나타나는 경우
+#stop_en
+- Your symptoms have not improved after 7 days
+- Allergic symptoms such as itching or bronchial constriction (tightening of the airways)
+#caution_ko
+- 다른 약(테트라사이클린, 디곡신, 플루오로퀴놀론, 철분제, 케토코나졸, 혈압약, 스테로이드 등)과는 2시간 이상 간격을 두고 복용
+- 권장량보다 많이 먹으면 변비, 알칼리증, 고칼슘혈증이 생길 수 있음
+- 실온(1~30℃) 서늘한 곳에 보관, 냉장 금지, 개봉 후 6개월 이내 사용
+#caution_en
+- Leave at least 2 hours between this and other medicines (tetracyclines, digoxin, fluoroquinolones, iron supplements, ketoconazole, blood pressure medicines, steroids, etc.)
+- Taking more than the recommended amount may cause constipation, alkalosis or high blood calcium
+- Store in a cool place at room temperature (1–30 °C). Do not refrigerate. Use within 6 months of opening
+
+#id pancold
+#name_ko 판콜에스내복액
+#name_en Pan Cold-S Oral Solution
+#ingredient 주성분: 아세트아미노펜 300mg, 카페인무수물 30mg, 클로르페니라민말레산염 2.5mg, DL-메틸에페드린염산염 17.5mg, 구아이페네신 83.3mg
+#video https://www.youtube.com/embed/VIDEO_ID_6
+#dose_ko
+- 성인: 1회 1병(30mL), 1일 3회 식후 30분, 충분한 물과 함께 복용.
+#dose_en
+- Adults: 1 bottle (30 mL) at a time, 3 times a day, 30 minutes after meals, with plenty of water.
+#ban_ko
+- 이 약 성분에 알레르기가 있는 경우
+- 이 약이나 감기약·해열진통제로 천식이 있었던 경우
+- 만 3개월 미만 영아
+- MAO 억제제(항우울제 등)를 복용 중이거나 중단한 지 2주 이내인 경우
+- 진해거담제, 다른 감기약, 해열진통제, 진정제, 항히스타민제(비염약, 멀미약, 알레르기약)를 함께 복용 중인 경우
+#ban_en
+- You are allergic to an ingredient of this medicine
+- You have had asthma from this medicine, a cold medicine or a fever/pain reliever
+- Infants under 3 months
+- You are taking an MAO inhibitor (such as some antidepressants), or stopped taking one within the last 2 weeks
+- You are taking another cough/expectorant, cold medicine, fever/pain reliever, sedative or antihistamine (for allergic rhinitis, motion sickness or allergies)
+#consult_ko
+- 수두·독감이 의심되는 영아 및 15세 미만 어린이
+- 알레르기 체질이거나 약으로 알레르기가 있었던 경우
+- 간·신장·심장·갑상선 질환, 당뇨병, 고혈압, 녹내장, 배뇨곤란, 고령, 몸이 약한 경우
+- 위궤양, 속쓰림 등 위장 문제나 출혈 문제
+- 임신·수유중
+- 당뇨약, 통풍약, 관절염약, 항응고제, 스테로이드제 복용 중
+- 흡연, 천식, 만성 기관지염 등으로 가래가 많거나 1주 이상 기침이 지속되는 경우
+- 술을 정기적으로(매일 3잔 이상) 마시는 경우
+#consult_en
+- Infants and children under 15 who may have chickenpox or the flu
+- You are allergic by nature, or have had an allergic reaction to a medicine
+- Liver, kidney, heart or thyroid disease, diabetes, high blood pressure, glaucoma, difficulty urinating, older age, or being frail
+- Stomach problems such as stomach ulcer or heartburn, or bleeding problems
+- Pregnancy or breastfeeding
+- You are taking medicine for diabetes, gout or arthritis, a blood thinner or a steroid
+- You have a lot of phlegm (from smoking, asthma, chronic bronchitis, etc.) or a cough lasting more than 1 week
+- You drink alcohol regularly (3 or more drinks every day)
+#stop_ko
+- 5~6회 복용해도 증상이 좋아지지 않는 경우
+- 발진, 가려움, 구역·구토, 식욕부진, 어지러움, 불안, 불면
+- 쇼크, 심한 피부 반응, 천식, 황달, 호흡곤란이 나타나는 경우
+#stop_en
+- Your symptoms have not improved after 5–6 doses
+- Rash, itching, nausea/vomiting, loss of appetite, dizziness, anxiety or sleeplessness
+- Signs of shock, a severe skin reaction, asthma, jaundice or difficulty breathing
+#caution_ko
+- 아세트아미노펜이 든 다른 약(감기약·해열진통제)과 함께 복용 금지
+- 복용 기간 중에는 음주 금지
+- 졸음이 올 수 있으므로 운전이나 위험한 기계 조작은 피하기
+- 입안이 마르거나 배뇨곤란이 생길 수 있으므로 물을 충분히 마시기
+#caution_en
+- Do not take it together with other medicines that contain acetaminophen (cold medicines, fever/pain relievers)
+- Do not drink alcohol while taking it
+- It may make you drowsy, so avoid driving or operating dangerous machinery
+- It may cause dry mouth or difficulty urinating, so drink plenty of water
+
+#id whituben
+#name_ko 화이투벤씨플러스캡슐
+#name_en Whituben C Plus Capsule
+#ingredient 주성분: 아세트아미노펜 200mg, 아스코르브산 83.3mg, 카페인무수물 10mg, 클로르페니라민말레산염 1.25mg, 클로페라스틴염산염 8mg, DL-메틸에페드린염산염 12.5mg, 리보플라빈 2mg, 티아민질산염 4.1mg
+#video https://www.youtube.com/embed/VIDEO_ID_7
+#dose_ko
+- 만 15세 이상·성인: 1회 2캡슐 / 만 8~14세: 1회 1캡슐, 1일 3회 식후 30분.
+#dose_en
+- Adults and age 15 and over: 2 capsules at a time. Age 8–14: 1 capsule at a time. 3 times a day, 30 minutes after meals.
+#ban_ko
+- 이 약 성분에 알레르기가 있거나 감기약·해열진통제로 천식이 있었던 경우
+- 만 3개월 미만 영아
+- MAO 억제제(항우울제 등)를 복용 중이거나 중단한 지 2주 이내인 경우
+- 진해거담제, 다른 감기약, 해열진통제, 진정제, 항히스타민제(비염약, 멀미약, 알레르기약)를 함께 복용 중인 경우
+#ban_en
+- You are allergic to an ingredient of this medicine, or have had asthma from a cold medicine or fever/pain reliever
+- Infants under 3 months
+- You are taking an MAO inhibitor (such as some antidepressants), or stopped taking one within the last 2 weeks
+- You are taking another cough/expectorant, cold medicine, fever/pain reliever, sedative or antihistamine (for allergic rhinitis, motion sickness or allergies)
+#consult_ko
+- 수두·독감이 의심되는 영아 및 15세 미만 어린이
+- 알레르기 체질이거나 약으로 알레르기가 있었던 경우 (황색5호 포함)
+- 간·신장·심장·갑상선 질환, 당뇨병, 고혈압, 녹내장, 배뇨곤란, 고령, 몸이 약한 경우
+- 위궤양, 속쓰림 등 위장 문제나 출혈 문제
+- 임신·수유 중
+- 당뇨약, 통풍약, 관절염약, 항응고제, 스테로이드제 복용 중
+- 술을 정기적으로(매일 3잔 이상) 마시는 경우
+#consult_en
+- Infants and children under 15 who may have chickenpox or the flu
+- You are allergic by nature, or have had an allergic reaction to a medicine (including Yellow No. 5)
+- Liver, kidney, heart or thyroid disease, diabetes, high blood pressure, glaucoma, difficulty urinating, older age, or being frail
+- Stomach problems such as stomach ulcer or heartburn, or bleeding problems
+- Pregnancy or breastfeeding
+- You are taking medicine for diabetes, gout or arthritis, a blood thinner or a steroid
+- You drink alcohol regularly (3 or more drinks every day)
+#stop_ko
+- 5~6회 복용해도 증상이 좋아지지 않는 경우
+- 발진, 가려움, 구역·구토, 식욕부진, 변비, 어지러움, 배뇨곤란, 불안
+- 쇼크, 심한 피부 반응, 천식, 황달, 호흡곤란이 나타나는 경우
+#stop_en
+- Your symptoms have not improved after 5–6 doses
+- Rash, itching, nausea/vomiting, loss of appetite, constipation, dizziness, difficulty urinating or anxiety
+- Signs of shock, a severe skin reaction, asthma, jaundice or difficulty breathing
+#caution_ko
+- 아세트아미노펜이 든 다른 약(감기약·해열진통제)과 함께 복용 금지, 합쳐서 1일 4,000mg 초과 금지
+- 복용 중에는 음주를 피하기
+- 졸음이 올 수 있으므로 운전이나 위험한 기계 조작은 피하기
+#caution_en
+- Do not take it together with other medicines that contain acetaminophen (cold medicines, fever/pain relievers), and do not take more than 4,000 mg per day in total
+- Avoid alcohol while taking it
+- It may make you drowsy, so avoid driving or operating dangerous machinery
+
+#id daitop
+#name_ko 다이톱현탁액
+#name_en Daitop Suspension
+#video https://www.youtube.com/embed/VIDEO_ID_8
+#dose_ko
+- 성인: 1회 3g, 1일 3회. 급성 설사일 때 처음 3일은 1일 용량을 2배로 늘릴 수 있음.
+- 식도염에는 식후에, 그 외에는 식사와 식사 사이에 복용.
+#dose_en
+- Adults: 3 g at a time, 3 times a day. For acute diarrhea, the daily dose may be doubled for the first 3 days.
+- For esophagitis, take it after meals; otherwise take it between meals.
+#ban_ko
+- 소아
+- 임신 중이거나 임신 가능성이 있는 여성, 수유 중
+#ban_en
+- Children
+- Women who are pregnant or may be pregnant, or who are breastfeeding
+#consult_ko
+- 다른 약을 복용 중인 경우 (약 흡수에 영향을 줄 수 있으므로 간격을 두고 복용)
+- 심한 만성 변비
+- 장폐색(창자막힘) 병력
+#consult_en
+- You are taking other medicines (this medicine can affect their absorption, so take them at different times)
+- Severe chronic constipation
+- A history of intestinal obstruction (blocked bowel)
+#stop_ko
+- 복부팽만감, 구토, 변비가 나타나는 경우
+- 두드러기, 발진, 가려움, 혈관 부종 등 알레르기 증상
+- 7일이 지나도 증상이 좋아지지 않는 경우
+#stop_en
+- Bloating, vomiting or constipation occurs
+- Allergic symptoms such as hives, rash, itching or angioedema (swelling under the skin)
+- Your symptoms have not improved after 7 days
+#caution_ko
+- 정해진 용법·용량을 지키기
+- 이 약은 수분을 보충해 주는 약이 아니므로, 탈수 증상이 나타나면 수액 등 수분 보충을 받기
+#caution_en
+- Follow the stated dose
+- This medicine does not replace lost fluids. If you show signs of dehydration, get fluids such as an IV drip
+
+#id almagel
+#name_ko 알마겔현탁액(알마게이트)
+#name_en Almagel Suspension (Almagate)
+#video https://www.youtube.com/embed/VIDEO_ID_9
+#dose_ko
+- 성인·만 12세 이상: 1회 1~1.5g, 1일 3회, 식후 30분~1시간에 복용.
+- 필요하면 취침 전에 1회 더 복용.
+#dose_en
+- Adults and age 12 and over: 1–1.5 g at a time, 3 times a day, 30 minutes to 1 hour after meals.
+- If needed, take one more dose at bedtime.
+#ban_ko
+- 이 약이나 구성성분에 알레르기(과민반응)가 있는 경우
+- 알츠하이머병
+- 치질
+- 체액 저류(부기)
+- 임신 중독증
+- 설사
+- 진단되지 않은 소화기 출혈
+#ban_en
+- You are allergic (hypersensitive) to this medicine or its ingredients
+- Alzheimer's disease
+- Hemorrhoids
+- Fluid retention (swelling)
+- Toxemia of pregnancy (preeclampsia)
+- Diarrhea
+- Undiagnosed bleeding in the digestive tract
+#consult_ko
+#consult_en
+#stop_ko
+#stop_en
+#caution_ko
+- 테트라사이클린계 항생제와 함께 복용 금지 (흡수가 억제됨)
+#caution_en
+- Do not take it together with tetracycline antibiotics (they reduce absorption)
+
+#id dulcolax
+#name_ko 둘코락스좌약(비사코딜)
+#name_en Dulcolax Suppository (Bisacodyl)
+#video https://www.youtube.com/embed/VIDEO_ID_10
+#dose_ko
+- 성인: 1일 1회 10mg, 필요할 때 항문에 삽입.
+- 소아(6~12세): 1일 1회 5mg, 필요할 때 항문에 삽입.
+- 연령과 증상에 따라 적절히 조절.
+#dose_en
+- Adults: 10 mg once a day, inserted into the rectum (anus) when needed.
+- Children (6–12 years): 5 mg once a day, inserted into the rectum when needed.
+- Adjust appropriately for age and symptoms.
+#ban_ko
+- 급성 복부 질환(충수염, 장출혈, 궤양성 대장염 등)
+- 장마비, 장폐색(창자막힘)
+- 구역·구토를 동반한 심한 복통 (중증 상태일 수 있음)
+- 경련성 변비
+- 심하게 단단한 변
+- 급성 맹장염 같은 급성 복부 수술 상태
+- 항문 열창(찢긴 상처)
+- 심한 탈수 상태
+- 이 약이나 구성성분에 알레르기가 있는 경우
+#ban_en
+- Acute abdominal conditions (appendicitis, intestinal bleeding, ulcerative colitis, etc.)
+- Paralytic ileus or intestinal obstruction (blocked bowel)
+- Severe abdominal pain with nausea or vomiting (it may be a serious condition)
+- Spastic constipation
+- Severely hard stool
+- An acute abdominal surgical condition such as acute appendicitis
+- Anal fissure (torn skin)
+- Severe dehydration
+- You are allergic to this medicine or its ingredients
+#consult_ko
+- 임신 중이거나 임신 가능성이 있는 여성, 수유 중
+- 소아
+#consult_en
+- Women who are pregnant or may be pregnant, or who are breastfeeding
+- Children
+#stop_ko
+#stop_en
+#caution_ko
+#caution_en

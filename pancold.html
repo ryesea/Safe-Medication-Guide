@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>판콜에스내복액 | Co-Co 안전 복약 가이드</title>
+<style>
+:root{--paper:#FBFAF7;--ink:#1C2B33;--green:#1E7A5A;--green-soft:#E4F1EB;
+      --amber:#B96A00;--amber-soft:#FBF0DF;--line:#E3E0D8;--muted:#6B7680;}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{font-size:17px;}
+body{font-family:'Apple SD Gothic Neo','Noto Sans KR',sans-serif;
+     background:var(--paper);color:var(--ink);line-height:1.65;}
+a{color:inherit;}
+/* ── 사이트 상단 바: 로고 + 메뉴 ── */
+.topbar{position:sticky;top:0;z-index:20;background:#fff;
+     border-bottom:1px solid var(--line);}
+.topbar-inner{max-width:720px;margin:0 auto;padding:14px 20px;
+     display:flex;align-items:center;justify-content:space-between;}
+.logo{display:flex;align-items:center;gap:8px;text-decoration:none;}
+.logo-mark{width:34px;height:34px;border-radius:9px;background:var(--green);
+     color:#fff;font-weight:800;font-size:1rem;display:flex;
+     align-items:center;justify-content:center;flex:0 0 auto;}
+.logo-text{font-weight:800;font-size:1.15rem;color:var(--ink);}
+.logo-sub{font-size:.68rem;color:var(--muted);display:block;margin-top:-2px;}
+.topmenu{display:flex;gap:18px;font-size:.88rem;font-weight:600;color:var(--muted);}
+.topmenu a:hover{color:var(--green);}
+/* ── 공통 레이아웃 ── */
+.wrap{max-width:720px;margin:0 auto;padding:20px 20px 80px;}
+h1{font-size:1.6rem;line-height:1.3;font-weight:800;}
+.sub{color:var(--muted);font-size:.9rem;margin-top:4px;}
+.card{background:#fff;border:1px solid var(--line);border-radius:14px;
+      padding:18px;margin-top:16px;}
+/* ── 화면 전환 탭 (영상/글) ── */
+.viewtab{display:flex;gap:8px;margin-top:20px;}
+.viewtab button{flex:1;padding:14px 8px;border-radius:12px;font-size:1rem;
+      font-weight:700;border:1.5px solid var(--line);background:#fff;
+      color:var(--ink);cursor:pointer;}
+.viewtab button.on{background:var(--green);border-color:var(--green);color:#fff;}
+/* ── 언어 탭 (글 화면 안) ── */
+.langtab{display:flex;gap:8px;margin-top:20px;}
+.langtab button{padding:8px 16px;border-radius:999px;font-size:.9rem;
+      font-weight:600;border:1.5px solid var(--line);background:#fff;cursor:pointer;}
+.langtab button.on{background:var(--ink);border-color:var(--ink);color:#fff;}
+.label{font-size:.8rem;font-weight:800;letter-spacing:.06em;color:var(--green);}
+.caution-card{background:var(--amber-soft);border-color:#EED9B8;}
+.caution-card .label{color:var(--amber);}
+.caution-card li{margin-bottom:10px;}
+.caution-card li:last-child{margin-bottom:0;}
+iframe{width:100%;aspect-ratio:16/9;border:0;border-radius:10px;background:#000;}
+.hidden{display:none;}
+/* ── 글 화면: 복용 금지 대상 (3칸) ── */
+.sec-title{font-size:1.05rem;font-weight:800;margin-top:22px;}
+.card ul{margin-top:8px;padding-left:20px;}
+.card li{margin-bottom:8px;}
+.card li:last-child{margin-bottom:0;}
+.sub-block{margin-top:14px;padding-top:12px;border-top:1px dashed var(--line);}
+.sub-block:first-of-type{margin-top:6px;padding-top:0;border-top:0;}
+.sub-label{font-size:.92rem;font-weight:800;}
+.ban-card{background:#FDECEC;border-color:#F1C9C9;}
+.ban-card .sub-block{border-top-color:#F1C9C9;}
+.ban-card .lv1{color:#B3261E;}
+.ban-card .lv2{color:#9A5B00;}
+.ban-card .lv3{color:#B3261E;}
+.hero{background:var(--green-soft);border-radius:18px;padding:28px 22px;margin-top:4px;}
+.hero .tag{display:inline-block;background:#fff;color:var(--green);font-weight:700;
+     font-size:.78rem;border-radius:999px;padding:4px 12px;}
+.hero h1{margin-top:12px;color:var(--green);}
+.hero p{margin-top:8px;color:#2E4A3F;font-size:.92rem;max-width:46ch;}
+.pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:22px;}
+.pillar{background:#fff;border:1px solid var(--line);border-radius:12px;
+     padding:12px 10px;text-align:center;font-size:.78rem;font-weight:700;color:var(--muted);}
+.pillar b{display:block;font-size:1.3rem;margin-bottom:4px;}
+/* ── 약 목록 ── */
+.section-title{font-size:1.05rem;font-weight:800;margin-top:34px;margin-bottom:4px;}
+a.drug{display:block;background:#fff;border:1px solid var(--line);
+      border-radius:14px;padding:18px;margin-top:12px;text-decoration:none;
+      color:var(--ink);}
+a.drug:hover{border-color:var(--green);}
+a.drug b{font-size:1.1rem;}
+a.drug span{display:block;color:var(--muted);font-size:.85rem;margin-top:2px;}
+a.back{color:var(--green);font-weight:700;text-decoration:none;font-size:.9rem;}
+/* ── 하단 푸터 ── */
+footer.site{max-width:720px;margin:40px auto 0;padding:20px 20px 40px;
+     color:var(--muted);font-size:.78rem;border-top:1px solid var(--line);}
+</style>
+</head>
+<body>
+<div class="topbar"><div class="topbar-inner">
+  <a class="logo" href="index.html">
+    <span class="logo-mark">CC</span>
+    <span><span class="logo-text">Co-Co</span>
+    <span class="logo-sub">안전 복약 가이드</span></span>
+  </a>
+  <nav class="topmenu">
+    <a href="index.html">홈</a>
+    <a href="index.html#about">소개</a>
+  </nav>
+</div></div>
+<div class="wrap">
+<a class="back" href="index.html">&larr; 약 목록으로</a>
+<h1 style="margin-top:12px" id="drug-name">판콜에스내복액</h1>
+<p class="sub">주성분: 아세트아미노펜 300mg, 카페인무수물 30mg, 클로르페니라민말레산염 2.5mg, DL-메틸에페드린염산염 17.5mg, 구아이페네신 83.3mg</p>
+<div class="viewtab">
+  <button id="btn-video" onclick="setView('video')">수어·음성 영상</button>
+  <button id="btn-text"  onclick="setView('text')">글로 보기</button>
+</div>
+<div id="view-video">
+  <div class="card">
+    <div class="label">수어 &amp; 음성 안내 영상</div>
+    <iframe src="https://www.youtube.com/embed/VIDEO_ID_6" title="수어 안내 영상" allowfullscreen
+            style="margin-top:10px"></iframe>
+    <p class="sub" style="margin-top:10px">영상에는 수어 통역과 음성 설명이 함께 나옵니다.</p>
+  </div>
+</div>
+<div id="view-text" class="hidden">
+  <div class="langtab">
+    <button id="lang-ko" class="on" onclick="setLang('ko')">한국어</button>
+    <button id="lang-en" onclick="setLang('en')">English</button>
+  </div>
+
+  <div id="blk-dose">
+    <div class="sec-title" id="h-dose"></div>
+    <div class="card"><ul id="l-dose"></ul></div>
+  </div>
+
+  <div id="blk-ban">
+    <div class="sec-title" id="h-ban"></div>
+    <div class="card ban-card">
+      <div class="sub-block" id="blk-ban1"><div class="sub-label lv1" id="h-ban1"></div><ul id="l-ban"></ul></div>
+      <div class="sub-block" id="blk-consult"><div class="sub-label lv2" id="h-consult"></div><ul id="l-consult"></ul></div>
+      <div class="sub-block" id="blk-stop"><div class="sub-label lv3" id="h-stop"></div><ul id="l-stop"></ul></div>
+    </div>
+  </div>
+
+  <div id="blk-caution">
+    <div class="sec-title" id="h-caution"></div>
+    <div class="card caution-card"><ul id="l-caution"></ul></div>
+  </div>
+</div>
+</div>
+<footer class="site">Co-Co 안전 복약 가이드 · 이 페이지는 의약품 이해를 돕기 위한
+안내이며, 정확한 복용은 제품 첨부문서와 의사·약사의 지시를 따르세요.</footer>
+<script>
+const TEXT = {
+  ko: {name:"판콜에스내복액", dose:["성인: 1회 1병(30mL), 1일 3회 식후 30분, 충분한 물과 함께 복용."], ban:["이 약 성분에 알레르기가 있는 경우","이 약이나 감기약·해열진통제로 천식이 있었던 경우","만 3개월 미만 영아","MAO 억제제(항우울제 등)를 복용 중이거나 중단한 지 2주 이내인 경우","진해거담제, 다른 감기약, 해열진통제, 진정제, 항히스타민제(비염약, 멀미약, 알레르기약)를 함께 복용 중인 경우"], consult:["수두·독감이 의심되는 영아 및 15세 미만 어린이","알레르기 체질이거나 약으로 알레르기가 있었던 경우","간·신장·심장·갑상선 질환, 당뇨병, 고혈압, 녹내장, 배뇨곤란, 고령, 몸이 약한 경우","위궤양, 속쓰림 등 위장 문제나 출혈 문제","임신·수유중","당뇨약, 통풍약, 관절염약, 항응고제, 스테로이드제 복용 중","흡연, 천식, 만성 기관지염 등으로 가래가 많거나 1주 이상 기침이 지속되는 경우","술을 정기적으로(매일 3잔 이상) 마시는 경우"], stop:["5~6회 복용해도 증상이 좋아지지 않는 경우","발진, 가려움, 구역·구토, 식욕부진, 어지러움, 불안, 불면","쇼크, 심한 피부 반응, 천식, 황달, 호흡곤란이 나타나는 경우"], caution:["아세트아미노펜이 든 다른 약(감기약·해열진통제)과 함께 복용 금지","복용 기간 중에는 음주 금지","졸음이 올 수 있으므로 운전이나 위험한 기계 조작은 피하기","입안이 마르거나 배뇨곤란이 생길 수 있으므로 물을 충분히 마시기"]},
+  en: {name:"Pan Cold-S Oral Solution", dose:["Adults: 1 bottle (30 mL) at a time, 3 times a day, 30 minutes after meals, with plenty of water."], ban:["You are allergic to an ingredient of this medicine","You have had asthma from this medicine, a cold medicine or a fever/pain reliever","Infants under 3 months","You are taking an MAO inhibitor (such as some antidepressants), or stopped taking one within the last 2 weeks","You are taking another cough/expectorant, cold medicine, fever/pain reliever, sedative or antihistamine (for allergic rhinitis, motion sickness or allergies)"], consult:["Infants and children under 15 who may have chickenpox or the flu","You are allergic by nature, or have had an allergic reaction to a medicine","Liver, kidney, heart or thyroid disease, diabetes, high blood pressure, glaucoma, difficulty urinating, older age, or being frail","Stomach problems such as stomach ulcer or heartburn, or bleeding problems","Pregnancy or breastfeeding","You are taking medicine for diabetes, gout or arthritis, a blood thinner or a steroid","You have a lot of phlegm (from smoking, asthma, chronic bronchitis, etc.) or a cough lasting more than 1 week","You drink alcohol regularly (3 or more drinks every day)"], stop:["Your symptoms have not improved after 5–6 doses","Rash, itching, nausea/vomiting, loss of appetite, dizziness, anxiety or sleeplessness","Signs of shock, a severe skin reaction, asthma, jaundice or difficulty breathing"], caution:["Do not take it together with other medicines that contain acetaminophen (cold medicines, fever/pain relievers)","Do not drink alcohol while taking it","It may make you drowsy, so avoid driving or operating dangerous machinery","It may cause dry mouth or difficulty urinating, so drink plenty of water"]}
+};
+const LABEL = {
+  ko: {dose:'1. 복용법 (용법·용량)', ban:'2. 복용 금지 대상',
+       ban1:'(1) 다음과 같은 사람은 이 약을 복용하지 말 것',
+       consult:'(2) 복용 전 의사·약사와 상의해야 하는 대상',
+       stop:'(3) 즉각 복용 중지하고 의사, 약사와 상의해야 하는 대상',
+       caution:'3. 주의 사항'},
+  en: {dose:'1. How to take (dose)', ban:'2. Who should not take this medicine',
+       ban1:'(1) Do NOT take this medicine if you are in any of these groups',
+       consult:'(2) Talk to a doctor or pharmacist BEFORE taking if',
+       stop:'(3) STOP taking it right away and talk to a doctor or pharmacist if',
+       caution:'3. Precautions'}
+};
+function fill(id, items){
+  const ul = document.getElementById('l-' + id);
+  ul.innerHTML = '';
+  items.forEach(t => { const li = document.createElement('li'); li.textContent = t; ul.appendChild(li); });
+}
+function show(blockId, on){ document.getElementById(blockId).classList.toggle('hidden', !on); }
+function setView(v){
+  document.getElementById('view-video').classList.toggle('hidden', v!=='video');
+  document.getElementById('view-text').classList.toggle('hidden', v!=='text');
+  document.getElementById('btn-video').classList.toggle('on', v==='video');
+  document.getElementById('btn-text').classList.toggle('on', v==='text');
+}
+function setLang(l){
+  const t = TEXT[l], lab = LABEL[l];
+  document.documentElement.lang = l;
+  document.getElementById('drug-name').textContent = t.name;
+  ['dose','ban','caution'].forEach(k => document.getElementById('h-' + k).textContent = lab[k]);
+  ['ban1','consult','stop'].forEach(k => document.getElementById('h-' + k).textContent = lab[k]);
+  fill('dose', t.dose); fill('ban', t.ban); fill('consult', t.consult);
+  fill('stop', t.stop); fill('caution', t.caution);
+  show('blk-dose', t.dose.length > 0);
+  show('blk-ban1', t.ban.length > 0);
+  show('blk-consult', t.consult.length > 0);
+  show('blk-stop', t.stop.length > 0);
+  show('blk-ban', t.ban.length + t.consult.length + t.stop.length > 0);
+  show('blk-caution', t.caution.length > 0);
+  document.getElementById('lang-ko').classList.toggle('on', l==='ko');
+  document.getElementById('lang-en').classList.toggle('on', l==='en');
+}
+const first = new URLSearchParams(location.search).get('view') || 'video';
+setView(first === 'text' ? 'text' : 'video');
+setLang('ko');
+</script>
+</body>
+</html>
